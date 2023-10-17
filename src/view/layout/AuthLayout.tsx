@@ -1,27 +1,34 @@
-import React from "react";
+import React, {CSSProperties} from "react";
+import {ThemeUtil} from "../../util/ThemeUtil.ts";
 
 interface AuthLayoutProps {
-    children?: React.JSX.Element
+    children?: React.JSX.Element,
+    title: string,
+    subTitle: string,
+    style?: CSSProperties | undefined
 }
-export const AuthLayout = ({children}: AuthLayoutProps) => {
+export const AuthLayout = ({children, title, subTitle, style}: AuthLayoutProps) => {
   return(
       <div
-        className={"w-full hv bg-onboarding bg-contain pt-10 pl-10 "}
+        className={"auth-two-background"}
       >
-          <img src={"src/assets/image/logo.svg"}  alt={"logo"}/>
+        {/*<img src={"/src/assets/image/onboarding.svg"}  className={"background-image"} alt={"onboarding"} />*/}
+          <img src={"/src/assets/image/logo.svg"} className={"logo"} alt={"logo"}/>
           <div
             className={" w-1/2 m-auto mt-20 h-[80%] flex justify-center pt-10"}
+            style={style}
           >
               <div
                 className={"text-center w-1/2"}
               >
                   <h2
                       className={"font-medium text-[48px] leading-[65px]"}
-                  >Welcome back!</h2>
+                      style={{color: ThemeUtil.color.blackColor}}
+                  >{title}</h2>
 
                   <h2
-                      className={"font-bold text-[28px] leading-[25px] text-[#7A7A7A]"}
-                  >Login to your account</h2>
+                      className={"font-bold text-[28px] leading-[25px] text-grayColor_2"}
+                  >{subTitle}</h2>
 
                   {children}
 
@@ -29,4 +36,9 @@ export const AuthLayout = ({children}: AuthLayoutProps) => {
         </div>
       </div>
   )
+}
+
+AuthLayout.defaultProps = {
+    title: "Welcome back!",
+    subTitle: "Login to your account",
 }

@@ -1,9 +1,13 @@
 import React from "react";
 
 export type BaseRoute = {
-    name: string,
     component: React.ComponentType,
     path: string,
-    meta: object,
+    meta: Meta,
     options: object,
+}
+
+type Meta ={
+    isAuth: boolean,
+    redirectTo: string | undefined,
 }

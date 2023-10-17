@@ -1,10 +1,13 @@
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
 import {authRoute} from "./route/auth-route.ts";
 import {BaseRoute} from "./route/base-route.ts";
+import {pageRoute} from "./route/page-route.ts";
+import {AuthRequired} from "./layout/AuthRequired.tsx";
 
 export const Router = () => {
-    const baseRoute: BaseRoute[]  | undefined[] = [];
-    const routes = baseRoute.concat(authRoute)
+    const baseRoute = [] as BaseRoute[];
+
+    const routes = baseRoute.concat(authRoute, pageRoute)
 
     console.log(routes)
   return(
@@ -13,7 +16,14 @@ export const Router = () => {
               {
                   routes.map((item, index)=>{
                       const Element = item!.component
-                      return  <Route key={index} path={item!.path} element={<Element />}  />
+                      if (item.meta.redirectTo !== undefined){
+                          console.log("redirect ", item!.meta.redirectTo)
+                          return <Route key={index} path={item.path} element={<Navigate to={item!.meta.redirectTo} />} />
+                      }
+                      if (item.meta.isAuth){
+                          return <Route key={index} path={item.path} element={<AuthRequired isAuth={item.meta.isAuth} />}  />
+                      }
+                      return  <Route  key={index} path={item!.path}  element={<Element  />}  />
                   })
               }
           </Routes>

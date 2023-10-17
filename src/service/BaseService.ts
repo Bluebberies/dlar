@@ -1,14 +1,12 @@
 import axios from "axios";
-import {useSelector} from "react-redux";
 
-export const BaseService = () => {
-    const token = useSelector<any>((state)=> state.auth.token)
+export const BaseService = (others: any) => {
     const axiosInstance =  axios.create({
           baseURL: "https://",
           headers:{
               "Content-Type": "application/json",
               Accept:"application/json",
-              Authorization: `Bearer ${token}`
+              // Authorization: `Bearer ${token}`
           }
       })
 

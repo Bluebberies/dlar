@@ -1,14 +1,12 @@
 import {AuthLayout} from "../layout/AuthLayout.tsx";
-import {BaseInput} from "../../component/input/BaseInput.tsx";
+import {LoginContent} from "../../component/content/LoginContent.tsx";
 
 export const LoginView = () => {
     document.title = "Login | Dwelar"
+
   return(
     <AuthLayout>
-        <>
-            <BaseInput placeholder={"Input your email address"} label={"Email"} />
-            <BaseInput placeholder={"Input your password"} label={"Password"} />
-        </>
+      <LoginContent />
     </AuthLayout>
   )
 }

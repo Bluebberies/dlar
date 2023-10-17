@@ -2,7 +2,28 @@
   font-family: darkerGrotesque-Bold;
   src: url("../font/DarkerGrotesque-Bold.ttf");
 }
+
 .hv{
   height: 100vh;
 }
+.logo{
+  height: 45px;
+  width: 125px;
+}
+.auth-one-background{
+  background-image: url("/src/assets/image/onboarding.svg");
+  padding: 20px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+}
 
+.auth-two-background{
+  background-image: url("/src/assets/image/onboarding_1.svg");
+  padding: 20px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+}
