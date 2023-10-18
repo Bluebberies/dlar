@@ -12,7 +12,12 @@ export default {
         'onboarding': "url('/src/assets/image/onboarding.svg')"
       },
       fontFamily:{
-        "sans": ['darkerGrotesque-Bold', ...defaultTheme.fontFamily.sans]
+        "sans": ['darkerGrotesque-regular', ...defaultTheme.fontFamily.sans],
+        "darkerGrotesque-regular": ['darkerGrotesque-regular'],
+        "darkerGrotesque-medium": ['darkerGrotesque-medium'],
+        "darkerGrotesque-bold": ['darkerGrotesque-bold'],
+        "darkerGrotesque-semiBold": ['darkerGrotesque-semiBold'],
+        "darkerGrotesque-black": ['darkerGrotesque-black'],
       },
       colors:{
         primaryColor: "#18ACE8",

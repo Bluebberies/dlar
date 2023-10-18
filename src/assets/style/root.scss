@@ -1,11 +1,30 @@
 @font-face {
-  font-family: darkerGrotesque-Bold;
+  font-family: darkerGrotesque-bold;
   src: url("../font/DarkerGrotesque-Bold.ttf");
+}
+
+@font-face {
+  font-family: darkerGrotesque-medium;
+  src: url("../font/DarkerGrotesque-Medium.ttf");
+}
+
+@font-face {
+  font-family: darkerGrotesque-regular;
+  src: url("../font/DarkerGrotesque-Regular.ttf");
+}
+
+@font-face {
+  font-family: darkerGrotesque-semiBold;
+  src: url("../font/DarkerGrotesque-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: darkerGrotesque-black;
+  src: url("../font/DarkerGrotesque-Black.ttf");
 }
 
 body{
   background-color: #ffffff;
-  margin: auto;
 }
 .hv{
   height: 100vh;

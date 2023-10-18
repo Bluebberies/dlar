@@ -6,7 +6,7 @@ export const HomeView = () => {
 
   return (
       <BasePageLayout>
-            <HomeContent />
+          <HomeContent />
       </BasePageLayout>
   )
 }

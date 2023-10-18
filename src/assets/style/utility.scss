@@ -1,3 +1,12 @@
+$primary: #18ACE8;
+$black: #111110;
+$white: #FAFAFA;
+$gray1: #606060;
+$gray2: #7A7A7A;
+$gray3: #F5F5F5;
+$gray4: #C0C0C0;
+$gray5: #F2F2F2;
+
 .button-container{
   height: 60px;
   width: 100%;
@@ -16,13 +25,15 @@
 }
 
 .active-nav{
+  font-family: darkerGrotesque-bold, sans-serif;
   font-size: 20px;
   line-height: 20px;
-  color: #18ACE8;
+  color: $primary;
 }
 
 .inactive-nav{
   font-size: 20px;
   line-height: 20px;
-  color: #111110;
+  font-family: darkerGrotesque-bold, sans-serif;
+  color: $black;
 }
