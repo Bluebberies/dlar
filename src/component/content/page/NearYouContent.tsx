@@ -1,5 +1,5 @@
 import {RecentlyUploadCard} from "../../card/RecentlyUploadCard.tsx";
-import {recentlyUploadedData} from "../../../toolkit/data/recentlyUploadedData.ts";
+import {nearYouData} from "../../../toolkit/data/nearYouData.ts";
 
 export const NearYouContent = () => {
   return(
@@ -13,7 +13,7 @@ export const NearYouContent = () => {
           </div>
             <div className={"w-full mt-0 flex items-center gap-5 justify-between flex-wrap"}>
                 {
-                    recentlyUploadedData.map((value, index)=>{
+                    nearYouData.map((value, index)=>{
                         return(
                             <RecentlyUploadCard key={index} item={value}  />
                         )
