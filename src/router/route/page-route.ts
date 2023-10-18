@@ -1,6 +1,7 @@
 import {RouterConstantUtil} from "../../util/constant/RouterConstantUtil.ts";
 import {OverviewView} from "../../view/page/OverviewView.tsx";
 import {NoPageFoundView} from "../../view/page/NoPageFoundView.tsx";
+import {HomeView} from "../../view/page/HomeView.tsx";
 
 export const pageRoute = [
     {
@@ -10,20 +11,30 @@ export const pageRoute = [
             isAuth: true,
             redirectTo: undefined
         },
-        options: {},
+        options: {
+
+        },
     },
     {
-        component: OverviewView,
+        component: HomeView,
         path: "/",
         meta: {
             isAuth: false,
-            redirectTo: RouterConstantUtil.routes.page.overview
+            redirectTo: RouterConstantUtil.routes.page.home
         },
         options: {},
     },
     {
         component: NoPageFoundView,
         path: "*",
+        meta: {
+            isAuth: false,
+            redirectTo: undefined        },
+        options: {},
+    },
+    {
+        component: HomeView,
+        path: RouterConstantUtil.routes.page.home,
         meta: {
             isAuth: false,
             redirectTo: undefined        },

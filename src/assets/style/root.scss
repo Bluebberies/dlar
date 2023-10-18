@@ -27,3 +27,20 @@
   background-position: center;
   height: 100vh;
 }
+
+.base-page-background{
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+.base-page-header{
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.base-page-space{
+  padding-left: 100px;
+  padding-right: 100px;
+}

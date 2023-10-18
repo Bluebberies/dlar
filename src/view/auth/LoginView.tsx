@@ -1,5 +1,5 @@
 import {AuthLayout} from "../layout/AuthLayout.tsx";
-import {LoginContent} from "../../component/content/LoginContent.tsx";
+import {LoginContent} from "../../component/content/auth/LoginContent.tsx";
 
 export const LoginView = () => {
     document.title = "Login | Dwelar"

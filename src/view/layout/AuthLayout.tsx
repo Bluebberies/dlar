@@ -15,7 +15,7 @@ export const AuthLayout = ({children, title, subTitle, style}: AuthLayoutProps) 
         {/*<img src={"/src/assets/image/onboarding.svg"}  className={"background-image"} alt={"onboarding"} />*/}
           <img src={"/src/assets/image/logo.svg"} className={"logo"} alt={"logo"}/>
           <div
-            className={" w-1/2 m-auto mt-20 h-[80%] flex justify-center pt-10"}
+            className={" w-[55%] m-auto mt-20 h-[80%] flex justify-center pt-10 mb-10"}
             style={style}
           >
               <div

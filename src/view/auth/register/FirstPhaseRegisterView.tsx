@@ -1,5 +1,5 @@
 import {AuthLayout} from "../../layout/AuthLayout.tsx";
-import {FirstPhaseRegisterContent} from "../../../component/content/register/FirstPhaseRegisterContent.tsx";
+import {FirstPhaseRegisterContent} from "../../../component/content/auth/register/FirstPhaseRegisterContent.tsx";
 
 export const FirstPhaseRegisterView = () => {
     document.title = "Register | Dwelar"
