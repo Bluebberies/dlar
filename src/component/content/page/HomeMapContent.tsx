@@ -1,3 +1,4 @@
+
 export const HomeMapContent = () => {
   return(
       <div className={"w-full h-[484px] flex items-center "}>
@@ -10,7 +11,9 @@ export const HomeMapContent = () => {
                   You can use the Map You in finding what you are looking for. Search for properties by typing their location.
               </p>
           </div>
-          <div className={"border w-full h-full"}></div>
+          <div className={"border w-full h-full"}>
+
+          </div>
       </div>
   )
 }

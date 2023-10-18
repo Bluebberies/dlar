@@ -12,7 +12,7 @@ export const BasePageFooter = () => {
             </p>
             <BasePageFooterSubscribeInput />
         </div>
-        <div className={"h-[60%] w-full border bg-primaryColor flex items-center justify-center p-16"} >
+        <div className={"h-[60%] w-full border bg-primaryColor flex items-center justify-center p-16 "} >
             <div className={" h-full w-full "}>
                 <BaseAvatar isActive={true} containerStyle={{
                     width: 200,

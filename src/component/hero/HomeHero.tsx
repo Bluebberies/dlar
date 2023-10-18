@@ -2,7 +2,7 @@ import {BaseAvatar} from "../avatar/BaseAvatar.tsx";
 
 export const HomeHero = () => {
   return(
-      <div className={"border h-[500px] w-full mt-32 rounded-[12px] overflow-hidden relative"} style={{
+      <div className={"border h-[500px] w-full mt-0 rounded-[12px] overflow-hidden relative"} style={{
           backgroundColor: "rgba(17, 17, 16, .7)",
       }}>
         <img src={"/src/assets/image/hero-image.jpg"} className={"absolute w-full h-full bg-center bg-no-repeat -z-[999]"} alt={"hero image"}/>
