@@ -3,6 +3,10 @@
   src: url("../font/DarkerGrotesque-Bold.ttf");
 }
 
+body{
+  background-color: #ffffff;
+  margin: auto;
+}
 .hv{
   height: 100vh;
 }
@@ -17,6 +21,7 @@
   background-repeat: no-repeat;
   background-position: center;
   height: 100vh;
+
 }
 
 .auth-two-background{
@@ -41,6 +46,6 @@
 }
 
 .base-page-space{
-  padding-left: 150px;
-  padding-right: 150px;
+  padding-left: 100px;
+  padding-right: 100px;
 }

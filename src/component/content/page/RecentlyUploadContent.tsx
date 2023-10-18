@@ -10,7 +10,7 @@ export const RecentlyUploadContent = () => {
                     <img src={"/src/assets/icon/arrow.svg"} alt={"arrow"}/>
                 </div>
           </div>
-            <div className={"w-full mt-5 flex items-center justify-between gap-10 flex-wrap"}>
+            <div className={"w-full mt-5 flex items-center justify-between flex-wrap"}>
                 <RecentlyUploadCard />
                 <RecentlyUploadCard />
                 <RecentlyUploadCard />
