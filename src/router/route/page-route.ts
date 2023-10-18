@@ -2,6 +2,7 @@ import {RouterConstantUtil} from "../../util/constant/RouterConstantUtil.ts";
 import {OverviewView} from "../../view/page/OverviewView.tsx";
 import {NoPageFoundView} from "../../view/page/NoPageFoundView.tsx";
 import {HomeView} from "../../view/page/HomeView.tsx";
+import {LoginView} from "../../view/auth/LoginView.tsx";
 
 export const pageRoute = [
     {
@@ -16,11 +17,11 @@ export const pageRoute = [
         },
     },
     {
-        component: HomeView,
+        component: LoginView,
         path: "/",
         meta: {
             isAuth: false,
-            redirectTo: RouterConstantUtil.routes.page.home
+            redirectTo: RouterConstantUtil.routes.auth.login
         },
         options: {},
     },

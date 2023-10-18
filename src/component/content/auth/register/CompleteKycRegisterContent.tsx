@@ -11,7 +11,7 @@ export const CompleteKycRegisterContent = () => {
     }
 
     function handleFinish() {
-        navigate(RouterConstantUtil.routes.auth.successful, {
+        navigate(RouterConstantUtil.routes.page.home, {
             state:{
                 title: "Congratulations",
                 subtitle: "You have successfully set up your marketplace, please log in to start selling properties.",
