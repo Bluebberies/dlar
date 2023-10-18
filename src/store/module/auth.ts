@@ -7,8 +7,8 @@ const initialState = {
 }
 
 const action = {
-    login:createAsyncThunk("auth/authAction/login",  ()=>{
-        AuthService.login().then((response)=>{
+    login:createAsyncThunk("auth/authAction/login",  (arg: object, thunkAPI)=>{
+        AuthService.login(thunkAPI, arg).then((response)=>{
             return response.data
         }).catch((reason)=>{
             return reason.message
