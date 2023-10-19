@@ -28,14 +28,14 @@ export const LoginContent = () => {
                       fontSize: 20
                   }}>Remember me</span>
               </div>
-              <span className={"text-[16px]"}>Forgot Password</span>
+              <span className={"text-[16px] font-darkerGrotesque-bold"}>Forgot Password</span>
           </div>
           <BaseButton title={"Login"} onClick={handleLogin} containerStyle={{marginTop: 25}} />
           <p className={"text-grayColor_1 text-[18px] text-center cursor-pointer"} onClick={handleRegisterNavigate}>
-              Don’t have an account yet? <span className={"text-blackColor"}>Register</span>
+              Don’t have an account yet? <span className={"text-blackColor font-darkerGrotesque-bold"}>Register</span>
           </p>
 
-          <p className={"text-grayColor_1 text-[18px] text-center mt-10 mb-10"}>
+          <p className={"text-blackColor text-[18px] text-center mt-10 mb-10 font-darkerGrotesque-medium"}>
               Or Login using
           </p>
           <div className={"flex justify-center items-center gap-5"}>

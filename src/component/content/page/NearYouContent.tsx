@@ -8,7 +8,7 @@ export const NearYouContent = () => {
               <h1 className={"text-[48px] leading-[35px] mb-0 text-blackColor font-darkerGrotesque-bold"}>Near You</h1>
                 <div className={"flex items-center gap-2"}>
                     <span className={"text-[28px] leading-[35px] text-blackColor font-darkerGrotesque-bold"}>See all</span>
-                    <img src={"/src/assets/icon/arrow-right.svg"} alt={"arrow"}/>
+                    <img src={"/src/assets/icon/arrow-right.icon"} alt={"arrow"}/>
                 </div>
           </div>
             <div className={"w-full mt-0 flex items-center gap-5 justify-between flex-wrap"}>

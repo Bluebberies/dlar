@@ -41,7 +41,7 @@ export const BasePageTab = () => {
                   marginLeft: 200
               }}>
                   <div className={"flex gap-3 items-center"}>
-                      <img src={"/src/assets/icon/setting-slider.svg"} className={"w-[24px] h-[24px]"} alt={"setting-slider"}/>
+                      <img src={"/src/assets/icon/setting-slider.icon"} className={"w-[24px] h-[24px]"} alt={"setting-slider"}/>
                       <span className={"text-center text-blackColor font-darkerGrotesque-bold"}>More Filters</span>
                   </div>
               </BaseAvatar>

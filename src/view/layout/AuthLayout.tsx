@@ -14,14 +14,14 @@ export const AuthLayout = ({children, title, subTitle, style}: AuthLayoutProps) 
       >
           <img src={Logo} className={"logo"} alt={"logo"}/>
           <div
-            className={" w-[55%] m-auto p-10  flex justify-center  mb-10 "}
+            className={" w-[40%] m-auto p-20 pl-20 pr-10 flex justify-center mt-32  "}
             style={{
                 backgroundColor: "rgba(255, 255, 255, 0.7)",
                 ...style
             }}
           >
               <div
-                className={"text-center w-1/2"}
+                className={"text-center  min-w-[55%] max-w-[85%]"}
               >
                   <h2
                       className={"font-medium text-[48px] leading-[65px] font-darkerGrotesque-bold"}

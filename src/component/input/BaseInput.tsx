@@ -23,7 +23,7 @@ export const BaseInput = ({label, placeholder, superText, superTextPosition, con
                   <span className={`absolute text-grayColor_2 text-[20px] leading-[25px] mt-5 ml-3 mr-20 ${superTextPosition === "left"? "left-0" : "right-0"}`}>{superText}</span>
               )
           }
-          <input className={'border-0 w-full h-[60%] bg-[#F5F5F5] font-darkerGrotesque-bold pl-5 font-light text-[20px] leading-[25px]'} placeholder={placeholder} {...props}  />
+          <input className={'border-0 w-full h-[60%] bg-[#F5F5F5] font-darkerGrotesque-bold focus:outline-0 pl-5 font-light text-[20px] leading-[25px]'} placeholder={placeholder} {...props}  />
       </div>
   )
 }

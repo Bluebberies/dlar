@@ -16,13 +16,13 @@ export const FirstPhaseRegisterContent = () => {
 
   return(
       <>
-          <h4 className={"mb-10 mt-20 text-[28px]"}>
+          <h4 className={"mb-10 mt-20 text-[28px] font-darkerGrotesque-semiBold"}>
               Register as
           </h4>
         <SelectAgentCard />
           <BaseButton title={"Next"} onClick={handleNext} containerStyle={{marginTop: 25}} />
-          <p className={"text-grayColor_1 text-[18px] text-center cursor-pointer"} onClick={handleLoginNavigate}>
-              Already have an account? <span className={"text-blackColor"}>Login</span>
+          <p className={"text-grayColor_1 text-[20px] text-center cursor-pointer font-darkerGrotesque-medium"} onClick={handleLoginNavigate}>
+              Already have an account? <span className={"text-blackColor font-darkerGrotesque-bold"}>Login</span>
           </p>
       </>
   )

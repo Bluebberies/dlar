@@ -1,9 +1,9 @@
-import {ArrowLeftSvg} from "../svg/ArrowLeftSvg.tsx";
+import {ChevronRoundArrowSvg} from "../icon/ChevronRoundArrowSvg.tsx";
 
 export const BasePagination = () => {
   return(
       <div className={"w-full"}>
-        <ArrowLeftSvg  />
+        <ChevronRoundArrowSvg  />
       </div>
   )
 }

@@ -9,7 +9,7 @@ export default {
   theme: {
     extend: {
       backgroundImage:{
-        'onboarding': "url('/src/assets/image/onboarding.svg')"
+        'onboarding': "url('/src/assets/image/onboarding.icon')"
       },
       fontFamily:{
         "sans": ['darkerGrotesque-regular', ...defaultTheme.fontFamily.sans],
