@@ -3,7 +3,9 @@ import {ThemeUtil} from "../../../util/ThemeUtil.ts";
 import {BaseButton} from "../../button/BaseButton.tsx";
 import {RouterConstantUtil} from "../../../util/constant/RouterConstantUtil.ts";
 import {useNavigate} from "react-router-dom";
-
+import Google from "../../../assets/icon/google.svg";
+import Apple from "../../../assets/icon/apple.svg";
+import Facebook from "../../../assets/icon/facebook.svg";
 export const LoginContent = () => {
     const navigate= useNavigate()
     function handleRegisterNavigate() {
@@ -37,9 +39,9 @@ export const LoginContent = () => {
               Or Login using
           </p>
           <div className={"flex justify-center items-center gap-5"}>
-              <img src={"/src/assets/icon/google.svg"} className={"social-icon"} alt={"google"}/>
-              <img src={"/src/assets/icon/apple.svg"} className={"social-icon"} alt={"apple"}/>
-              <img src={"/src/assets/icon/facebook.svg"} className={"social-icon"} alt={"facebook"}/>
+              <img src={Google} className={"social-icon"} alt={"google"}/>
+              <img src={Apple} className={"social-icon"} alt={"apple"}/>
+              <img src={Facebook} className={"social-icon"} alt={"facebook"}/>
           </div>
       </>
   )

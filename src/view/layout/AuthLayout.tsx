@@ -1,6 +1,6 @@
 import React, {CSSProperties} from "react";
 import {ThemeUtil} from "../../util/ThemeUtil.ts";
-
+import Logo from "../../assets/image/logo.svg"
 interface AuthLayoutProps {
     children?: React.JSX.Element,
     title: string,
@@ -12,8 +12,7 @@ export const AuthLayout = ({children, title, subTitle, style}: AuthLayoutProps) 
       <div
         className={"auth-two-background"}
       >
-        {/*<img src={"/src/assets/image/onboarding.svg"}  className={"background-image"} alt={"onboarding"} />*/}
-          <img src={"../../assets/image/logo.svg"} className={"logo"} alt={"logo"}/>
+          <img src={Logo} className={"logo"} alt={"logo"}/>
           <div
             className={" w-[55%] m-auto p-10  flex justify-center  mb-10 "}
             style={{

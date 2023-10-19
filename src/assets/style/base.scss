@@ -9,7 +9,6 @@
 
 .login-checkbox-dev{
   display: flex;
-  //justify-content: flex-start;
   align-items: center;
   height: 100%;
   gap: 10px;
@@ -17,9 +16,8 @@
 
 .login-checkbox{
   width: 24px;
-  //height: 24px;
+  height: 24px;
   min-height: 95%;
-  margin-top: -5px;
 }
 
 .social-icon{
