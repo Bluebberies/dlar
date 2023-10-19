@@ -5,7 +5,12 @@ export const LoginView = () => {
     document.title = "Login | Dwelar"
 
   return(
-    <AuthLayout>
+    <AuthLayout style={{
+        marginTop: 0,
+        paddingLeft: 10,
+        paddingRight: 10,
+        width: "50%"
+    }}>
       <LoginContent />
     </AuthLayout>
   )

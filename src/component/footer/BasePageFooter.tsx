@@ -1,5 +1,6 @@
 import {BasePageFooterSubscribeInput} from "../input/BasePageFooterSubscribeInput.tsx";
 import {BaseAvatar} from "../avatar/BaseAvatar.tsx";
+import {ThemeUtil} from "../../util/ThemeUtil.ts";
 
 export const BasePageFooter = () => {
   return(
@@ -19,7 +20,7 @@ export const BasePageFooter = () => {
                     height: 70
                 }} >
                     <div className={"flex items-center justify-center"}>
-                        <img src={"/src/assets/image/logo.icon"} alt={"logo"} className={"w-[135px] h-[40px]"} />
+                        <img src={ThemeUtil.image.logo} alt={"logo"} className={"w-[135px] h-[40px]"} />
                     </div>
                 </BaseAvatar>
                 <h1 className={"text-[28px] leading-[35px] text-white mt-5 mb-5 font-darkerGrotesque-bold"}>About Us</h1>
@@ -51,22 +52,22 @@ export const BasePageFooter = () => {
             <div className={"  h-full w-full"}>
                 <h1 className={"text-[28px] leading-[35px] text-white font-darkerGrotesque-bold"}>Follow us on our socials</h1>
                 <div className={"flex gap-5 mt-5"}>
-                    <img src={"/src/assets/icon/white-facebook.icon"} alt={"facebook"} />
-                    <img src={"/src/assets/icon/white-twitter.icon"} alt={"twitter"} />
-                    <img src={"/src/assets/icon/white-instagram.icon"} alt={"instagram"} />
-                    <img src={"/src/assets/icon/white-linkin.icon"} alt={"linkin"} />
+                    <img src={ThemeUtil.icon.whiteFacebook} alt={"facebook"} />
+                    <img src={ThemeUtil.icon.whiteTwitter} alt={"twitter"} />
+                    <img src={ThemeUtil.icon.whiteInstagram} alt={"instagram"} />
+                    <img src={ThemeUtil.icon.whiteLinkIn} alt={"linkin"} />
                 </div>
 
                 <h1 className={"text-[28px] leading-[35px] text-white font-darkerGrotesque-bold mt-10"}>Contact us</h1>
 
 
                 <div className={"flex gap-2 mt-1"}>
-                    <img src={"/src/assets/icon/white-call.icon"} alt={"call"} />
+                    <img src={ThemeUtil.icon.whiteCall} alt={"call"} />
                     <span className={"text-[20px]  text-white leading-[27px]"}>+234 803 884 8947</span>
                 </div>
 
                 <div className={"flex gap-2 mt-1"}>
-                    <img src={"/src/assets/icon/white-message-filled.icon"} alt={"call"} />
+                    <img src={ThemeUtil.icon.whiteMessage} alt={"call"} />
                     <span className={"text-[20px]  text-white leading-[27px]"}>Info@dwelar.com</span>
                 </div>
             </div>

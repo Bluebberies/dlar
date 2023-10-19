@@ -5,7 +5,9 @@ export const FirstPhaseRegisterView = () => {
     document.title = "Register | Dwelar"
 
     return(
-      <AuthLayout title={"Welcome to Dwelar"} subTitle={"Please create your account now"}>
+      <AuthLayout title={"Welcome to Dwelar"} subTitle={"Please create your account now"} style={{
+          width:"40%"
+      }}>
         <FirstPhaseRegisterContent />
       </AuthLayout>
   )

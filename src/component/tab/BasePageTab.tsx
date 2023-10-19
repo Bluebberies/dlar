@@ -6,7 +6,7 @@ import {FilterCheckbox} from "../checkbox/FilterCheckbox.tsx";
 import {ThemeUtil} from "../../util/ThemeUtil.ts";
 
 export const BasePageTab = () => {
-    const [filter, setFilter] = useState<boolean>(true)
+    const [filter, setFilter] = useState<boolean>(false)
 
     function handleFilter() {
         setFilter(!filter)
@@ -41,7 +41,7 @@ export const BasePageTab = () => {
                   marginLeft: 200
               }}>
                   <div className={"flex gap-3 items-center"}>
-                      <img src={"/src/assets/icon/setting-slider.icon"} className={"w-[24px] h-[24px]"} alt={"setting-slider"}/>
+                      <img src={ThemeUtil.icon.settingSlider} className={"w-[24px] h-[24px]"} alt={"setting-slider"}/>
                       <span className={"text-center text-blackColor font-darkerGrotesque-bold"}>More Filters</span>
                   </div>
               </BaseAvatar>

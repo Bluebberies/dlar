@@ -1,3 +1,5 @@
+import {ThemeUtil} from "../../util/ThemeUtil.ts";
+
 export type NearYouDataProps = {
     image: string[],
     title: string,
@@ -10,8 +12,8 @@ export type NearYouDataProps = {
 export const nearYouData: NearYouDataProps[] =[
     {
         image: [
-            "/src/assets/image/daniel.jpg",
-            "/src/assets/image/andrea.jpg",
+            ThemeUtil.image.daniel,
+            ThemeUtil.image.simone,
         ],
         title: "My Odessy Lodge",
         location: "Ifite Awka.",
@@ -20,9 +22,9 @@ export const nearYouData: NearYouDataProps[] =[
     },
     {
         image: [
-            "/src/assets/image/lance.jpg",
-            "/src/assets/image/simone.jpg",
-            "/src/assets/image/andrea.jpg",
+            ThemeUtil.image.lance,
+            ThemeUtil.image.matteo,
+            ThemeUtil.image.andrea,
         ],
         title: "St. John’s Residence.",
         location: "Book Foundation, Ifite Awka.",
@@ -31,10 +33,10 @@ export const nearYouData: NearYouDataProps[] =[
     },
     {
         image: [
-            "/src/assets/image/matthew.jpg",
-            "/src/assets/image/grant.jpg",
-            "/src/assets/image/simone.jpg",
-            "/src/assets/image/andrea.jpg",
+            ThemeUtil.image.mathew,
+            ThemeUtil.image.simone,
+            ThemeUtil.image.matteo,
+            ThemeUtil.image.andrea,
         ],
         title: "Harmony Lodge.",
         location: "Second Market Ifite Awka.",

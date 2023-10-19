@@ -1,3 +1,5 @@
+import {ThemeUtil} from "../../util/ThemeUtil.ts";
+
 export type RecentlyUploadedDataProps = {
     image: string[],
     title: string,
@@ -10,7 +12,8 @@ export type RecentlyUploadedDataProps = {
 export const recentlyUploadedData: RecentlyUploadedDataProps[] =[
     {
         image: [
-            "/src/assets/image/andrea.jpg"
+            ThemeUtil.image.matteo,
+            ThemeUtil.image.andrea,
         ],
         title: "My Odessy Lodge",
         location: "Ifite Awka.",
@@ -19,8 +22,9 @@ export const recentlyUploadedData: RecentlyUploadedDataProps[] =[
     },
     {
         image: [
-            "/src/assets/image/simone.jpg",
-            "/src/assets/image/andrea.jpg",
+            ThemeUtil.image.simone,
+            ThemeUtil.image.matteo,
+            ThemeUtil.image.andrea,
         ],
         title: "St. John’s Residence.",
         location: "Book Foundation, Ifite Awka.",
@@ -29,9 +33,10 @@ export const recentlyUploadedData: RecentlyUploadedDataProps[] =[
     },
     {
         image: [
-            "/src/assets/image/grant.jpg",
-            "/src/assets/image/simone.jpg",
-            "/src/assets/image/andrea.jpg",
+            ThemeUtil.image.grant,
+            ThemeUtil.image.simone,
+            ThemeUtil.image.matteo,
+            ThemeUtil.image.andrea,
         ],
         title: "Harmony Lodge.",
         location: "Second Market Ifite Awka.",
