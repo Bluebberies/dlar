@@ -23,7 +23,7 @@
             yarn build
 
         - name: Sync files
-          uses: SamKirkland/FTP-Deploy-Actions@v4.3.4
+          uses: SamKirkland/FTP-Deploy-Action@v4.3.4
           with:
             server: ${{secrets.GIT_FTPS_SERVER}}
             username: ${{secrets.GIT_FTPS_USERNAME}}
