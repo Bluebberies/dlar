@@ -29,4 +29,4 @@
             username: ${{secrets.GIT_FTPS_USERNAME}}
             password: ${{secrets.GIT_FTPS_PASSWORD}}
             protocol: ${{secrets.GIT_FTPS_PROTOCOL}}
-            local-dir: ./build/
+            local-dir: ./dist/
