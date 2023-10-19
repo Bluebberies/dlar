@@ -3,13 +3,14 @@ import {RecentlyUploadedDataProps} from "../../toolkit/data/recentlyUploadedData
 import {ThemeUtil} from "../../util/ThemeUtil.ts";
 
 type RecentlyUploadCardProps = {
-    item: RecentlyUploadedDataProps
+    item: RecentlyUploadedDataProps,
+    onClick?: ()=> void
 }
-export const RecentlyUploadCard = ({item}: RecentlyUploadCardProps) => {
+export const RecentlyUploadCard = ({item, onClick}: RecentlyUploadCardProps) => {
   return(
-      <div className={"w-[400px] h-[534px]  rounded-[12px] overflow-hidden mt-10"}>
+      <div className={"w-[400px] h-[534px]  rounded-[12px] overflow-hidden mt-10 cursor-pointer"} onClick={onClick}>
         <div className={"h-[300px] overflow-hidden rounded-[12px] relative"}>
-            <img src={item.image[0]} className={"w-full h-full z-0"} alt={"andrea"} />
+            <img src={item.image[0]} className={"w-full h-full z-0 "} alt={"andrea"} />
             <BaseAvatar containerStyle={{
                 position:"absolute",
                 backgroundColor: "white",

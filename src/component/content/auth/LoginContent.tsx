@@ -13,7 +13,7 @@ export const LoginContent = () => {
     }
 
     function handleLogin() {
-        navigate(RouterConstantUtil.routes.auth.completeKyc)
+        navigate(RouterConstantUtil.routes.page.home)
     }
 
   return(
