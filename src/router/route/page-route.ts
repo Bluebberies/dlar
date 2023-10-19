@@ -3,6 +3,7 @@ import {OverviewView} from "../../view/page/OverviewView.tsx";
 import {NoPageFoundView} from "../../view/page/NoPageFoundView.tsx";
 import {HomeView} from "../../view/page/HomeView.tsx";
 import {LoginView} from "../../view/auth/LoginView.tsx";
+import {SearchResultView} from "../../view/page/SearchResultView.tsx";
 
 export const pageRoute = [
     {
@@ -36,6 +37,14 @@ export const pageRoute = [
     {
         component: HomeView,
         path: RouterConstantUtil.routes.page.home,
+        meta: {
+            isAuth: false,
+            redirectTo: undefined        },
+        options: {},
+    },
+    {
+        component: SearchResultView,
+        path: RouterConstantUtil.routes.page.searchResult,
         meta: {
             isAuth: false,
             redirectTo: undefined        },

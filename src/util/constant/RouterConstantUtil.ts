@@ -12,6 +12,7 @@ export const RouterConstantUtil = {
             overview: "/page/overview",
             noPageFound: "/page/noPageFound",
             home: "/page/home",
+            searchResult: "/page/search/result",
         }
     }
 }
