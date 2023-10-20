@@ -1,10 +1,10 @@
-import {BasePageLayout} from "../layout/BasePageLayout.tsx";
-import {BookmarkContent} from "../../component/content/page/BookmarkContent.tsx";
+import {SecondPageLayout} from "../layout/SecondPageLayout.tsx";
+import {PropertyDetailsContent} from "../../component/content/page/PropertyDetailsContent.tsx";
 
 export const PropertyDetailsView = () => {
   return(
-      <BasePageLayout>
-          <BookmarkContent />
-      </BasePageLayout>
+      <SecondPageLayout>
+          <PropertyDetailsContent />
+      </SecondPageLayout>
   )
 }

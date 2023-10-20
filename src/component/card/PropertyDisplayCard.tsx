@@ -6,7 +6,7 @@ type RecentlyUploadCardProps = {
     item: RecentlyUploadedDataProps,
     onClick?: ()=> void
 }
-export const RecentlyUploadCard = ({item, onClick}: RecentlyUploadCardProps) => {
+export const PropertyDisplayCard = ({item, onClick}: RecentlyUploadCardProps) => {
   return(
       <div className={"w-[400px] h-[534px]  rounded-[12px] overflow-hidden mt-10 cursor-pointer"} onClick={onClick}>
         <div className={"h-[300px] overflow-hidden rounded-[12px] relative"}>

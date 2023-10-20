@@ -7,6 +7,13 @@ export type NearYouDataProps = {
     type: string,
     amount: string,
 }
+export type BasePropertiesData = {
+    image: string[],
+    title: string,
+    location: string,
+    type: string,
+    amount: string,
+}
 
 
 export const nearYouData: NearYouDataProps[] =[

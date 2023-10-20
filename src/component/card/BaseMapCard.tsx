@@ -1,5 +1,5 @@
 
-export const HomeMapContent = () => {
+export const BaseMapCard = () => {
   return(
       <div className={"w-full h-[484px] flex items-center "}>
           <div className={"h-full w-full border flex flex-col items-center justify-center"}>

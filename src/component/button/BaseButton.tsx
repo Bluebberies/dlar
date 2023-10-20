@@ -1,12 +1,13 @@
-import {ButtonHTMLAttributes, CSSProperties} from "react";
+import {ButtonHTMLAttributes, CSSProperties, ReactElement} from "react";
 import {ThemeUtil} from "../../util/ThemeUtil.ts";
 
 type BaseButtonProps = {
     title?: string,
     containerStyle?: CSSProperties,
     buttonStyle?: CSSProperties,
+    children?: ReactElement
 }
-export const BaseButton = ({title, containerStyle, buttonStyle, ...props}: BaseButtonProps & ButtonHTMLAttributes<HTMLButtonElement>) => {
+export const BaseButton = ({title, containerStyle, children, buttonStyle, ...props}: BaseButtonProps & ButtonHTMLAttributes<HTMLButtonElement>) => {
   return(
       <div
         className={`button-container`}
@@ -16,7 +17,7 @@ export const BaseButton = ({title, containerStyle, buttonStyle, ...props}: BaseB
               className={"button"}
               style={{backgroundColor: ThemeUtil.color.primaryColor, color: ThemeUtil.color.whiteColor, ...buttonStyle}}
               {...props}
-          >{title}</button>
+          >{children || title}</button>
       </div>
   )
 }

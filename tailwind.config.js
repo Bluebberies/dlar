@@ -21,6 +21,7 @@ export default {
       },
       colors:{
         primaryColor: "#18ACE8",
+        primaryColor_2: "#E8F8FF",
         blackColor: "#111110",
         whiteColor: "#FAFAFA",
         grayColor_1: "#606060",
@@ -28,6 +29,10 @@ export default {
         grayColor_3: "#F5F5F5",
         grayColor_4: "#C0C0C0",
         grayColor_5: "#F2F2F2",
+        grayColor_6: "#F2F2F2",
+        dangerColor: "#E33629",
+
+
       }
     },
   },

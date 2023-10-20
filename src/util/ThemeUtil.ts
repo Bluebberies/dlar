@@ -18,10 +18,18 @@ import WhiteMessageSvg from "../assets/icon/white-message-filled.svg"
 import SettingSliderSvg from "../assets/icon/setting-slider.svg"
 import FacebookSvg from "../assets/icon/facebook.svg"
 import NairaSvg from "../assets/icon/naira.svg"
+import NotificationOn from "../assets/icon/notification-on.svg"
+import NotificationOff from "../assets/icon/notification-off.svg"
 import BookmarkOutline from "../assets/icon/bookmark-outline.svg"
+import BlackWhatsapp from "../assets/icon/black-whatsapp.svg"
+import Whatsapp from "../assets/icon/whatsapp.svg"
+import Twitter from "../assets/icon/twitter.svg"
+import BlackCall from "../assets/icon/black-call.svg"
 import CelebrationSvg from "../assets/image/celebration.svg"
 import CameraOutline from "../assets/icon/camera-outline.svg"
+import DangerWarning from "../assets/icon/danger-warning.svg"
 import ArrowLeft from "../assets/icon/arrow-left.svg"
+import ChatOwner from "../assets/icon/chat-owner.svg"
 import ArrowRight from "../assets/icon/arrow-right.svg"
 import Matteo from "../assets/image/matteo.jpg"
 import Andrea from "../assets/image/andrea.jpg"
@@ -34,6 +42,7 @@ import Matthew from "../assets/image/matthew.jpg"
 export const ThemeUtil = {
     color:{
         primaryColor: "#18ACE8",
+        primaryColor_2: "#E8F8FF",
         blackColor: "#111110",
         whiteColor: "#FAFAFA",
         grayColor_1: "#606060",
@@ -41,6 +50,8 @@ export const ThemeUtil = {
         grayColor_3: "#F5F5F5",
         grayColor_4: "#C0C0C0",
         grayColor_5: "#F2F2F2",
+        grayColor_6: "#F2F2F2",
+        dangerColor: "#E33629",
     },
     icon:{
         bookmark: BookmarkSvg,
@@ -66,6 +77,14 @@ export const ThemeUtil = {
         arrowLeft: ArrowLeft,
         naira: NairaSvg,
         bookmarkOutline: BookmarkOutline,
+        blackCall: BlackCall,
+        blackWhatsapp: BlackWhatsapp,
+        chatOwner: ChatOwner,
+        whatsapp: Whatsapp,
+        twitter: Twitter,
+        dangerWarning: DangerWarning,
+        notificationOff: NotificationOff,
+        notificationOn: NotificationOn,
     },
     image:{
         logo: LogoSvg,
