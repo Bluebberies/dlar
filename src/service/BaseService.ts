@@ -10,7 +10,10 @@ const ApiClient = (others: any) => {
         const token = others.getState().auth.token
         //axiosInstance
         const axiosInstance = axios.create({
-            baseURL: appConfig.baseURL,
+            //todo prod
+            //baseURL: appConfig.prod.baseURL,
+            //todo dev
+            baseURL: appConfig.dev.baseURL,
             withCredentials: false,
             adapter: cache.adapter,
             headers: {
