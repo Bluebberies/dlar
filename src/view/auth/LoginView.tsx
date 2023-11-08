@@ -1,8 +1,8 @@
 import { AuthLayout } from "../layout/AuthLayout.tsx";
-import { LoginContent } from "../../component/content/auth/LoginContent.tsx";
 import { RouterConstantUtil } from "../../util/constant/RouterConstantUtil.ts";
-import { AnimatePresence, motion } from "framer-motion";
-import { useState } from "react";
+// import { AnimatePresence, motion } from "framer-motion";
+// import { useState } from "react";
+import {LoginFormik} from "../../component/formik/auth/LoginFormik.tsx";
 
 export const LoginView = () => {
   document.title = "Login | Dwelar";
@@ -17,7 +17,8 @@ export const LoginView = () => {
       footerNextRouteType="register"
       routeUrl={routeUrl}
     >
-      <LoginContent routeUrl={routeUrl} />
+      <LoginFormik />
+      {/* routeUrl={routeUrl} */}
     </AuthLayout>
   );
   

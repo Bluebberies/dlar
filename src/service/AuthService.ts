@@ -1,10 +1,9 @@
 import {BaseService} from "./BaseService.ts";
-import {GetThunkAPI} from "@reduxjs/toolkit/dist/createAsyncThunk";
-// import { ThunkAction } from "@reduxjs/toolkit";
+import {LoginRequestProps} from "../model/request/auth/LoginRequest.ts";
 
 export class AuthService {
-    static login = (others: GetThunkAPI<any>, data: object)=>{
-
-        return BaseService.appClient(others).post("https://", data)
+    static login = (data: LoginRequestProps, others: any)=>{
+        return BaseService.appClient(others).post("/auth/login", data)
     }
+
 }

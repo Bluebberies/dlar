@@ -1,5 +1,5 @@
 import { AuthLayout } from "../layout/AuthLayout.tsx";
-import { VerifyYourAccountContent } from "../../component/content/auth/VerifyYourAccountContent.tsx";
+import {VerifyYourAccountFormik} from "../../component/formik/auth/VerifyYourAccountFormik.tsx";
 
 export const VerifyYourAccountView = () => {
   document.title = "Verify Your Account | Dwelar";
@@ -20,7 +20,7 @@ export const VerifyYourAccountView = () => {
         "Please input the code sent to your mail to verify your email address."
       }
     >
-      <VerifyYourAccountContent />
+      <VerifyYourAccountFormik />
     </AuthLayout>
   );
 };

@@ -2,20 +2,24 @@ import { BaseInput } from "../../input/BaseInput.tsx";
 import { ThemeUtil } from "../../../util/ThemeUtil.ts";
 import { BaseButton } from "../../button/BaseButton.tsx";
 import { RouterConstantUtil } from "../../../util/constant/RouterConstantUtil.ts";
-import { Navigate, useLocation, useNavigate } from "react-router-dom";
+import {useNavigate } from "react-router-dom";
 import Google from "../../../assets/icon/google.svg";
 import Apple from "../../../assets/icon/apple.svg";
 import Facebook from "../../../assets/icon/facebook.svg";
-import useHandleRouteNavigate from "../../../util/customhooks/useHandleRouteNavigate.tsx";
-import { useEffect } from "react";
+// import useHandleRouteNavigate from "../../../util/customhooks/useHandleRouteNavigate.tsx";
+// import { useEffect } from "react";
 
-export interface LoginContentProps{
-  routeUrl: string
-}
+// export interface LoginContentProps{
+//   routeUrl: string
+// }
 
-export const LoginContent = ({routeUrl}: LoginContentProps) => {
+// {routeUrl}: LoginContentProps
+export const LoginFormik = () => {
   const navigate = useNavigate();
-  const location = useLocation()
+
+  function handleRegisterNavigate() {
+      navigate(RouterConstantUtil.routes.auth.firstPhaseRegister)
+  }
 
   function handleLogin() {
     navigate(RouterConstantUtil.routes.page.home);
@@ -66,10 +70,12 @@ export const LoginContent = ({routeUrl}: LoginContentProps) => {
       </div>
       <p
         className={" max-[425px]:hidden text-grayColor_1 text-[18px] text-center mt-4 cursor-pointer"}
-        // onClick={handleRegisterNavigate}
+        onClick={handleRegisterNavigate}
       >
-        Don’t have an account yet?{" "}
-        <span className={"text-blackColor font-darkerGrotesque-bold"} onClick={useHandleRouteNavigate(routeUrl)}>
+        Don&quot;t have an account yet?{" "}
+        <span className={"text-blackColor font-darkerGrotesque-bold"} 
+        // onClick={useHandleRouteNavigate(routeUrl)}
+        >
           Register
         </span>
       </p>

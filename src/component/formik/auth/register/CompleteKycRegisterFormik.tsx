@@ -4,7 +4,7 @@ import {RouterConstantUtil} from "../../../../util/constant/RouterConstantUtil.t
 import {BaseInput} from "../../../input/BaseInput.tsx";
 import {BaseButton} from "../../../button/BaseButton.tsx";
 
-export const CompleteKycRegisterContent = () => {
+export const CompleteKycRegisterFormik = () => {
     const navigate= useNavigate()
     function handleRegisterNavigate() {
         // navigate(RouterConstantUtil.routes.auth.firstPhaseRegister)
@@ -15,7 +15,6 @@ export const CompleteKycRegisterContent = () => {
             state:{
                 title: "Congratulations",
                 subtitle: "You have successfully set up your marketplace, please log in to start selling properties.",
-
             }
         })
     }

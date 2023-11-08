@@ -1,6 +1,6 @@
 import { AuthLayout } from "../../layout/AuthLayout.tsx";
-import { SecondPhaseRegisterContent } from "../../../component/content/auth/register/SecondPhaseRegisterContent.tsx";
 import { RouterConstantUtil } from "../../../util/constant/RouterConstantUtil.ts";
+import {SecondPhaseRegisterFormik} from "../../../component/formik/auth/register/SecondPhaseRegisterFormik.tsx";
 
 export const SecondPhaseRegisterView = () => {
   document.title = "Register | Dwelar";
@@ -24,7 +24,8 @@ export const SecondPhaseRegisterView = () => {
       footerNextRouteType="login"
       routeUrl={routeUrl}
     >
-      <SecondPhaseRegisterContent routeUrl={routeUrl}/>
+      <SecondPhaseRegisterFormik/>
+      {/* routeUrl={routeUrl} */}
     </AuthLayout>
   );
 };

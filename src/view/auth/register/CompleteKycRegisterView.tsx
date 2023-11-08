@@ -1,6 +1,6 @@
 import { AuthLayout } from "../../layout/AuthLayout.tsx";
-import { CompleteKycRegisterContent } from "../../../component/content/auth/register/CompleteKycRegisterContent.tsx";
 import { RouterConstantUtil } from "../../../util/constant/RouterConstantUtil.ts";
+import {CompleteKycRegisterFormik} from "../../../component/formik/auth/register/CompleteKycRegisterFormik.tsx";
 
 export const CompleteKycRegisterView = () => {
   document.title = "Register | Dwelar";
@@ -18,7 +18,7 @@ export const CompleteKycRegisterView = () => {
       footerNextRouteType="register"
       routeUrl={routeUrl}
     >
-      <CompleteKycRegisterContent />
+      <CompleteKycRegisterFormik />
     </AuthLayout>
   );
 };

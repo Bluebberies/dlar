@@ -4,7 +4,7 @@ import {RouterConstantUtil} from "../../../util/constant/RouterConstantUtil.ts";
 import {OtpInput} from "../../input/OtpInput.tsx";
 import {useState} from "react";
 
-export const VerifyYourAccountContent = () => {
+export const VerifyYourAccountFormik = () => {
     const [otp, setOtp] = useState<string>("")
     const navigate = useNavigate()
     function handleVerify() {

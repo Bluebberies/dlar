@@ -1,6 +1,6 @@
 import { AuthLayout } from "../../layout/AuthLayout.tsx";
-import { FirstPhaseRegisterContent } from "../../../component/content/auth/register/FirstPhaseRegisterContent.tsx";
 import { RouterConstantUtil } from "../../../util/constant/RouterConstantUtil.ts";
+import {FirstPhaseRegisterFormik} from "../../../component/formik/auth/register/FirstPhaseRegisterFormik.tsx";
 
 export const FirstPhaseRegisterView = () => {
   document.title = "Register | Dwelar";
@@ -8,7 +8,7 @@ export const FirstPhaseRegisterView = () => {
   const routeUrl = RouterConstantUtil.routes.auth.login;
   return (
     <AuthLayout
-    title={"Welcome back!"}
+    title={"Welcome to Dwelar"}
     subTitle={"Please create your account now"}
     style={{
         // width: "40%",
@@ -17,7 +17,8 @@ export const FirstPhaseRegisterView = () => {
       footerNextRouteType="login"
       routeUrl={routeUrl}
     >
-      <FirstPhaseRegisterContent routeUrl={routeUrl} />
+      <FirstPhaseRegisterFormik  />
+      {/* routeUrl={routeUrl} */}
     </AuthLayout>
   );
 };

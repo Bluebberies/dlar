@@ -1,17 +1,17 @@
-import { BaseButton } from "../../../button/BaseButton.tsx";
+import { useNavigate } from "react-router-dom";
 import { RouterConstantUtil } from "../../../../util/constant/RouterConstantUtil.ts";
-import { useNavigate, useParams } from "react-router-dom";
+import { BaseButton } from "../../../button/BaseButton.tsx";
+// import useHandleRouteNavigate from "../../../../util/customhooks/useHandleRouteNavigate.tsx";
+// import { LoginContentProps } from "../LoginContent.tsx";
 import { SelectAgentCard } from "../../../card/SelectAgentCard.tsx";
-import { LoginContentProps } from "../LoginContent.tsx";
-import useHandleRouteNavigate from "../../../../util/customhooks/useHandleRouteNavigate.tsx";
 
-export const SecondPhaseRegisterContent = ({routeUrl}: LoginContentProps) => {
-  // const navigate = useNavigate();
-  // const { id } = useParams();
+// { routeUrl }: LoginContentProps
+export const FirstPhaseRegisterFormik = () => {
+  const navigate = useNavigate();
 
-  // function handleLoginNavigate() {
-  //   navigate(RouterConstantUtil.routes.auth.login);
-  // }
+  function handleLoginNavigate() {
+    navigate(RouterConstantUtil.routes.auth.login);
+  }
 
   function handleNext() {
     // navigate(RouterConstantUtil.routes.auth.secondPhaseRegister);
@@ -19,7 +19,11 @@ export const SecondPhaseRegisterContent = ({routeUrl}: LoginContentProps) => {
 
   return (
     <>
-      <h4 className={"mb-2 mt-10 max-[425px]:mt-5 text-[28px] font-darkerGrotesque-semiBold"}>
+      <h4
+        className={
+          "mb-2 mt-10 max-[425px]:mt-5 text-[28px] font-darkerGrotesque-semiBold"
+        }
+      >
         Register as
       </h4>
       <SelectAgentCard />
@@ -33,7 +37,8 @@ export const SecondPhaseRegisterContent = ({routeUrl}: LoginContentProps) => {
         className={
           "text-grayColor_1 text-[20px] text-center max-[425px]:hidden cursor-pointer font-darkerGrotesque-medium"
         }
-        onClick={useHandleRouteNavigate(routeUrl)}
+        // onClick={useHandleRouteNavigate(routeUrl)}
+        onClick={handleLoginNavigate}
       >
         Already have an account?{" "}
         <span className={"text-blackColor font-darkerGrotesque-bold"}>

@@ -1,16 +1,23 @@
-import { useNavigate } from "react-router-dom";
-import { RouterConstantUtil } from "../../../../util/constant/RouterConstantUtil.ts";
-import { BaseInput } from "../../../input/BaseInput.tsx";
 import { BaseButton } from "../../../button/BaseButton.tsx";
+import { RouterConstantUtil } from "../../../../util/constant/RouterConstantUtil.ts";
+import { useNavigate } from "react-router-dom";
+// import { SelectAgentCard } from "../../../card/SelectAgentCard.tsx";
+// import { LoginContentProps } from "../LoginContent.tsx";
+// import useHandleRouteNavigate from "../../../../util/customhooks/useHandleRouteNavigate.tsx";
 import { ThemeUtil } from "../../../../util/ThemeUtil.ts";
-import useHandleRouteNavigate from "../../../../util/customhooks/useHandleRouteNavigate.tsx";
-import { LoginContentProps } from "../LoginContent.tsx";
+import { BaseInput } from "../../../input/BaseInput.tsx";
 
-export const FirstPhaseRegisterContent = ({ routeUrl }: LoginContentProps) => {
+// { routeUrl }: LoginContentProps
+export const SecondPhaseRegisterFormik = () => {
+  // const navigate = useNavigate();
+  // const { id } = useParams();
   const navigate = useNavigate();
-
   function handleRegister() {
     navigate(RouterConstantUtil.routes.page.emailVerificationSuccessful);
+  }
+
+  function handleRegisterNavigate() {
+    navigate(RouterConstantUtil.routes.auth.firstPhaseRegister);
   }
 
   return (
@@ -69,11 +76,11 @@ export const FirstPhaseRegisterContent = ({ routeUrl }: LoginContentProps) => {
         className={
           "text-grayColor_1 text-[20px] max-[425px]:hidden text-center cursor-pointer font-darkerGrotesque-medium"
         }
-        // onClick={handleRegisterNavigate}
+        onClick={handleRegisterNavigate}
       >
         Already have an account?{" "}
         <span
-          onClick={useHandleRouteNavigate(routeUrl)}
+          // onClick={useHandleRouteNavigate(routeUrl)}
           className={"text-blackColor font-darkerGrotesque-bold"}
         >
           Login

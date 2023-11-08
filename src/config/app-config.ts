@@ -1,4 +1,11 @@
 export const appConfig = {
-    baseURL: "",
+    prod:{
+        baseURL: "https://api.dwelar.com/api",
+    },
+    dev:{
+        baseURL: "https://sandbox.api.dwelar.com/api",
+    },
+
+
 
 }
