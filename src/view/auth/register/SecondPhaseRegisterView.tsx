@@ -1,19 +1,30 @@
-import {AuthLayout} from "../../layout/AuthLayout.tsx";
-import {SecondPhaseRegisterContent} from "../../../component/content/auth/register/SecondPhaseRegisterContent.tsx";
+import { AuthLayout } from "../../layout/AuthLayout.tsx";
+import { SecondPhaseRegisterContent } from "../../../component/content/auth/register/SecondPhaseRegisterContent.tsx";
+import { RouterConstantUtil } from "../../../util/constant/RouterConstantUtil.ts";
 
 export const SecondPhaseRegisterView = () => {
-    document.title = "Register | Dwelar"
+  document.title = "Register | Dwelar";
 
-    return(
-      <AuthLayout title={"Welcome to Dwelar"} subTitle={"Please create your account now"} style={{
-          marginTop: 0,
-          width: "50%",
-          borderWidth: 2,
-          borderColor: "black",
-          paddingRight: 0,
-          paddingLeft: 0
-      }}>
-        <SecondPhaseRegisterContent />
-      </AuthLayout>
-  )
-}
+  const routeUrl = RouterConstantUtil.routes.auth.login
+
+  return (
+    <AuthLayout
+      // title={`Welcome to Dwelar`}
+      title={"Welcome to <span class='uppercase text-[#18ACE8]'>D</span>welar"}
+      subTitle={"Please create your account now"}
+      style={{
+      marginTop: '30px',
+        // width: "50%",
+        // borderWidth: 2,
+        // borderColor: "black",
+        // paddingLeft: 10,
+        // paddingRight: 10,
+        // padding: '0 100px'
+      }}
+      footerNextRouteType="login"
+      routeUrl={routeUrl}
+    >
+      <SecondPhaseRegisterContent routeUrl={routeUrl}/>
+    </AuthLayout>
+  );
+};

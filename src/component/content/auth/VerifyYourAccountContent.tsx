@@ -8,12 +8,12 @@ export const VerifyYourAccountContent = () => {
     const [otp, setOtp] = useState<string>("")
     const navigate = useNavigate()
     function handleVerify() {
-        navigate(RouterConstantUtil.routes.auth.successful)
+        navigate(RouterConstantUtil.routes.page.emailVerificationSuccessful)
     }
 
     console.log(otp)
   return(
-      <div className={"mt-[40px]"}>
+      <div className={"mt-[40px] w-[90%] py-4"}>
           <OtpInput onChangeText={setOtp} />
           <BaseButton title={"Verify email address"} onClick={handleVerify}  />
           <div className={"w-full flex items-center justify-end"}>

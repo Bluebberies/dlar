@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import {BasePageHeader} from "../../component/header/BasePageHeader.tsx";
 import {BasePageFooter} from "../../component/footer/BasePageFooter.tsx";
 import {ThemeUtil} from "../../util/ThemeUtil.ts";
@@ -14,6 +15,13 @@ export const SecondPageLayout = ({children}: SecondPageLayoutProps) => {
         navigate(-1)
     }
   return(
+    <motion.div
+    key="BaseLayout"
+    initial={{ opacity: 0, x: -100 }}
+    animate={{ opacity: 1, x: 0 }}
+    transition={{ duration: 0.5 }}
+  >
+
       <div className={"base-page-background"}>
           <div className={"w-[1440px] m-auto"}>
               <BasePageHeader />
@@ -25,5 +33,6 @@ export const SecondPageLayout = ({children}: SecondPageLayoutProps) => {
           </div>
           <BasePageFooter />
       </div>
+      </motion.div>
   )
 }

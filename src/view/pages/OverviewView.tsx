@@ -2,6 +2,6 @@ export const OverviewView = () => {
   document.title = "Overview | Dwelar"
 
   return (
-      <div></div>
+      <div>hello</div>
   )
 }

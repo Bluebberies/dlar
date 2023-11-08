@@ -1,24 +1,33 @@
 export const RouterConstantUtil = {
-    routes:{
-        auth:{
-            login: "/auth/login",
-            firstPhaseRegister: "/auth/firstPhaseRegister",
-            secondPhaseRegister: "/auth/secondPhaseRegister",
-            verifyYourAccount: "/auth/verifyYourAccount",
-            successful: "/auth/successful",
-            completeKyc: "/auth/completeKyc",
-            forgetPassword: "/auth/forgetPassword",
-            completeForgetPassword: "/auth/completeForgetPassword",
-            changeNewPassword: "/auth/changeNewPassword",
-        },
-        page:{
-            overview: "/page/overview",
-            noPageFound: "/page/noPageFound",
-            home: "/page/home",
-            searchResult: "/page/search/result",
-            bookmark: "/page/Bookmark",
-            propertyDetails: "/page/property/details",
-            agentProfile: "/page/agent/profile",
-        }
-    }
-}
+  routes: {
+    auth: {
+      login: "/auth/login",
+      baseRegisterRoute: "/auth/register",
+      registrationPhases: "/auth/register/:phase/:token",
+      // firstPhaseRegister: "/auth/register/:id",
+      // secondPhaseRegister: "/auth/register/2",
+      // successful: "/auth/successful",
+      //   completeKyc: "/auth/completeKyc",
+      // verifyYourAccount: "/auth/verifyYourAccount",
+      forgetPassword: "/auth/forgetPassword",
+      completeForgetPassword: "/auth/completeForgetPassword",
+      changeNewPassword: "/auth/changeNewPassword",
+    },
+    page: {
+      emailVerificationSuccessful: "/emailVerificationSuccessful/:token",
+      registrationCompleted: "/registrationCompleted",
+      basePasswordReset: "/resetPassword",
+      passwordReset: "/resetPassword/:token",
+      passwordResetEmailSent: "/resetEmailSent",
+      passwordResetSuccessful: "/resetPasswordSuccess",
+      overview: "/page/overview",
+      noPageFound: "/page/noPageFound",
+      home: "/page/home",
+      searchResult: "/page/property/search-result",
+      bookmark: "/page/bookmark",
+      basePropertyDetails: "/page/property/details",
+      propertyDetails: "/page/property/details/:id",
+      agentProfile: "/page/agent/profile",
+    },
+  },
+};

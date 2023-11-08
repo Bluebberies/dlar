@@ -38,6 +38,7 @@ import Grant from "../assets/image/grant.jpg"
 import Daniel from "../assets/image/daniel.jpg"
 import Lance from "../assets/image/lance.jpg"
 import Matthew from "../assets/image/matthew.jpg"
+import MailSent from "../assets/image/mailSent.svg"
 
 export const ThemeUtil = {
     color:{
@@ -96,5 +97,6 @@ export const ThemeUtil = {
         daniel: Daniel,
         lance: Lance,
         mathew: Matthew,
+        mailSent: MailSent,
     },
 }

@@ -1,6 +1,7 @@
 import {ThemeUtil} from "../../util/ThemeUtil.ts";
 
 export type RecentlyUploadedDataProps = {
+    id: string,
     image: string[],
     title: string,
     location: string,
@@ -11,6 +12,7 @@ export type RecentlyUploadedDataProps = {
 
 export const recentlyUploadedData: RecentlyUploadedDataProps[] =[
     {
+        id: "nadjbjkbfjkbjksf",
         image: [
             ThemeUtil.image.matteo,
             ThemeUtil.image.andrea,
@@ -21,6 +23,7 @@ export const recentlyUploadedData: RecentlyUploadedDataProps[] =[
         amount: "300, 000"
     },
     {
+        id: "njdbjkqsbuiuiqqw",
         image: [
             ThemeUtil.image.simone,
             ThemeUtil.image.matteo,
@@ -32,6 +35,7 @@ export const recentlyUploadedData: RecentlyUploadedDataProps[] =[
         amount: "150, 000"
     },
     {
+        id: "niofeiahhrh9h89qwer",
         image: [
             ThemeUtil.image.grant,
             ThemeUtil.image.simone,

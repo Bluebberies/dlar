@@ -7,7 +7,7 @@ import {BaseButton} from "../../../button/BaseButton.tsx";
 export const CompleteKycRegisterContent = () => {
     const navigate= useNavigate()
     function handleRegisterNavigate() {
-        navigate(RouterConstantUtil.routes.auth.firstPhaseRegister)
+        // navigate(RouterConstantUtil.routes.auth.firstPhaseRegister)
     }
 
     function handleFinish() {
@@ -21,16 +21,16 @@ export const CompleteKycRegisterContent = () => {
     }
 
     return(
-        <>
-            <BaseInput superText={"+234- "} label={"Mobile Phone Number"} />
-            <BaseInput superText={"+234- "} label={"WhatsApp Number"} />
-            <BaseInput superText={"Enter BVN"} label={"Password"} />
-            <BaseInput superText={"NIN"} label={"Confirm Password"} />
+        <div className={"w-[90%] mt-[1rem]"}>
+            <BaseInput superText={"+234- "} label={"Mobile Phone Number"} labelStyle={{ fontSize: "20px" }} superTextPosition="left"/>
+            <BaseInput superText={"+234- "} label={"WhatsApp Number"} labelStyle={{ fontSize: "20px" }} superTextPosition="left"/>
+            <BaseInput superText={"BVN"} label={"Enter BVN"} labelStyle={{ fontSize: "20px" }} type="password" superTextPosition="left"/>
+            <BaseInput superText={"NIN"} label={"Enter your NIN"} labelStyle={{ fontSize: "20px" }} superTextPosition="left"/>
 
             <BaseButton title={"Finish"} onClick={handleFinish} containerStyle={{marginTop: 25}} />
-            <p className={"text-grayColor_1 text-[18px] text-center cursor-pointer"} onClick={handleRegisterNavigate}>
+            <p className={"max-[425px]:hidden text-grayColor_1 text-[18px] text-center cursor-pointer"} onClick={handleRegisterNavigate}>
                 Already have an account? <span className={"text-blackColor"}>Login</span>
             </p>
-        </>
+        </div>
     )
 }
