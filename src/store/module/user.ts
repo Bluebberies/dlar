@@ -1,16 +1,16 @@
 import {createAsyncThunk, createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {AuthService} from "../../service/AuthService.ts";
-import {LoginRequest} from "../../model/request/auth/LoginRequest.ts";
+import {ReadUserByIdResponseProps} from "../../model/response/user/ReadUserByIdResponse.ts";
 
 const initialState = {
-    token: null,
-    loading: false
+    loading: false,
+    userData: {}
 }
 
 const action = {
-    login:createAsyncThunk("auth/action/login",  async (data: LoginRequest, {rejectWithValue, ...props})=>{
+    readUserById:createAsyncThunk("auth/action/login",  async (query: string, {rejectWithValue, ...props})=>{
         try {
-            const response = await AuthService.login(data, {...props})
+            const response = await AuthService.login(query, {...props})
             return response.data
         }catch (e: any) {
             return rejectWithValue(e.response.message)
@@ -18,11 +18,11 @@ const action = {
     })
 }
 const slice = createSlice({
-    name: "auth",
+    name: "user",
     initialState,
     reducers:{
-        updateToken: (state, action)=>{
-            state.token = action.payload
+        updateUserData: (state, action)=>{
+            state.userData = action.payload
         },
         updateLoading: (state, action)=>{
             state.loading = action.payload
@@ -30,17 +30,19 @@ const slice = createSlice({
     },
     extraReducers: (builder)=>{
         builder
-            .addCase(action.login.pending, (state)=>{
+            .addCase(action.readUserById.pending, (state)=>{
                 state.loading = false
             })
-            .addCase(action.login.fulfilled, (state, action: PayloadAction<any>)=>{
-                state.token = action.payload.token
+            .addCase(action.readUserById.fulfilled, (state, action: PayloadAction<ReadUserByIdResponseProps>)=>{
+                if (action.payload.responseCode === "100"){
+                    state.userData = action.payload.responseData
+                }
                 state.loading = false
             })
     }
 })
 
-export const auth={
+export const user={
     reducer: slice.reducer,
     action: action,
     mutation: slice.actions
