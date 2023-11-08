@@ -3,7 +3,7 @@ import {RouterConstantUtil} from "../../../../util/constant/RouterConstantUtil.t
 import {useNavigate} from "react-router-dom";
 import {SelectAgentCard} from "../../../card/SelectAgentCard.tsx";
 
-export const FirstPhaseRegisterContent = () => {
+export const FirstPhaseRegisterFormik = () => {
     const navigate= useNavigate()
     function handleLoginNavigate() {
         navigate(RouterConstantUtil.routes.auth.login)
@@ -12,7 +12,6 @@ export const FirstPhaseRegisterContent = () => {
     function handleNext() {
         navigate(RouterConstantUtil.routes.auth.secondPhaseRegister)
     }
-
 
   return(
       <>

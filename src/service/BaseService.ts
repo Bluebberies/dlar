@@ -1,5 +1,10 @@
 import axios from "axios";
 import {appConfig} from "../config/app-config.ts";
+import {setupCache} from "axios-cache-adapter";
+
+const cache = setupCache({
+    maxAge: 15 * 60 * 1000,
+})
 
 const ApiClient = (others: any) => {
         const token = others.getState().auth.token
@@ -7,6 +12,7 @@ const ApiClient = (others: any) => {
         const axiosInstance = axios.create({
             baseURL: appConfig.baseURL,
             withCredentials: false,
+            adapter: cache.adapter,
             headers: {
                 "Content-Type": "application/json",
                 Accept: "application/json",
@@ -21,7 +27,7 @@ const ApiClient = (others: any) => {
             console.log("Request ===> ", config.data)
             return config;
         }, function (error) {
-            console.log("Request Error ===> ",error.message)
+            console.log("Request Error ===> ",error.response.data)
             return Promise.reject(error);
         });
 
@@ -30,7 +36,7 @@ const ApiClient = (others: any) => {
             console.log("Response ===> ",response.data)
             return response
         },(error)=>{
-            console.log("Response Error ===> ",error.message)
+            console.log("Response Error ===> ",error.response.data)
             return Promise.reject(error)
         })
         return axiosInstance
@@ -38,5 +44,5 @@ const ApiClient = (others: any) => {
 
 
 export const BaseService = {
-    appClient: ApiClient
+    appClient: ApiClient,
 }

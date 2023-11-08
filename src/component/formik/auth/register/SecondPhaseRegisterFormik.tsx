@@ -5,7 +5,7 @@ import {BaseInput} from "../../../input/BaseInput.tsx";
 import {BaseButton} from "../../../button/BaseButton.tsx";
 import {ThemeUtil} from "../../../../util/ThemeUtil.ts";
 
-export const SecondPhaseRegisterContent = () => {
+export const SecondPhaseRegisterFormik = () => {
     const navigate= useNavigate()
     function handleRegisterNavigate() {
         navigate(RouterConstantUtil.routes.auth.firstPhaseRegister)

@@ -1,5 +1,5 @@
 import {AuthLayout} from "../layout/AuthLayout.tsx";
-import {LoginContent} from "../../component/content/auth/LoginContent.tsx";
+import {LoginFormik} from "../../component/formik/auth/LoginFormik.tsx";
 
 export const LoginView = () => {
     document.title = "Login | Dwelar"
@@ -11,7 +11,7 @@ export const LoginView = () => {
         paddingRight: 10,
         width: "50%"
     }}>
-      <LoginContent />
+      <LoginFormik />
     </AuthLayout>
   )
 }

@@ -6,7 +6,7 @@ import {useNavigate} from "react-router-dom";
 import Google from "../../../assets/icon/google.svg";
 import Apple from "../../../assets/icon/apple.svg";
 import Facebook from "../../../assets/icon/facebook.svg";
-export const LoginContent = () => {
+export const LoginFormik = () => {
     const navigate= useNavigate()
     function handleRegisterNavigate() {
         navigate(RouterConstantUtil.routes.auth.firstPhaseRegister)
@@ -15,6 +15,7 @@ export const LoginContent = () => {
     function handleLogin() {
         navigate(RouterConstantUtil.routes.page.home)
     }
+
 
   return(
       <>

@@ -1,5 +1,5 @@
 import {AuthLayout} from "../../layout/AuthLayout.tsx";
-import {FirstPhaseRegisterContent} from "../../../component/content/auth/register/FirstPhaseRegisterContent.tsx";
+import {FirstPhaseRegisterFormik} from "../../../component/formik/auth/register/FirstPhaseRegisterFormik.tsx";
 
 export const FirstPhaseRegisterView = () => {
     document.title = "Register | Dwelar"
@@ -8,7 +8,7 @@ export const FirstPhaseRegisterView = () => {
       <AuthLayout title={"Welcome to Dwelar"} subTitle={"Please create your account now"} style={{
           width:"40%"
       }}>
-        <FirstPhaseRegisterContent />
+        <FirstPhaseRegisterFormik />
       </AuthLayout>
   )
 }
