@@ -7,7 +7,7 @@ import {LoginFormik} from "../../component/formik/auth/LoginFormik.tsx";
 export const LoginView = () => {
   document.title = "Login | Dwelar";
 
-  const routeUrl = RouterConstantUtil.routes.auth.baseRegisterRoute;
+  const routeUrl = RouterConstantUtil.routes.auth.secondPhaseRegister;
   return (
     <AuthLayout
       style={{

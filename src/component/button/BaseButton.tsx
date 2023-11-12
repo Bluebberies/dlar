@@ -14,6 +14,9 @@ type BaseButtonProps = {
   children?: ReactElement;
   containerClassName?: string;
   onClick?: MouseEventHandler;
+  hoverScale?: number;
+  hoverOpacity?: number;
+  tapScale?: number;
 };
 export const BaseButton = ({
   title,
@@ -22,22 +25,25 @@ export const BaseButton = ({
   buttonStyle,
   containerClassName,
   onClick,
-  // ...props
-}: BaseButtonProps & ButtonHTMLAttributes<HTMLButtonElement>) => {
+  hoverScale = 1.1,
+  hoverOpacity = 0.9,
+  tapScale = 0.8,
+}: // ...props
+BaseButtonProps & ButtonHTMLAttributes<HTMLButtonElement>) => {
   return (
     <div
       // className={`button-container`}
-      className={` ${containerClassName} button-container`}
+      className={` ${containerClassName} button-container `}
       style={containerStyle}
     >
       <motion.button
         whileHover={{
-          scale: 1.2,
-          opacity: 0.8,
+          scale: hoverScale,
+          opacity: hoverOpacity,
           transition: { duration: 0.1 },
         }}
-        whileTap={{ scale: 0.9, borderRadius: "15px" }}
-        className={"button"}
+        whileTap={{ scale: tapScale, borderRadius: "15px" }}
+        className={"button select-none"}
         style={{
           fontSize: "20px",
           backgroundColor: ThemeUtil.color.primaryColor,

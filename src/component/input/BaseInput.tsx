@@ -3,7 +3,7 @@ import {
   AiFillEyeInvisible,
   AiFillEye,
   AiOutlineInfoCircle,
-  AiFillCheckCircle
+  AiFillCheckCircle,
 } from "react-icons/ai";
 
 interface BaseInputProps {
@@ -13,7 +13,11 @@ interface BaseInputProps {
   superTextPosition?: "left" | "right";
   containerStyle?: CSSProperties;
   labelStyle?: CSSProperties;
+  inputStyle?: CSSProperties;
+  inputContainerStyle?: CSSProperties;
   type?: string;
+  superTextStyles?: CSSProperties;
+  inputContainerClassName?: string
 }
 export const BaseInput = ({
   label,
@@ -23,6 +27,10 @@ export const BaseInput = ({
   containerStyle,
   labelStyle,
   type,
+  inputStyle,
+  inputContainerStyle,
+  superTextStyles,
+  inputContainerClassName,
   ...props
 }: BaseInputProps & InputHTMLAttributes<HTMLInputElement>) => {
   // const [visible, setVisible] = useState(true);
@@ -46,15 +54,22 @@ export const BaseInput = ({
         </h1>
       )}
 
-      <div className={`relative h-[65px] flex items-center flex-row justify-between gap-1 ${type == "checkbox"? "bg-none": 'bg-[#F5F5F5]'} rounded-xl pr-[15px]`}>
+      <div
+        style={inputContainerStyle}
+        className={`${inputContainerClassName} relative h-[65px] flex items-center flex-row justify-between gap-1 ${
+          type == "checkbox" ? "bg-none" : "bg-[#F5F5F5]"
+        } rounded-xl pr-[15px]`}
+      >
         {superText && (
           <span
+           dangerouslySetInnerHTML={{ __html: superText }}
             // className={`absolute bottom-4 text-grayColor_2 text-[20px] leading-[25px] mt-5 ml-3 mr-20 ${
-            className={`text-grayColor_2 text-[20px] leading-[25px] ml-3 border-r-slate-950 border-r-4 pr-2 border-l-[#070707] ${
+            className={` text-grayColor_2 text-[20px] leading-[25px] ml-3 border-r-slate-950 border-r-4 pr-2 border-l-[#070707] ${
               superTextPosition === "left" ? "left-0" : "right-0"
             }`}
+            style={superTextStyles}
           >
-            {superText}
+            {/* {superText} */}
           </span>
         )}
         <input
@@ -63,21 +78,22 @@ export const BaseInput = ({
             type === "password" ? (showPassword ? "text" : "password") : type
           }
           className={
-            "border-0 rounded-xl w-full h-[100%] bg-[#F5F5F5] font-darkerGrotesque-bold focus:outline-0 pl-5 font-light text-[20px] leading-[25px]"
+            "text-[#111110] border-0 rounded-xl w-full h-[100%] bg-[#F5F5F5] font-darkerGrotesque-bold focus:outline-0 pl-5 font-light text-[20px] leading-[25px]"
           }
           placeholder={placeholder}
+          style={inputStyle}
           {...props}
         />
         {type == "password" &&
           (showPassword ? (
             <AiFillEyeInvisible
               onClick={handleTogglePassword}
-              className="text-[30px] cursor-pointer"
+              className="text-[30px] cursor-pointer text-[#111110]"
             />
           ) : (
             <AiFillEye
               onClick={handleTogglePassword}
-              className="text-[30px] cursor-pointer"
+              className="text-[30px] cursor-pointer text-[#111110]"
             />
           ))}
         {/* <AiFillCheckCircle className="text-[green] text-[30px] ml-3"/> */}

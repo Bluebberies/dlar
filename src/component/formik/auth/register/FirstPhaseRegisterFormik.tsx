@@ -14,7 +14,7 @@ export const FirstPhaseRegisterFormik = () => {
   }
 
   function handleNext() {
-    // navigate(RouterConstantUtil.routes.auth.secondPhaseRegister);
+    navigate(RouterConstantUtil.routes.auth.secondPhaseRegister);
   }
 
   return (

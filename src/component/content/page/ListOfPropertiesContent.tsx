@@ -75,17 +75,15 @@ export const ListOfPropertiesContent = ({
           "w-full mt-0 flex items-center gap-5 justify-between flex-wrap"
         }
       >
-        {data.map((value, index) => {
-          return (
-            <motion.div variants={item} key={index}>
-              <PropertyDisplayCard
-                key={index}
-                onClick={() => handlePropertyNavigation(value.id)}
-                item={value}
-              />
-            </motion.div>
-          );
-        })}
+        {data.map((value, index) => (
+          <motion.div variants={item} key={index}>
+            <PropertyDisplayCard
+              // key={index}
+              onClick={() => handlePropertyNavigation(value.id)}
+              item={value}
+            />
+          </motion.div>
+        ))}
       </motion.div>
       {showPagination && <BasePagination />}
     </div>

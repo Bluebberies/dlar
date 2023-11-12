@@ -1,67 +1,140 @@
-import { createRef, useEffect, useLayoutEffect, useRef, useState } from "react";
+import React, { createRef, useMemo, useRef } from "react";
 
 type OtpInputProps = {
   numberOfInputs: number;
-  onChangeText?: (text: string) => void;
+  onChangeText: Function;
+  otp: string;
 };
-export const OtpInput = ({ numberOfInputs, onChangeText }: OtpInputProps) => {
+export const OtpInput = ({
+  numberOfInputs,
+  onChangeText,
+  otp,
+}: OtpInputProps) => {
   const ref = useRef<any>(
     [...Array<any>(numberOfInputs)].map(() => createRef())
   );
   // const ref = useRef<HTMLInputElement>(null)
-  const [inputBoxes, setInputBoxes] = useState<any[]>([]);
-  const [input, setInput] = useState(inputBoxes.fill(""));
+  const regex = useMemo(() => {
+    return new RegExp(/^\d+$/);
+  }, []);
 
-  function handleKeyUp(key: string, index: number) {
-    const nextIndex = index + 1;
-    if (key.length === 1 && nextIndex < inputBoxes.length) {
-      ref.current[nextIndex].current.focus();
+  const focusToNextInput = (target: HTMLElement) => {
+    const nextElementSibling =
+      target.nextElementSibling as HTMLInputElement | null;
+
+    if (nextElementSibling) {
+      nextElementSibling.focus();
+    }
+  };
+  const focusToPrevInput = (target: HTMLElement) => {
+    const previousElementSibling =
+      target.previousElementSibling as HTMLInputElement | null;
+
+    if (previousElementSibling) {
+      previousElementSibling.focus();
+    }
+  };
+
+  const inputOnKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    const { key } = e;
+    const target = e.target as HTMLInputElement;
+    const targetValue = target.value;
+
+    if (key === "ArrowRight" || key === "ArrowDown") {
+      e.preventDefault();
+      return focusToNextInput(target);
     }
 
-    if (key === "Backspace" && index > 0) {
-      ref.current[index - 1].current.focus();
-      ref.current[index].current.clear;
+    if (key === "ArrowLeft" || key === "ArrowUp") {
+      e.preventDefault();
+      return focusToPrevInput(target);
     }
-  }
-  function handleOnChangeText(value: string, index: number) {
-    setInput((prevState) => {
-      const state = [...prevState];
-      state[index] = value;
-      return state;
-    });
-    console.log(input);
-  }
 
-  useLayoutEffect(() => {
-    const inputs = [];
-    for (let i = 1; i <= numberOfInputs; i++) {
-      inputs.push(i);
+    if (e.key !== "Backspace" || target.value !== "") {
+      return;
     }
-    setInputBoxes(inputs);
-  }, [numberOfInputs]);
 
-  useEffect(() => {
-    if (onChangeText) {
-      onChangeText(input.join(""));
+    target.setSelectionRange(0, targetValue.length);
+    focusToPrevInput(target);
+  };
+
+  const inputOnFocus = (e: React.FocusEvent<HTMLInputElement>) => {
+    const { target } = e;
+
+    target.setSelectionRange(0, target.value.length);
+  };
+
+  const otpItems = useMemo(() => {
+    const otpArray = otp.split("");
+    const items: Array<string> = [];
+
+    for (let i = 0; i < numberOfInputs; i++) {
+      const char = otpArray[i];
+
+      if (regex.test(char)) {
+        items.push(char);
+      } else {
+        items.push("");
+      }
     }
-  }, [input, onChangeText]);
+
+    return items;
+  }, [otp, numberOfInputs, regex]);
+
+  const handleOnChangeText = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    i: number
+  ) => {
+    const target = e.target;
+    let targetValue = target.value.trim();
+    const isTargetValueDigit = regex.test(targetValue);
+
+    if (!isTargetValueDigit && targetValue !== "") {
+      return;
+    }
+
+    targetValue = isTargetValueDigit ? targetValue : " ";
+
+    const targetValueLength = targetValue.length;
+
+    if (targetValueLength === 1) {
+      const newValue = otp.substring(0, i) + targetValue + otp.substring(i + 1);
+
+      onChangeText(newValue);
+
+      if (!isTargetValueDigit) {
+        return;
+      }
+
+      focusToNextInput(target);
+    } else if (targetValueLength === numberOfInputs) {
+      onChangeText(targetValue);
+
+      target.blur();
+    }
+  };
+
   return (
     <div
       className={
         "w-full h-[auto] flex max-[440px]:flex-wrap items-center justify-center gap-3 mt-5 mb-5"
       }
     >
-      {inputBoxes?.map((_, index) => {
+      {otpItems?.map((_, i) => {
         return (
           <input
-            type="number"
-            key={index}
-            ref={ref.current[index]}
-            onKeyUp={(event) => handleKeyUp(event.key, index)}
-            onChange={(event) => handleOnChangeText(event.target.value, index)}
+            inputMode="numeric"
+            pattern="\d{1}"
+            value={_}
+            key={i}
+            ref={ref.current[i]}
+            // onKeyUp={(e) => handleKeyUp(e.key, i)}
+            onKeyDown={inputOnKeyDown}
+            onChange={(e) => handleOnChangeText(e, i)}
+            onFocus={inputOnFocus}
             maxLength={1}
             className={
-              "w-[80px] h-[70px] max-[425px]:w-[40px] max-[425px]:h-[40px] max-[850px]:w-[60px] max-[850px]:h-[60px]focus:outline-0 text-center border-[3px] border-grayColor_4 rounded-[4px]"
+              "select-none text-[#111110] w-[80px] h-[70px] font-black text-[24px] max-[425px]:w-[40px] max-[425px]:h-[40px] max-[850px]:w-[60px] max-[850px]:h-[60px]focus:outline-0 text-center border-[3px] bg-inherit border-grayColor_4 rounded-[4px]"
             }
           />
         );

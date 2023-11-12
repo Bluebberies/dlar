@@ -1,10 +1,10 @@
-import {BasePageLayout} from "../layout/BasePageLayout.tsx";
-import {SearchResultContent} from "../../component/content/page/SearchResultContent.tsx";
+import { BasePageLayout } from "../layout/BasePageLayouts/BasePageLayout.tsx";
+import { SearchResultContent } from "../../component/content/page/SearchResultContent.tsx";
 
 export const SearchResultView = () => {
-  return(
-      <BasePageLayout>
-          <SearchResultContent />
-      </BasePageLayout>
-  )
-}
+  return (
+    <BasePageLayout>
+      <SearchResultContent />
+    </BasePageLayout>
+  );
+};

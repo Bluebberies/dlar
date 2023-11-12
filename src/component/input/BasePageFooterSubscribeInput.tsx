@@ -10,7 +10,7 @@ export const BasePageFooterSubscribeInput = () => {
       <input
         placeholder={"Please enter your email address..."}
         className={
-          "w-full h-full focus:outline-0 text-grayColor_2 text-[20px] font-darkerGrotesque-bold"
+          "w-full h-full focus:outline-0 bg-inherit text-grayColor_2 text-[20px] font-darkerGrotesque-bold"
         }
         type="email"
       />

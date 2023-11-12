@@ -11,6 +11,7 @@ import { RegistrationCompletedView } from "../../view/pages/RegistrationComplete
 import { ResetPasswordView } from "../../view/pages/passwordReset/ResetPasswordView.tsx";
 import { PasswordResetEmailSentView } from "../../view/pages/passwordReset/PasswordResetEmailSentView.tsx";
 import { PasswordResetSuccessfullView } from "../../view/pages/passwordReset/PasswordResetSuccessful.tsx";
+import ReferralsView from "../../view/pages/ReferralsView.tsx";
 
 export const pageRoute = [
   {
@@ -124,6 +125,15 @@ export const pageRoute = [
   {
     component: PasswordResetSuccessfullView,
     path: RouterConstantUtil.routes.page.passwordResetSuccessful,
+    meta: {
+      isAuth: false,
+      redirectTo: undefined,
+    },
+    options: {},
+  },
+  {
+    component: ReferralsView,
+    path: RouterConstantUtil.routes.page.referrals,
     meta: {
       isAuth: false,
       redirectTo: undefined,

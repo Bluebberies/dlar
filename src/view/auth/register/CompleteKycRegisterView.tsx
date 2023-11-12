@@ -5,7 +5,7 @@ import {CompleteKycRegisterFormik} from "../../../component/formik/auth/register
 export const CompleteKycRegisterView = () => {
   document.title = "Register | Dwelar";
 
-  const routeUrl = RouterConstantUtil.routes.auth.baseRegisterRoute + '/2'
+  const routeUrl = RouterConstantUtil.routes.auth.login
   return (
     <AuthLayout
       title={"Complete KYC"}
@@ -15,7 +15,7 @@ export const CompleteKycRegisterView = () => {
       style={{
         marginTop: 0,
       }}
-      footerNextRouteType="register"
+      footerNextRouteType="login"
       routeUrl={routeUrl}
     >
       <CompleteKycRegisterFormik />

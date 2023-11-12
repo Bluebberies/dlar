@@ -4,7 +4,7 @@ import { LoginView } from "../../view/auth/LoginView.tsx";
 // import {SecondPhaseRegisterView} from "../../view/auth/register/SecondPhaseRegisterView.tsx";
 import { VerifyYourAccountView } from "../../view/auth/VerifyYourAccountView.tsx";
 // import { SuccessfulView } from "../../view/auth/EmailVerificationSuccessfulView.tsx";
-// import { CompleteKycRegisterView } from "../../view/auth/register/CompleteKycRegisterView.tsx";
+import { CompleteKycRegisterView } from "../../view/auth/register/CompleteKycRegisterView.tsx";
 import RegistrationPhases from "../../view/auth/register/RegistrationPhases.tsx";
 import { FirstPhaseRegisterView } from "../../view/auth/register/FirstPhaseRegisterView.tsx";
 // import { EmailVerificationSuccessful } from "./../../component/content/auth/EmailVerificationSuccessful";
@@ -38,15 +38,15 @@ export const authRoute = [
   //         redirectTo: undefined        },
   //     options: {},
   // },
-  {
-    component: FirstPhaseRegisterView,
-    path: RouterConstantUtil.routes.auth.baseRegisterRoute,
-    meta: {
-      isAuth: false,
-      redirectTo: undefined,
-    },
-    options: {},
-  },
+  // {
+  //   component: FirstPhaseRegisterView,
+  //   path: RouterConstantUtil.routes.auth.firstPhaseRegister,
+  //   meta: {
+  //     isAuth: false,
+  //     redirectTo: undefined,
+  //   },
+  //   options: {},
+  // },
   {
     component: RegistrationPhases,
     path: RouterConstantUtil.routes.auth.registrationPhases,
@@ -57,22 +57,22 @@ export const authRoute = [
     options: {},
   },
 
-  // {
-  //   component: VerifyYourAccountView,
-  //   path: RouterConstantUtil.routes.auth.verifyYourAccount,
-  //   meta: {
-  //     isAuth: false,
-  //     redirectTo: undefined,
-  //   },
-  //   options: {},
-  // },
-  //   {
-  //     component: CompleteKycRegisterView,
-  //     path: RouterConstantUtil.routes.auth.completeKyc,
-  //     meta: {
-  //       isAuth: false,
-  //       redirectTo: undefined,
-  //     },
-  //     options: {},
-  //   },
+  {
+    component: VerifyYourAccountView,
+    path: RouterConstantUtil.routes.auth.verifyUserAccount,
+    meta: {
+      isAuth: false,
+      redirectTo: undefined,
+    },
+    options: {},
+  },
+    {
+      component: CompleteKycRegisterView,
+      path: RouterConstantUtil.routes.auth.completeKyc,
+      meta: {
+        isAuth: false,
+        redirectTo: undefined,
+      },
+      options: {},
+    },
 ];

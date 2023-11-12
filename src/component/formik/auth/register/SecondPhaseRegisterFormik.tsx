@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 // import useHandleRouteNavigate from "../../../../util/customhooks/useHandleRouteNavigate.tsx";
 import { ThemeUtil } from "../../../../util/ThemeUtil.ts";
 import { BaseInput } from "../../../input/BaseInput.tsx";
+import { FilterCheckbox } from "../../../checkbox/FilterCheckbox.tsx";
 
 // { routeUrl }: LoginContentProps
 export const SecondPhaseRegisterFormik = () => {
@@ -13,7 +14,10 @@ export const SecondPhaseRegisterFormik = () => {
   // const { id } = useParams();
   const navigate = useNavigate();
   function handleRegister() {
-    navigate(RouterConstantUtil.routes.page.emailVerificationSuccessful);
+    const userId = 'iowh89y4u9buhru9'
+    navigate(
+      `${RouterConstantUtil.routes.auth.baseAcountVerification}/${userId}`
+    );
   }
 
   function handleRegisterNavigate() {
@@ -46,7 +50,7 @@ export const SecondPhaseRegisterFormik = () => {
         type="password"
       />
       <div className={"login-checkbox-forgot-password"}>
-        <div className={"login-checkbox-dev"}>
+        {/* <div className={"login-checkbox-dev"}>
           <BaseInput
             type={"checkbox"}
             className={"login-checkbox"}
@@ -61,7 +65,8 @@ export const SecondPhaseRegisterFormik = () => {
           >
             Remember me
           </span>
-        </div>
+        </div> */}
+        <FilterCheckbox label="Remember me"/>
         <span className={"text-[16px] font-darkerGrotesque-bold"}>
           Forgot Password?
         </span>

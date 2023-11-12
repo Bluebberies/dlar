@@ -6,7 +6,7 @@ import { SectionTitleHeader } from "../../header/SectionTitleHeader.tsx";
 import { PhotoSwipe } from "../../utility/PhotoSwipe.tsx";
 import {
   PropertiesDataProps,
-  nearYouData,
+  PropertiesData,
 } from "../../../toolkit/data/nearYouData.ts";
 import { recentlyUploadedData } from "../../../toolkit/data/recentlyUploadedData.ts";
 import { RouterConstantUtil } from "../../../util/constant/RouterConstantUtil.ts";
@@ -19,7 +19,7 @@ export const PropertyDetailsImageSection = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const allPropertyData = [...nearYouData, ...recentlyUploadedData];
+    const allPropertyData = [...PropertiesData, ...recentlyUploadedData];
     const dataExist = allPropertyData.find((data) => data.id == propertyId);
     if (dataExist) {
       setPropertyData(dataExist);
@@ -157,7 +157,7 @@ export const PropertyDetailsImageSection = () => {
           />
           <span
             className={
-              "font-darkerGrotesque-bold text-[24px] leading-[35px] ml-2"
+              "font-darkerGrotesque-bold text-[24px] leading-[35px] ml-2 text-[#111110]"
             }
           >
             Mr Anthony

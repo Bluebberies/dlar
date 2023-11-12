@@ -1,10 +1,10 @@
-import {BasePageLayout} from "../layout/BasePageLayout.tsx";
-import {BookmarkContent} from "../../component/content/page/BookmarkContent.tsx";
+import { BasePageLayout } from "../layout/BasePageLayouts/BasePageLayout.tsx";
+import { BookmarkContent } from "../../component/content/page/BookmarkContent.tsx";
 
 export const AgentProfileView = () => {
-  return(
-      <BasePageLayout>
-          <BookmarkContent />
-      </BasePageLayout>
-  )
-}
+  return (
+    <BasePageLayout>
+      <BookmarkContent />
+    </BasePageLayout>
+  );
+};

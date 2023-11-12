@@ -11,7 +11,9 @@ export const EmailVerificationSuccessful = ({
   const navigate = useNavigate();
 
   function handleLogin() {
-    navigate(RouterConstantUtil.routes.auth.login);
+    const userId = "iowh89y4u9buhru9";
+
+    navigate(`${RouterConstantUtil.routes.auth.baseCompleteKyc}/${userId}`);
   }
 
   return (

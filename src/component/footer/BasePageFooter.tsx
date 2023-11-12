@@ -24,7 +24,7 @@ export const BasePageFooter = () => {
         >
           <p
             className={
-              "text-[48px] max-[1100px]:text-[33px] max-[1100px]:leading-[30px] leading-[50px] w-[360px] font-darkerGrotesque-bold"
+              "text-[#111110] text-[48px] max-[1100px]:text-[33px] max-[1100px]:leading-[30px] leading-[50px] w-[360px] font-darkerGrotesque-bold"
             }
           >
             Be the first to hear about our Updates
@@ -148,7 +148,7 @@ export const BasePageFooter = () => {
             </div>
           </div>
         </div>
-        <div className={"h-[10%] flex items-center justify-center mb-2"}>
+        <div className={"h-[10%] flex items-center text-black justify-center mb-2"}>
           <span>2023 Dwelar. All Rights Reserved</span>
         </div>
       </div>

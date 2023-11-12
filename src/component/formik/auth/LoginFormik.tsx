@@ -2,10 +2,12 @@ import { BaseInput } from "../../input/BaseInput.tsx";
 import { ThemeUtil } from "../../../util/ThemeUtil.ts";
 import { BaseButton } from "../../button/BaseButton.tsx";
 import { RouterConstantUtil } from "../../../util/constant/RouterConstantUtil.ts";
-import {useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Google from "../../../assets/icon/google.svg";
 import Apple from "../../../assets/icon/apple.svg";
 import Facebook from "../../../assets/icon/facebook.svg";
+import axios from "axios";
+import { FilterCheckbox } from "../../checkbox/FilterCheckbox.tsx";
 // import useHandleRouteNavigate from "../../../util/customhooks/useHandleRouteNavigate.tsx";
 // import { useEffect } from "react";
 
@@ -18,7 +20,7 @@ export const LoginFormik = () => {
   const navigate = useNavigate();
 
   function handleRegisterNavigate() {
-      navigate(RouterConstantUtil.routes.auth.firstPhaseRegister)
+    navigate(RouterConstantUtil.routes.auth.firstPhaseRegister);
   }
 
   function handleLogin() {
@@ -27,15 +29,26 @@ export const LoginFormik = () => {
 
   return (
     <div className="w-[90%] mt-[1rem]">
-      <BaseInput placeholder={"Input your email address"} label={"Email"} labelStyle={{ fontSize: "20px" }} type="email"/>
-      <BaseInput placeholder={"Input your password"} label={"Password"} labelStyle={{ fontSize: "20px" }} />
+      <BaseInput
+        placeholder={"Input your email address"}
+        label={"Email"}
+        labelStyle={{ fontSize: "20px" }}
+        type="email"
+      />
+      <BaseInput
+        placeholder={"Input your password"}
+        label={"Password"}
+        labelStyle={{ fontSize: "20px" }}
+        type="password"
+      />
       <div className={"login-checkbox-forgot-password"}>
-        <div className={"login-checkbox-dev"}>
+        {/* <div className={"login-checkbox-dev"}>
           <BaseInput
             type={"checkbox"}
-            className={"login-checkbox"}
+            className={"login-checkbox bg-inherit"}
             style={{ border: 1, borderColor: ThemeUtil.color.primaryColor }}
             containerStyle={{ height: 0 }}
+            inputStyle={{ backgroundColor: "inherit" }}
           />
           <span
             style={{
@@ -45,7 +58,8 @@ export const LoginFormik = () => {
           >
             Remember me
           </span>
-        </div>
+        </div> */}
+        <FilterCheckbox label="Remember me"/>
         <span className={"text-[16px] font-darkerGrotesque-bold"}>
           Forgot Password?
         </span>
@@ -69,12 +83,15 @@ export const LoginFormik = () => {
         <img src={Facebook} className={"social-icon"} alt={"facebook"} />
       </div>
       <p
-        className={" max-[425px]:hidden text-grayColor_1 text-[18px] text-center mt-4 cursor-pointer"}
+        className={
+          " max-[425px]:hidden text-grayColor_1 text-[18px] text-center mt-4 cursor-pointer"
+        }
         onClick={handleRegisterNavigate}
       >
         Don&quot;t have an account yet?{" "}
-        <span className={"text-blackColor font-darkerGrotesque-bold"} 
-        // onClick={useHandleRouteNavigate(routeUrl)}
+        <span
+          className={"text-blackColor font-darkerGrotesque-bold"}
+          // onClick={useHandleRouteNavigate(routeUrl)}
         >
           Register
         </span>

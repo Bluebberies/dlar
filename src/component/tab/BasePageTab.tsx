@@ -6,73 +6,53 @@ import { FilterCard } from "../card/FilterCard.tsx";
 
 export const BasePageTab = () => {
   const [filter, setFilter] = useState<boolean>(false);
+  const [activePropertyTab, setActivePropertyTab] = useState<string>("All");
 
   function handleFilter() {
     setFilter(!filter);
   }
 
+  const propertyTypes: string[] = [
+    "All",
+    "Hotels",
+    "Lodges",
+    "Apartment",
+    "Selfcon",
+    "Duplex",
+  ];
+
+  function handlePropertyTabChange(type: string) {
+    setActivePropertyTab(type);
+  }
+
   return (
     <>
       <div
-        className={
-          "flex gap-1 w-full justify-center mt-10 mb-20 base-page-space"
-        }
+        className={"flex gap-28 max-[1000px]:gap-24 max-[900px]:gap-10 max-[850px]:gap-8 max-[800px]:gap-4 max-[800px]:flex-wrap w-full justify-center mb-20 base-page-space"}
       >
-        <BaseAvatar isActive={true}>
-          <span
-            className={"text-center text-blackColor font-darkerGrotesque-bold"}
-          >
-            All
-          </span>
-        </BaseAvatar>
-        <BaseAvatar isActive={true}>
-          <span
-            className={"text-center text-blackColor font-darkerGrotesque-bold"}
-          >
-            Lodges
-          </span>
-        </BaseAvatar>
-        <BaseAvatar isActive={false}>
-          <span
-            className={"text-center text-blackColor font-darkerGrotesque-bold"}
-          >
-            Apartment
-          </span>
-        </BaseAvatar>
-        <BaseAvatar isActive={false}>
-          <span
-            className={"text-center text-blackColor font-darkerGrotesque-bold"}
-          >
-            Selfcon
-          </span>
-        </BaseAvatar>
-        <BaseAvatar isActive={false}>
-          <span
-            className={"text-center text-blackColor font-darkerGrotesque-bold"}
-          >
-            Duplex
-          </span>
-        </BaseAvatar>
-        <BaseAvatar isActive={false}>
-          <span
-            className={"text-center text-blackColor font-darkerGrotesque-bold"}
-          >
-            pent House
-          </span>
-        </BaseAvatar>
-        <BaseAvatar isActive={false}>
-          <span
-            className={"text-center text-blackColor font-darkerGrotesque-bold"}
-          >
-            Bungalow
-          </span>
-        </BaseAvatar>
+        <div className="flex flex-row items-center justify-center gap-1 max-[900px]:gap-[2px]">
+          {propertyTypes.map((type, i) => (
+            <BaseAvatar
+            key={i}
+              isActive={activePropertyTab == type}
+              onClick={() => handlePropertyTabChange(type)}
+            >
+              <span
+                className={
+                  "text-center text-blackColor font-darkerGrotesque-bold"
+                }
+              >
+                {type}
+              </span>
+            </BaseAvatar>
+          ))}
+        </div>
 
         <BaseAvatar
           isActive={true}
           onClick={handleFilter}
           containerStyle={{
-            marginLeft: 200,
+            // marginLeft: 200,
             minWidth: 150,
           }}
         >
@@ -97,8 +77,8 @@ export const BasePageTab = () => {
         {filter && (
           <motion.div
             initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto" ,opacity: 1 }}
-            exit={{ height: 0,opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
             transition={{ type: "spring", damping: 10, duration: 0.1 }}
           >
             <FilterCard />
