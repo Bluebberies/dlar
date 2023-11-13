@@ -31,7 +31,7 @@
             yarn build
 
         - name: Sync files
-          uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+          uses: SamKirkland/FTP-Deploy-Action@v4.0.0
           with:
             server: ${{ secrets.SANDBOX_MAIN_FTPS_SERVER }}
             username: ${{ secrets.SANDBOX_MAIN_FTPS_USERNAME }}
