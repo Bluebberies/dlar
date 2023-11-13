@@ -1,6 +1,6 @@
 import {createAsyncThunk, createSlice, PayloadAction} from "@reduxjs/toolkit";
-import {AuthService} from "../../service/AuthService.ts";
-import {ReadUserByIdResponseProps} from "../../model/response/user/ReadUserByIdResponse.ts";
+import {ReadUserByIdResponseProps} from "@/model/response/user/ReadUserByIdResponse.ts";
+import {UserService} from "@/service/UserService.ts";
 
 const initialState = {
     loading: false,
@@ -10,7 +10,7 @@ const initialState = {
 const action = {
     readUserById:createAsyncThunk("auth/action/login",  async (query: string, {rejectWithValue, ...props})=>{
         try {
-            const response = await AuthService.login(query, {...props})
+            const response = await UserService.readUserById(query, {...props})
             return response.data
         }catch (e: any) {
             return rejectWithValue(e.response.message)

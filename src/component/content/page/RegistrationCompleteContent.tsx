@@ -3,17 +3,16 @@ import { RouterConstantUtil } from "../../../util/constant/RouterConstantUtil.ts
 import { BaseButton } from "../../button/BaseButton.tsx";
 import { ThemeUtil } from "../../../util/ThemeUtil.ts";
 import useHandleRouteNavigate from "../../../util/customhooks/useHandleRouteNavigate.tsx";
-import { LoginContentProps } from "../auth/LoginContent.tsx";
+import React from "react";
 
-export const EmailVerificationSuccessful = ({
-  routeUrl,
-}: LoginContentProps) => {
+type RegistrationCompleteContentProps = {
+    routeUrl: string
+}
+function RegistrationCompleteContent({ routeUrl }:RegistrationCompleteContentProps ) {
   const navigate = useNavigate();
 
   function handleLogin() {
-    const userId = "iowh89y4u9buhru9";
-
-    navigate(`${RouterConstantUtil.routes.auth.baseCompleteKyc}/${userId}`);
+    navigate(RouterConstantUtil.routes.auth.login);
   }
 
   return (
@@ -28,20 +27,18 @@ export const EmailVerificationSuccessful = ({
           "text-[48px] max-[425px]:leading-[45px] mb-2 leading-[65px] mt-[30px] text-center font-darkerGrotesque-bold"
         }
       >
-        Email Address Verified!
+        Congratulations
       </h2>
       <p
         className={
           "text-grayColor_2 text-[28px] text-center mb-[20px] leading-[25px]"
         }
       >
-        {/* You have successfully verified your email address, Please login to your
-        account to get started. */}
-        You have successfully verified your email address, Please proceed to get
-        started.
+        You have successfully set up your marketplace, please log in to start
+        selling properties.
       </p>
       <BaseButton
-        title={"Proceed"}
+        title={"Login"}
         onClick={handleLogin}
         containerClassName={`w-[3rem]`}
         containerStyle={{ width: "70%" }}
@@ -59,4 +56,6 @@ export const EmailVerificationSuccessful = ({
       </p>
     </div>
   );
-};
+}
+
+export default RegistrationCompleteContent;

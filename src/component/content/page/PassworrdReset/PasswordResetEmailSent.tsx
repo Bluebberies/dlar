@@ -1,4 +1,4 @@
-import { ThemeUtil } from "../../../../util/ThemeUtil.ts";
+import { ThemeUtil } from "@/util/ThemeUtil.ts";
 
 export const PasswordResetEmailSent = () => {
   return (

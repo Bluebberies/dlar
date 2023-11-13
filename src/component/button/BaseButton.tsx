@@ -5,7 +5,7 @@ import {
   ReactElement,
 } from "react";
 import { motion } from "framer-motion";
-import { ThemeUtil } from "../../util/ThemeUtil.ts";
+import { ThemeUtil } from "@/util/ThemeUtil.ts";
 
 type BaseButtonProps = {
   title?: string;

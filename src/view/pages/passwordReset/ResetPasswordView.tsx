@@ -1,10 +1,11 @@
 import { useParams } from "react-router-dom";
-import { AuthLayout } from "../../layout/AuthLayout.tsx";
-import { RouterConstantUtil } from "../../../util/constant/RouterConstantUtil.ts";
-import { ResetPassword } from "../../../component/content/page/PassworrdReset/ResetPassword.tsx";
-import { useEffect, useState } from "react";
-import { NoPageFoundView } from "../NoPageFoundView.tsx";
-import { ResetPasswordWithToken } from "../../../component/content/page/PassworrdReset/ResetPasswordWithToken.tsx";
+import {useEffect, useState} from "react";
+import {RouterConstantUtil} from "@/util/constant/RouterConstantUtil.ts";
+import {AuthLayout} from "@/view/layout/AuthLayout.tsx";
+import {ResetPasswordWithToken} from "@/component/content/page/PassworrdReset/ResetPasswordWithToken.tsx";
+import {NoPageFoundView} from "@/view/pages/NoPageFoundView.tsx";
+import {ResetPassword} from "@/component/content/page/PassworrdReset/ResetPassword.tsx";
+
 
 export const ResetPasswordView = () => {
   const [tokenStatus, setTokenStatus] = useState("");

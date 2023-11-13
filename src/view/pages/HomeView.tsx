@@ -1,5 +1,5 @@
-import { BasePageLayout } from "../layout/BasePageLayouts/BasePageLayout.tsx";
-import { HomeContent } from "../../component/content/page/HomeContent.tsx";
+import {BasePageLayout} from "@/view/layout/BasePageLayouts/BasePageLayout.tsx";
+import {HomeContent} from "@/component/content/page/HomeContent.tsx";
 
 export const HomeView = () => {
   document.title = "Home | Dwelar";

@@ -3,7 +3,7 @@ import { RouterConstantUtil } from "../../../../util/constant/RouterConstantUtil
 import { BaseButton } from "../../../button/BaseButton.tsx";
 import { ThemeUtil } from "../../../../util/ThemeUtil.ts";
 
-function PasswordResetSuccessfull() {
+function PasswordResetSuccessful() {
   const navigate = useNavigate();
 
   function handleLogin() {
@@ -42,4 +42,4 @@ function PasswordResetSuccessfull() {
   );
 }
 
-export default PasswordResetSuccessfull;
+export default PasswordResetSuccessful;

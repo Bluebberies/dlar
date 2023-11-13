@@ -1,0 +1,40 @@
+  name: Deploying Frontend
+  on:
+    push:
+      branches:
+        - sandbox
+  jobs:
+    web-deploy:
+      name: Deploying
+      runs-on: ubuntu-latest
+      steps:
+        - name: Get latest code
+          uses: actions/checkout@v3
+
+        - name: Cache build artifacts
+          uses: actions/cache@v2
+          with:
+            path: |
+              dist
+            key: ${{ runner.os }}-dist-${{ hashFiles('**/package-lock.json') }}
+            restore-keys: |
+              ${{ runner.os }}-dist-
+
+        - name: Use Node.js 16
+          uses: actions/setup-node@v2
+          with:
+            node-version: '16'
+
+        - name: Build Project
+          run: |
+            yarn install
+            yarn build
+
+        - name: Sync files
+          uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+          with:
+            server: ${{secrets.SANDBOX_MAIN_FTPS_SERVER}}
+            username: ${{secrets.SANDBOX_MAIN_FTPS_USERNAME}}
+            password: ${{secrets.SANDBOX_MAIN_FTPS_PASSWORD}}
+            protocol: ${{secrets.SANDBOX_MAIN_FTPS_PORT}}
+            local-dir: ./dist/

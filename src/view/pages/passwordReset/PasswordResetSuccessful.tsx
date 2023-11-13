@@ -1,7 +1,7 @@
-import PasswordResetSuccessfull from "../../../component/content/page/PassworrdReset/PasswordResetSuccessfull.tsx";
-import { AuthLayout } from "../../layout/AuthLayout.tsx";
+import PasswordResetSuccessful from "@/component/content/page/PassworrdReset/PasswordResetSuccessful.tsx";
+import {AuthLayout} from "@/view/layout/AuthLayout.tsx";
 
-export const PasswordResetSuccessfullView = () => {
+export const PasswordResetSuccessfulView = () => {
 
     document.title = "Reset Email Sent | Dwelar";
 
@@ -13,7 +13,7 @@ export const PasswordResetSuccessfullView = () => {
           marginTop: "50px",
         }}
       >
-        <PasswordResetSuccessfull />
+        <PasswordResetSuccessful />
       </AuthLayout>
     );
   };

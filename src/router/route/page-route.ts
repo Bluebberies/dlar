@@ -10,7 +10,7 @@ import { EmailVerificationSuccessfulView } from "../../view/pages/EmailVerificat
 import { RegistrationCompletedView } from "../../view/pages/RegistrationCompleted.tsx";
 import { ResetPasswordView } from "../../view/pages/passwordReset/ResetPasswordView.tsx";
 import { PasswordResetEmailSentView } from "../../view/pages/passwordReset/PasswordResetEmailSentView.tsx";
-import { PasswordResetSuccessfullView } from "../../view/pages/passwordReset/PasswordResetSuccessful.tsx";
+import { PasswordResetSuccessfulView } from "../../view/pages/passwordReset/PasswordResetSuccessful.tsx";
 import ReferralsView from "../../view/pages/ReferralsView.tsx";
 
 export const pageRoute = [
@@ -123,7 +123,7 @@ export const pageRoute = [
     options: {},
   },
   {
-    component: PasswordResetSuccessfullView,
+    component: PasswordResetSuccessfulView,
     path: RouterConstantUtil.routes.page.passwordResetSuccessful,
     meta: {
       isAuth: false,

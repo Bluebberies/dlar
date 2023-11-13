@@ -1,5 +1,5 @@
-import {SecondPageLayout} from "../layout/SecondPageLayout.tsx";
-import {PropertyDetailsContent} from "../../component/content/page/PropertyDetailsContent.tsx";
+import {SecondPageLayout} from "@/view/layout/SecondPageLayout.tsx";
+import {PropertyDetailsContent} from "@/component/content/page/PropertyDetailsContent.tsx";
 
 export const PropertyDetailsView = () => {
   return(

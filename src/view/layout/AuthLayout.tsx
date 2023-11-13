@@ -1,9 +1,8 @@
-import { useHistory } from "react-router-dom";
-import React, { CSSProperties, useEffect } from "react";
+import React, { CSSProperties } from "react";
 import { motion } from "framer-motion";
-import { ThemeUtil } from "../../util/ThemeUtil.ts";
+import { ThemeUtil } from "@/util/ThemeUtil.ts";
 import Logo from "../../assets/image/logo.svg";
-import useHandleRouteNavigate from "../../util/customhooks/useHandleRouteNavigate.tsx";
+import useHandleRouteNavigate from "@/util/customhooks/useHandleRouteNavigate.tsx";
 export interface AuthLayoutProps {
   children?: React.JSX.Element;
   title: string;

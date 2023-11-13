@@ -1,6 +1,6 @@
 import React from "react";
-import { BasePageLayout } from "../layout/BasePageLayouts/BasePageLayout";
-import ReferralsContent from "../../component/content/page/ReferralsContent";
+import {BasePageLayout} from "@/view/layout/BasePageLayouts/BasePageLayout.tsx";
+import ReferralsContent from "@/component/content/page/ReferralsContent.tsx";
 
 export default function ReferralsView() {
   return (

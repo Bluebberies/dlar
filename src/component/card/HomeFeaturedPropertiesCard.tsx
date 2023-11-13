@@ -1,5 +1,5 @@
 import {BaseAvatar} from "../avatar/BaseAvatar.tsx";
-import {ThemeUtil} from "../../util/ThemeUtil.ts";
+import {ThemeUtil} from "@/util/ThemeUtil.ts";
 
 export const HomeFeaturedPropertiesCard = () => {
   return(

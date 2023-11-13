@@ -1,5 +1,5 @@
-import { AuthLayout } from "../../layout/AuthLayout.tsx";
-import { PasswordResetEmailSent } from "../../../component/content/page/PassworrdReset/PasswordResetEmailSent.tsx";
+import {AuthLayout} from "@/view/layout/AuthLayout.tsx";
+import {PasswordResetEmailSent} from "@/component/content/page/PassworrdReset/PasswordResetEmailSent.tsx";
 
 export const PasswordResetEmailSentView = () => {
   document.title = "Reset Email Sent | Dwelar";

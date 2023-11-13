@@ -1,16 +1,8 @@
-import { RouterConstantUtil } from "../../util/constant/RouterConstantUtil.ts";
-import { LoginView } from "../../view/auth/LoginView.tsx";
-// import {FirstPhaseRegisterView} from "../../view/auth/register/FirstPhaseRegisterView.tsx";
-// import {SecondPhaseRegisterView} from "../../view/auth/register/SecondPhaseRegisterView.tsx";
-import { VerifyYourAccountView } from "../../view/auth/VerifyYourAccountView.tsx";
-// import { SuccessfulView } from "../../view/auth/EmailVerificationSuccessfulView.tsx";
-import { CompleteKycRegisterView } from "../../view/auth/register/CompleteKycRegisterView.tsx";
-import RegistrationPhases from "../../view/auth/register/RegistrationPhases.tsx";
-import { FirstPhaseRegisterView } from "../../view/auth/register/FirstPhaseRegisterView.tsx";
-// import { EmailVerificationSuccessful } from "./../../component/content/auth/EmailVerificationSuccessful";
-// import { EmailVerificationSuccessfulView } from "./../../view/auth/EmailVerificationSuccessfulView";
-// import { RegistrationCompletedView } from "../../view/auth/RegistrationCompleted.tsx";
-// import RegistrationComplete from './../../component/content/auth/RegistrationComplete';
+import { RouterConstantUtil } from "@/util/constant/RouterConstantUtil.ts";
+import { LoginView } from "@/view/auth/LoginView.tsx";
+import { VerifyYourAccountView } from "@/view/auth/VerifyYourAccountView.tsx";
+import { CompleteKycRegisterView } from "@/view/auth/register/CompleteKycRegisterView.tsx";
+import RegistrationPhases from "@/view/auth/register/RegistrationPhases.tsx";
 
 export const authRoute = [
   {

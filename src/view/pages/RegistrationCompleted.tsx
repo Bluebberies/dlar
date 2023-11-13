@@ -1,6 +1,6 @@
-import { AuthLayout } from "../layout/AuthLayout.tsx";
-import { RouterConstantUtil } from "../../util/constant/RouterConstantUtil.ts";
-import RegistrationComplete from "../../component/content/page/RegistrationComplete.tsx";
+import {RouterConstantUtil} from "@/util/constant/RouterConstantUtil.ts";
+import {AuthLayout} from "@/view/layout/AuthLayout.tsx";
+import RegistrationCompleteContent from "@/component/content/page/RegistrationCompleteContent.tsx";
 
 export const RegistrationCompletedView = () => {
   document.title = "Registration Completed | Dwelar";
@@ -18,7 +18,7 @@ export const RegistrationCompletedView = () => {
       footerNextRouteType="login"
       routeUrl={routeUrl}
     >
-      <RegistrationComplete routeUrl={routeUrl} />
+      <RegistrationCompleteContent routeUrl={routeUrl} />
     </AuthLayout>
   );
 };

@@ -1,8 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { BasePageHeader } from "../../component/header/BasePageHeaders/index.tsx";
-import { BasePageFooter } from "../../component/footer/BasePageFooter.tsx";
-import { ThemeUtil } from "../../util/ThemeUtil.ts";
+import { BasePageHeader } from "@/component/header/BasePageHeaders/index.tsx";
+import { BasePageFooter } from "@/component/footer/BasePageFooter.tsx";
+import { ThemeUtil } from "@/util/ThemeUtil.ts";
 import { useNavigate } from "react-router-dom";
 
 type SecondPageLayoutProps = {

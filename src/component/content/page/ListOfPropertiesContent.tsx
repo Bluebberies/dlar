@@ -1,9 +1,9 @@
 import { PropertyDisplayCard } from "../../card/PropertyDisplayCard.tsx";
-import { PropertiesDataProps } from "../../../toolkit/data/nearYouData.ts";
-import { ThemeUtil } from "../../../util/ThemeUtil.ts";
+import { PropertiesDataProps } from "@/toolkit/data/nearYouData.ts";
+import { ThemeUtil } from "@/util/ThemeUtil.ts";
 import { BasePagination } from "../../pagination/BasePagination.tsx";
 import { CSSProperties } from "react";
-import { RouterConstantUtil } from "../../../util/constant/RouterConstantUtil.ts";
+import { RouterConstantUtil } from "@/util/constant/RouterConstantUtil.ts";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 

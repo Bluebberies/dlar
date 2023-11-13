@@ -1,4 +1,3 @@
-import { ThemeUtil } from "../../util/ThemeUtil.ts";
 import { BaseInput } from "../input/BaseInput.tsx";
 
 type FilterCheckboxProps = {

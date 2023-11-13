@@ -1,18 +1,17 @@
 import { useEffect, useState } from "react";
-import { Navigate, useParams, useNavigate } from "react-router-dom";
-import { ThemeUtil } from "../../../util/ThemeUtil.ts";
+import {  useParams, useNavigate } from "react-router-dom";
+import { ThemeUtil } from "@/util/ThemeUtil.ts";
 import { BaseButton } from "../../button/BaseButton.tsx";
 import { SectionTitleHeader } from "../../header/SectionTitleHeader.tsx";
-import { PhotoSwipe } from "../../utility/PhotoSwipe.tsx";
 import {
   PropertiesDataProps,
   PropertiesData,
-} from "../../../toolkit/data/nearYouData.ts";
-import { recentlyUploadedData } from "../../../toolkit/data/recentlyUploadedData.ts";
-import { RouterConstantUtil } from "../../../util/constant/RouterConstantUtil.ts";
+} from "@/toolkit/data/nearYouData.ts";
+import {recentlyUploadedData, RecentlyUploadedDataProps} from "@/toolkit/data/recentlyUploadedData.ts";
+import { RouterConstantUtil } from "@/util/constant/RouterConstantUtil.ts";
 
 export const PropertyDetailsImageSection = () => {
-  const [propertyData, setPropertyData] = useState<PropertiesDataProps>();
+  const [propertyData, setPropertyData] = useState<PropertiesDataProps|RecentlyUploadedDataProps>();
   const [photoSwiper, setPhotoSwiper] = useState<boolean>();
   const [image, setImage] = useState<any[]>([]);
   const { id: propertyId } = useParams();

@@ -1,8 +1,8 @@
 import { IoIosNotifications } from "react-icons/io";
 import { BasePageHeaderSearchInput } from "../../input/BasePageHeaderSearchInput.tsx";
 import { NavLink, useLocation } from "react-router-dom";
-import { RouterConstantUtil } from "../../../util/constant/RouterConstantUtil.ts";
-import { ThemeUtil } from "../../../util/ThemeUtil.ts";
+import { RouterConstantUtil } from "@/util/constant/RouterConstantUtil.ts";
+import { ThemeUtil } from "@/util/ThemeUtil.ts";
 import { MouseEventHandler } from "react";
 
 type DesktopBasePageHeaderProps = {

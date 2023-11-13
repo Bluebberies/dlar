@@ -1,5 +1,5 @@
-import {BookmarkContent} from "../../component/content/page/BookmarkContent.tsx";
-import {SecondPageLayout} from "../layout/SecondPageLayout.tsx";
+import {SecondPageLayout} from "@/view/layout/SecondPageLayout.tsx";
+import {BookmarkContent} from "@/component/content/page/BookmarkContent.tsx";
 
 export const BookmarkView = () => {
   return(

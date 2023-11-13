@@ -1,6 +1,6 @@
 // import { BaseInput } from "../input/BaseInput.tsx";
 import { MouseEventHandler, useState } from "react";
-import { ThemeUtil } from "../../util/ThemeUtil.ts";
+import { ThemeUtil } from "@/util/ThemeUtil.ts";
 
 type AgentSelectProps = {
   title: string;

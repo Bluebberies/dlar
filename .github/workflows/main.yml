@@ -2,7 +2,7 @@
   on:
     push:
       branches:
-        - master
+        - main
   jobs:
     web-deploy:
       name: Deploying
@@ -24,8 +24,8 @@
         - name: Sync files
           uses: SamKirkland/FTP-Deploy-Action@v4.3.4
           with:
-            server: ${{secrets.GIT_FTPS_SERVER}}
-            username: ${{secrets.GIT_FTPS_USERNAME}}
-            password: ${{secrets.GIT_FTPS_PASSWORD}}
-            protocol: ${{secrets.GIT_FTPS_PROTOCOL}}
+            server: ${{secrets.MAIN_FTPS_SERVER}}
+            username: ${{secrets.MAIN_FTPS_USERNAME}}
+            password: ${{secrets.MAIN_FTPS_PASSWORD}}
+            protocol: ${{secrets.MAIN_FTPS_PORT}}
             local-dir: ./dist/

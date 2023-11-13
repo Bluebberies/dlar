@@ -1,7 +1,6 @@
 import { BaseAvatar } from "../avatar/BaseAvatar.tsx";
-import { RecentlyUploadedDataProps } from "../../toolkit/data/recentlyUploadedData.ts";
-import { ThemeUtil } from "../../util/ThemeUtil.ts";
-import { PropertiesDataProps } from "../../toolkit/data/nearYouData.ts";
+import { ThemeUtil } from "@/util/ThemeUtil.ts";
+import { PropertiesDataProps } from "@/toolkit/data/nearYouData.ts";
 
 type RecentlyUploadCardProps = {
   // item: RecentlyUploadedDataProps,

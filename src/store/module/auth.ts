@@ -1,6 +1,6 @@
 import {createAsyncThunk, createSlice, PayloadAction} from "@reduxjs/toolkit";
-import {AuthService} from "../../service/AuthService.ts";
-import {LoginRequestProps} from "../../model/request/auth/LoginRequest.ts";
+import {AuthService} from "@/service/AuthService.ts";
+import {LoginRequestProps} from "@/model/request/auth/LoginRequest.ts";
 
 const initialState = {
     token: null,

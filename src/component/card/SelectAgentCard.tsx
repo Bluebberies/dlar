@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { AgentCheckbox } from "../checkbox/AgentCheckbox.tsx";
-import { ThemeUtil } from "../../util/ThemeUtil.ts";
+import { ThemeUtil } from "@/util/ThemeUtil.ts";
 
 export const SelectAgentCard = () => {
   const [selectedUserType, setSelectedUserType] = useState<string>("Agent");

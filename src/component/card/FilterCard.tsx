@@ -2,9 +2,9 @@ import { BaseButton } from "../button/BaseButton.tsx";
 import { FilterCheckbox } from "../checkbox/FilterCheckbox.tsx";
 import { BaseInput } from "../input/BaseInput.tsx";
 import { BaseAvatar } from "../avatar/BaseAvatar.tsx";
-import { ThemeUtil } from "../../util/ThemeUtil.ts";
+import { ThemeUtil } from "@/util/ThemeUtil.ts";
 import { SectionTitleHeader } from "../header/SectionTitleHeader.tsx";
-import { propertyFilters } from "../../toolkit/data/propertyFilters.ts";
+import { propertyFilters } from "@/toolkit/data/propertyFilters.ts";
 
 export const FilterCard = () => {
   const amountFilter = [

@@ -1,10 +1,6 @@
 import { CSSProperties } from "react";
-import { IoIosNotifications, IoCloseSharp } from "react-icons/io";
-import { GiHamburgerMenu } from "react-icons/gi";
-import { BasePageHeaderSearchInput } from "../../input/BasePageHeaderSearchInput.tsx";
-import { NavLink, useNavigate } from "react-router-dom";
-import { RouterConstantUtil } from "../../../util/constant/RouterConstantUtil.ts";
-import { ThemeUtil } from "../../../util/ThemeUtil.ts";
+import {  useNavigate } from "react-router-dom";
+import { RouterConstantUtil } from "@/util/constant/RouterConstantUtil.ts";
 import MobileBasePageHeader from "./MobileBasePageHeader";
 import DesktopBasePageHeader from "./DesktopBasePageHeader.tsx";
 
