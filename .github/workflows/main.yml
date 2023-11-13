@@ -1,31 +1,39 @@
-  name: Deploying Frontend
-  on:
-    push:
-      branches:
-        - main
-  jobs:
-    web-deploy:
-      name: Deploying
-      runs-on: ubuntu-latest
-      steps:
-        - name: Get latest code
-          uses: actions/checkout@v3
+name: Deploying Frontend
+on:
+  push:
+    branches:
+      - main
+jobs:
+  web-deploy:
+    name: Deploying
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get latest code
+        uses: actions/checkout@v3
 
-        - name: Use Node.js 16
-          uses: actions/setup-node@v2
-          with:
-            node-version: '16'
+      - name: Cache build artifacts
+        uses: actions/cache@v2
+        with:
+          path: |
+            dist
+          key: ${{ runner.os }}-dist-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-dist-
 
-        - name: Build Project
-          run: |
-            yarn install
-            yarn build
+      - name: Use Node.js 16
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
 
-        - name: Sync files
-          uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-          with:
-            server: ${{secrets.MAIN_FTPS_SERVER}}
-            username: ${{secrets.MAIN_FTPS_USERNAME}}
-            password: ${{secrets.MAIN_FTPS_PASSWORD}}
-            protocol: ${{secrets.MAIN_FTPS_PORT}}
-            local-dir: ./dist/
+      - name: Build Project
+        run: |
+          yarn install
+          yarn build
+
+      - name: Sync files
+        uses: SamKirkland/FTP-Deploy-Action@4.0.0
+        with:
+          server: ${{ secrets.MAIN_FTPS_SERVER }}
+          username: ${{ secrets.MAIN_FTPS_USERNAME }}
+          password: ${{ secrets.MAIN_FTPS_PASSWORD }}
+          local-dir: ./dist/
