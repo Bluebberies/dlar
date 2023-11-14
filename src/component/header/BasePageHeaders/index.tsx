@@ -8,7 +8,6 @@ import { ThemeUtil } from "@/util/ThemeUtil.ts";
 import { BaseButton } from "@/component/button/BaseButton.tsx";
 import { BsFillBookmarkFill, BsFillChatFill } from "react-icons/bs";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { IoSettings } from "react-icons/io";
 
 export type BasePageHeaderProps = {
   headerNavStyles?: CSSProperties;
