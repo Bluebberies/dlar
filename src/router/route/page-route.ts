@@ -60,6 +60,42 @@ export const pageRoute = [
     options: {},
   },
   {
+    component: SearchResultView,
+    path: RouterConstantUtil.routes.page.recentlyUploaded,
+    meta: {
+      isAuth: false,
+      redirectTo: undefined,
+    },
+    options: {},
+  },
+  {
+    component: SearchResultView,
+    path: RouterConstantUtil.routes.page.nearYou,
+    meta: {
+      isAuth: false,
+      redirectTo: undefined,
+    },
+    options: {},
+  },
+  {
+    component: SearchResultView,
+    path: RouterConstantUtil.routes.page.recommeded,
+    meta: {
+      isAuth: false,
+      redirectTo: undefined,
+    },
+    options: {},
+  },
+  {
+    component: SearchResultView,
+    path: RouterConstantUtil.routes.page.forYou,
+    meta: {
+      isAuth: false,
+      redirectTo: undefined,
+    },
+    options: {},
+  },
+  {
     component: PropertyDetailsView,
     path: RouterConstantUtil.routes.page.propertyDetails,
     meta: {

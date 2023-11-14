@@ -6,7 +6,7 @@
   jobs:
     web-deploy:
       name: Deploying
-      runs-on: ubuntu-latest
+      runs-on: widow-latest
       steps:
         - name: Get latest code
           uses: actions/checkout@v3

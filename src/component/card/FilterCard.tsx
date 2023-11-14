@@ -18,7 +18,14 @@ export const FilterCard = () => {
     },
   ];
   return (
-    <div className={"m-10 mb-10 "}>
+    // <div className={"m-10 mb-10"}>
+    // m-10 mb-10
+    <div
+      className={
+        "mx-10 min-[1330px]:w-[1270px] w-[auto] h-[auto] py-[38px] px-[50px] rounded-[15px] bg-[#FFF] shadow-[0px_8px_20px_0px_rgba(0,0,0,0.11)] "
+      }
+      // id="modal-box"
+    >
       <SectionTitleHeader
         title={"More Filers"}
         containerStyle={{
@@ -28,9 +35,9 @@ export const FilterCard = () => {
         headerStyle={{ justifyContent: "center", paddingLeft: "0" }}
       />
       {/* <div className={"flex h-[195px] mb-5"}> */}
-      <div className={"grid grid-cols-3 max-[860px]:grid-cols-2 h-[auto]"}>
+      <div className={"overflow-y-auto grid grid-cols-3 max-[920px]:grid-cols-2 h-[auto]"}>
         {propertyFilters.map((obj) => (
-          <div className={"w-full h-full mt-[60px]"}>
+          <div className={"w-full h-full mt-[25px]"}>
             <h1
               className={
                 "font-darkerGrotesque-bold text-[24px] leading-[20px] text-grayColor_1"
@@ -47,7 +54,9 @@ export const FilterCard = () => {
             </div>
           </div>
         ))}
-        <div className={"flex h-[250px] max-[1250px]:flex-wrap mt-[60px] gap-12"}>
+        <div
+          className={"flex h-[250px] max-[1250px]:flex-wrap mt-[60px] gap-12"}
+        >
           <div className={"w-full h-auto "}>
             <h1
               className={
@@ -62,7 +71,7 @@ export const FilterCard = () => {
                   <BaseInput
                     placeholder={item.placeholder}
                     containerStyle={{
-                      marginBottom: -30,
+                      // marginBottom: -30,
                       marginTop: 0,
                       display: "flex",
                       alignItems: "center",
@@ -81,13 +90,17 @@ export const FilterCard = () => {
                       height: "45px",
                     }}
                     label={`${item.type} Price`}
-                    labelStyle={{ fontSize: "20px", lineHeight: "20px" }}
+                    labelStyle={{
+                      fontSize: "20px",
+                      lineHeight: "20px",
+                      marginTop: "15px",
+                    }}
                   />
                 ))}
               </div>
             </div>
           </div>
-          <div className={"w-full h-full "}>
+          <div className={"w-full h-auto "}>
             <h1
               className={
                 "font-darkerGrotesque-bold text-[24px] leading-[20px] text-grayColor_1"
@@ -115,44 +128,51 @@ export const FilterCard = () => {
               }}
             />
           </div>
-        </div>
-      </div>
-      <div className={"w-full flex justify-end items-center "}>
-        <BaseAvatar
-          isActive={true}
-          containerStyle={{
-            backgroundColor: ThemeUtil.color.primaryColor,
-            width: 200,
-            height: 60,
-            borderRadius: 12,
-          }}
-          hoverScale={1}
-          hoverOpacity={0.7}
-        >
-          <div className={"h-full select-none w-full flex items-center justify-center"}>
-            <p
-              className={
-                "text-center text-white font-darkerGrotesque-bold text-[20px] leading-[20px]"
-              }
+          <div className={"w-full max-[1000px]:flex-wrap flex justify-end items-center "}>
+            <BaseAvatar
+              isActive={true}
+              containerStyle={{
+                backgroundColor: ThemeUtil.color.primaryColor,
+                width: 150,
+                height: 55,
+                borderRadius: 12,
+              }}
+              hoverScale={1}
+              hoverOpacity={0.7}
             >
-              Apply
-              <span className={"ml-5"}>(300)</span>
-            </p>
+              <div
+                className={
+                  "h-full select-none w-full flex items-center justify-center"
+                }
+              >
+                <p
+                  className={
+                    "text-center text-white font-darkerGrotesque-bold text-[20px] leading-[20px]"
+                  }
+                >
+                  Apply
+                  {/* <span className={"ml-5"}>(300)</span> */}
+                </p>
+              </div>
+            </BaseAvatar>
+            <form method="dialog">
+              {/* <button>close</button> */}
+              <BaseButton
+                title={"Cancel"}
+                buttonStyle={{
+                  backgroundColor: "white",
+                  color: ThemeUtil.color.blackColor,
+                  fontSize: 20,
+                  // lineHeight: 20
+                }}
+                containerStyle={{
+                  width: 150,
+                  height: 60,
+                }}
+              />
+            </form>
           </div>
-        </BaseAvatar>
-        <BaseButton
-          title={"Cancel"}
-          buttonStyle={{
-            backgroundColor: "white",
-            color: ThemeUtil.color.blackColor,
-            fontSize: 20,
-            // lineHeight: 20
-          }}
-          containerStyle={{
-            width: 200,
-            height: 60,
-          }}
-        />
+        </div>
       </div>
     </div>
   );

@@ -10,6 +10,8 @@ type BaseAvatarProps = {
   hoverScale?: number;
   hoverOpacity?: number;
   tapScale?: number;
+  activeBg?: string;
+  mobileBg?: string;
 };
 export const BaseAvatar = ({
   children,
@@ -20,6 +22,8 @@ export const BaseAvatar = ({
   hoverScale = 1.1,
   hoverOpacity = 0.9,
   tapScale = 0.8,
+  activeBg = 'bg-grayColor_5',
+  mobileBg = ''
 }: BaseAvatarProps) => {
   return (
     <motion.div
@@ -30,7 +34,7 @@ export const BaseAvatar = ({
       }}
       whileTap={{ scale: tapScale, borderRadius: "15px" }}
       className={` ${containerCLassName} flex items-center justify-center rounded-[12px] h-[45px] min-w-[100px] p-[10px]  cursor-pointer text-center  ${
-        isActive ? "bg-grayColor_5" : ""
+        isActive ? activeBg : mobileBg
       }`}
       style={containerStyle}
       onClick={onClick}

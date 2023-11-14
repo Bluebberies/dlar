@@ -20,9 +20,9 @@ export const SecondPageLayout = ({ children }: SecondPageLayoutProps) => {
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div className={"base-page-background"}>
-        <div className={"w-[1440px] m-auto"}>
-          <BasePageHeader />
+      <div className={"base-page-background relative"}>
+        <BasePageHeader />
+        <div className={"w-[1440px] m-auto relative"}>
           <div
             className={
               "flex items-center gap-3 w-full base-page-space mt-16 cursor-pointer"

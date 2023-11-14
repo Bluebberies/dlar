@@ -6,13 +6,16 @@ import { CSSProperties } from "react";
 import { RouterConstantUtil } from "@/util/constant/RouterConstantUtil.ts";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import { BasePageTab } from "@/component/tab/BasePageTab.tsx";
 
 type ListOfPropertiesContentProps = {
   title: string;
   showSeeAll?: boolean;
+  showFilters?: boolean;
   showPagination?: boolean;
   data: PropertiesDataProps[];
   containerStyle?: CSSProperties;
+  linkTo?: string
 };
 export const ListOfPropertiesContent = ({
   data,
@@ -20,11 +23,13 @@ export const ListOfPropertiesContent = ({
   showPagination,
   containerStyle,
   title,
+  showFilters,
+  linkTo,
 }: ListOfPropertiesContentProps) => {
   const navigate = useNavigate();
 
   function handlePropertyNavigation(id: string) {
-    navigate(RouterConstantUtil.routes.page.basePropertyDetails + `/${id}`);
+    navigate(RouterConstantUtil.routes.page.basePropertyDetails + `${id}`);
   }
 
   const container = {
@@ -44,39 +49,48 @@ export const ListOfPropertiesContent = ({
   };
 
   return (
-    <div className={"w-full mt-20 "} style={containerStyle}>
+    <div
+      className={"w-full mt-20 max-[500px]: px-[8px] sm:px-[32px] md:px-[32px]"}
+      style={containerStyle}
+    >
       <div className={"flex items-center justify-between"}>
         <h1
           className={
-            "text-[48px] leading-[35px] mb-0 text-blackColor font-darkerGrotesque-bold"
+            "text-[24px] md:text-[36px] leading-[35px] text-blackColor font-bold font-darkerGrotesque-bold"
           }
         >
           {title}
         </h1>
         {showSeeAll && (
-          <div className={"flex items-center gap-2"}>
+          <div
+            onClick={() => navigate(`${RouterConstantUtil.routes.page.baseFilteredPage}${linkTo}`)}
+            className={"flex items-center gap-2 cursor-pointer"}
+          >
             <span
               className={
-                "text-[28px] leading-[35px] text-blackColor font-darkerGrotesque-bold"
+                "text-[14px] md:text-[28px] leading-[16px] md:leading-[35px] text-blackColor font-darkerGrotesque-medium md:font-darkerGrotesque-bold"
               }
             >
               See all
             </span>
-            <img src={ThemeUtil.icon.arrowRight} alt={"arrow"} />
+            <img
+              src={ThemeUtil.icon.arrowRight}
+              alt={"arrow"}
+              className="max:[700px]:w-[20px] max:[700px]:h-[20px]"
+            />
           </div>
         )}
       </div>
+      {showFilters && <BasePageTab />}
       <motion.div
         variants={container}
+        viewport={{ once: true }}
         whileInView="show"
         initial="hidden"
-        viewport={{ once: true }}
-        className={
-          "w-full mt-0 flex items-center gap-5 justify-between flex-wrap"
-        }
+        className={"w-full mt-0 grid grid-cols-4 max-[1400px]:grid-cols-3 max-[1400px]:grid-cols-2 max-[425px]:flex justify-between flex-wrap"}
       >
-        {data.map((value, index) => (
-          <motion.div variants={item} key={index}>
+        {data.slice(0, 8).map((value, index) => (
+          <motion.div variants={item} key={index} className="m-auto w-full">
             <PropertyDisplayCard
               // key={index}
               onClick={() => handlePropertyNavigation(value.id)}
