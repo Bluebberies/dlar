@@ -37,4 +37,4 @@ jobs:
           username: ${{ secrets.MAIN_FTPS_USERNAME }}
           password: ${{ secrets.MAIN_FTPS_PASSWORD }}
           local-dir: ./dist/
-          protocol: "ftps"
+          protocol: "ftp"
