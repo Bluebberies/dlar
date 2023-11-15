@@ -37,3 +37,4 @@
             username: ${{ secrets.SANDBOX_MAIN_FTPS_USERNAME }}
             password: ${{ secrets.SANDBOX_MAIN_FTPS_PASSWORD }}
             local-dir: ./dist/
+            protocol: "ftps"
