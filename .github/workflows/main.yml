@@ -31,7 +31,7 @@ jobs:
           yarn build
 
       - name: Sync files
-        uses: SamKirkland/FTP-Deploy-Action@4.0.0
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.MAIN_FTPS_SERVER }}
           username: ${{ secrets.MAIN_FTPS_USERNAME }}

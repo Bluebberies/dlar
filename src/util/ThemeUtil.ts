@@ -1,4 +1,5 @@
 import LogoSvg from "../assets/image/logo.svg";
+import LogoDarkSvg from "../assets/image/logo_dark.svg";
 import BookmarkSvg from "../assets/icon/bookmark.svg";
 import ChatSvg from "../assets/icon/chat.svg";
 import ProfileSvg from "../assets/icon/profile.svg";
@@ -16,6 +17,7 @@ import WhiteMapSvg from "../assets/icon/white-map-pin-fill.svg";
 import BlackMapSvg from "../assets/icon/black-map-pin-fill.svg";
 import WhiteMessageSvg from "../assets/icon/white-message-filled.svg";
 import SettingSliderSvg from "../assets/icon/setting-slider.svg";
+import settingSliderWhite from "../assets/icon/settingSliderWhite.svg";
 import FacebookSvg from "../assets/icon/facebook.svg";
 import NairaSvg from "../assets/icon/naira.svg";
 import NotificationOn from "../assets/icon/notification-on.svg";
@@ -46,6 +48,20 @@ import CopyFileIcon from "../assets/icon/file_copy.svg";
 import SendMessageIcon from "../assets/icon/send_message_arrow.svg";
 import SendMessageIconGray from "../assets/icon/send_message_arrow_gray.svg";
 import GiftBox from "../assets/image/gift box.png";
+import SettingsWheel from "../assets/icon/settingsWheelcons.svg";
+import HeadSetIcon from "../assets/icon/headSetIcon.svg";
+import ChatIcon from "../assets/icon/chatIcon.svg";
+import SideBarNotificationIcon from "../assets/icon/sideBarNotificationIcon.svg";
+import QuestionIcon from "../assets/icon/questionIcon.svg";
+import ProfileIcon from "../assets/icon/profileIcon.svg";
+import Logout from "../assets/icon/logout.svg";
+import man_in_bath from "../assets/image/man_in_bath.svg";
+import bedroom from "../assets/image/bedroom.svg";
+import ref_person1 from "../assets/image/ref_person1.png";
+import ref_person2 from "../assets/image/ref_person2.png";
+import ref_person3 from "../assets/image/ref_person3.png";
+import ref_dummy_icon from "../assets/image/ref_dummy_icon.png";
+import phone_preview from "../assets/image/phone_preview.png";
 
 export const ThemeUtil = {
   color: {
@@ -99,9 +115,18 @@ export const ThemeUtil = {
     copyFileIcon: CopyFileIcon,
     sendMessageIcon: SendMessageIcon,
     sendMessageIconGray: SendMessageIconGray,
+    settingsWheel: SettingsWheel,
+    headSetIcon: HeadSetIcon,
+    chatIcon: ChatIcon,
+    sideBarNotificationIcon: SideBarNotificationIcon,
+    questionIcon: QuestionIcon,
+    profileIcon: ProfileIcon,
+    logout: Logout,
+    settingSliderWhite
   },
   image: {
     logo: LogoSvg,
+    logoDarkSvg: LogoDarkSvg,
     celebration: CelebrationSvg,
     matteo: Matteo,
     andrea: Andrea,
@@ -111,6 +136,13 @@ export const ThemeUtil = {
     lance: Lance,
     mathew: Matthew,
     mailSent: MailSent,
-    giftBox: GiftBox
+    giftBox: GiftBox,
+    man_in_bath,
+    bedroom,
+    ref_person1,
+    ref_person2,
+    ref_person3,
+    ref_dummy_icon,
+    phone_preview
   },
 };

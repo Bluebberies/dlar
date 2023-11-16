@@ -10,7 +10,7 @@ export const BasePageFooter = () => {
     <motion.div
       initial={{ opacity: 0, x: -100 }}
       whileInView={{ opacity: 1, x: 0 }}
-      transition={{ duration: 1 }}
+      transition={{ duration: 1 , delay: .5}}
       viewport={{ once: true }}
     >
       <div className={"h-full w-full flex flex-col mt-40"}>
