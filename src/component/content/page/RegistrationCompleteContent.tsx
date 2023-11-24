@@ -24,14 +24,14 @@ function RegistrationCompleteContent({ routeUrl }:RegistrationCompleteContentPro
       />
       <h2
         className={
-          "text-[48px] max-[425px]:leading-[45px] mb-2 leading-[65px] mt-[30px] text-center font-darkerGrotesque-bold"
+          "text-[48px] text-[#111110] max-[425px]:leading-[45px] mb-2 leading-[65px] mt-[30px] text-center font-darkerGrotesque-bold"
         }
       >
         Congratulations
       </h2>
       <p
         className={
-          "text-grayColor_2 text-[28px] text-center mb-[20px] leading-[25px]"
+          "text-grayColor_2 w-[80%] font-semibold text-[28px] text-center mb-[20px] leading-[25px]"
         }
       >
         You have successfully set up your marketplace, please log in to start

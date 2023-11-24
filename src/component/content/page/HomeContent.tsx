@@ -6,13 +6,40 @@ import { BaseMapCard } from "../../card/BaseMapCard.tsx";
 import { ThemeUtil } from "@/util/ThemeUtil.ts";
 import UserStatsSection from "./UserStatsSection.tsx";
 import GetApp from "./GetApp.tsx";
+import ReferAndWinSection from "./ReferAndWinSection.tsx";
 
 export const HomeContent = () => {
   // px-[100px] max-[1000px]:px-0
   return (
-    <div className={"w-full h-full"}>
+    <div className={"w-full h-full overflow-x-hidden"}>
       <HomeHero />
       {/* <BaseMapCard /> */}
+      <ListOfPropertiesContent
+        title={"Hospitality Highlight"}
+        data={PropertiesData}
+        showSeeAll={true}
+        showFilters={false}
+        linkTo={"recommended"}
+        isSlider={true}
+      />
+      <ReferAndWinSection />
+
+      <ListOfPropertiesContent
+        title={"Most Visited"}
+        data={PropertiesData}
+        showSeeAll={true}
+        showFilters={false}
+        linkTo={"recommended"}
+        isSlider={true}
+      />
+      <ListOfPropertiesContent
+        title={"Most Popular"}
+        data={PropertiesData}
+        showSeeAll={true}
+        showFilters={false}
+        linkTo={"recommended"}
+        isSlider={true}
+      />
       <ListOfPropertiesContent
         title={"Recommended"}
         data={PropertiesData}
@@ -28,7 +55,7 @@ export const HomeContent = () => {
         linkTo={"nearYou"}
       />
       <UserStatsSection />
-      <GetApp/>
+      <GetApp />
 
       {/* <HomeFeaturedPropertiesCard />
       {/* <ListOfPropertiesContent

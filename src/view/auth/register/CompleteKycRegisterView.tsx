@@ -1,6 +1,7 @@
 import { AuthLayout } from "../../layout/AuthLayout.tsx";
 import { RouterConstantUtil } from "../../../util/constant/RouterConstantUtil.ts";
 import {CompleteKycRegisterFormik} from "../../../component/formik/auth/register/CompleteKycRegisterFormik.tsx";
+import { ThemeUtil } from "@/util/ThemeUtil.ts";
 
 export const CompleteKycRegisterView = () => {
   document.title = "Register | Dwelar";
@@ -17,6 +18,7 @@ export const CompleteKycRegisterView = () => {
       }}
       footerNextRouteType="login"
       routeUrl={routeUrl}
+      bgImage={ThemeUtil.image.bedroom}
     >
       <CompleteKycRegisterFormik />
     </AuthLayout>

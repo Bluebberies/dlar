@@ -4,7 +4,9 @@ import ReferralsContent from "@/component/content/page/ReferralsContent.tsx";
 
 export default function ReferralsView() {
   return (
-    <BasePageLayout>
+    <BasePageLayout isBgLight={true} headerNavStyles={{
+      position: "sticky"
+    }}>
       <ReferralsContent />
     </BasePageLayout>
   );

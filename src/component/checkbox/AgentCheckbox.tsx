@@ -22,10 +22,10 @@ export const AgentCheckbox = ({
 
   return (
     <div
-      className={`hover:bg-[#e8e2e2] transition-all flex flex-row items-center gap-10 h-[10opx] w-[500px] max-[790px]:w-full  rounded-[10px] p-5 cursor-pointer mb-5 mt-5`}
+      className={`hover:bg-[#e8e2e2] w-[80%] transition-all flex flex-row items-center gap-10 h-[10opx] rounded-[10px] p-5 cursor-pointer mb-5 mt-5`}
       onClick={handleAgentSelect}
       style={{
-        backgroundColor: selected? "#dfdada": "#f5f5f5"
+        backgroundColor: selected ? "#E8F8FF" : "#f5f5f5",
       }}
     >
       <img

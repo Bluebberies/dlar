@@ -28,7 +28,7 @@ export const LoginFormik = () => {
   }
 
   return (
-    <div className="w-[90%] mt-[1rem]">
+    <div className="max-[700px]:w-full w-[70%] mt-[1rem] my-6">
       <BaseInput
         placeholder={"Input your email address"}
         label={"Email"}
@@ -72,7 +72,7 @@ export const LoginFormik = () => {
 
       <p
         className={
-          "text-blackColor text-[18px] text-center max-[425px]:mt-6 mt-10 mb-5 font-darkerGrotesque-medium"
+          "text-blackColor text-[18px] text-center max-[425px]:mt-6 mt-5 mb-5 font-darkerGrotesque-medium"
         }
       >
         Or Login using

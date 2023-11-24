@@ -9,11 +9,13 @@ export type BasePageLayoutProps = {
   children?: React.JSX.Element;
   filterPage?: boolean;
   headerNavStyles?: CSSProperties;
+  isBgLight?: boolean
 };
 export const BasePageLayout = ({
   children,
   filterPage = false,
   headerNavStyles,
+  isBgLight,
 }: BasePageLayoutProps) => {
   return (
     <motion.div
@@ -28,6 +30,7 @@ export const BasePageLayout = ({
           <BasePageHeader
             filterPage={filterPage}
             headerNavStyles={headerNavStyles}
+            isBgLight={isBgLight}
           />
           {/* <BasePageTab /> */}
           {children}

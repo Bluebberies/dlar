@@ -8,19 +8,23 @@ import { ThemeUtil } from "@/util/ThemeUtil.ts";
 import { BaseButton } from "@/component/button/BaseButton.tsx";
 import { BsFillBookmarkFill, BsFillChatFill } from "react-icons/bs";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { useMediaQuery } from "react-responsive";
 
 export type BasePageHeaderProps = {
   headerNavStyles?: CSSProperties;
   filterPage?: boolean;
+  isBgLight?: boolean;
 };
 
 export const BasePageHeader = ({
   headerNavStyles,
   filterPage,
+  isBgLight,
 }: BasePageHeaderProps) => {
   const navigate = useNavigate();
   const [isAuth, setIsAuth] = useState(true);
   const [locale, setLocale] = useState("");
+  const isMobileScreen = useMediaQuery({ query: "(max-width: 700px)" });
 
   function handleBookmark() {
     navigate(RouterConstantUtil.routes.page.bookmark);
@@ -40,7 +44,7 @@ export const BasePageHeader = ({
       }
       style={{
         height: "70px",
-        ...headerNavStyles
+        ...headerNavStyles,
       }}
     >
       {isAuth && (
@@ -49,7 +53,9 @@ export const BasePageHeader = ({
           <div className="drawer-content">
             <label htmlFor="my-drawer">
               <GiHamburgerMenu
-                className={"w-[27px] h-[27px] cursor-pointer text-[#fff]"}
+                className={`w-[27px] h-[27px] cursor-pointer ${
+                  isBgLight ? "text-black" : "text-[#fff]"
+                }`}
               />
             </label>
           </div>
@@ -77,23 +83,47 @@ export const BasePageHeader = ({
                 />
                 Become an Agent
               </li>
-              <li className="hover:text-[#18ACE8] hover:bg-[#EFF6FF]  flex items-center justify-start flex-row text-[#111110] text-[16px] font-medium leading-5 font-darkerGrotesque-bold">
-                <img
-                  onClick={() => navigate(RouterConstantUtil.routes.page.home)}
-                  src={ThemeUtil.icon.questionIcon}
-                  className={""}
-                  alt={"icon"}
-                />
-                About Us
+              <li className=" flex items-center text-[#111110] justify-start flex-row text-[16px] font-medium leading-5 font-darkerGrotesque-bold">
+                <NavLink
+                  to={RouterConstantUtil.routes.page.aboutPage}
+                  // className={({ isActive }) => (isActive ? "active-nav" : "nav")}
+                  className={() =>
+                    locale.toLowerCase().includes("about")
+                      ? "w-[80%] text-[#EFF6FF] bg-[#18ACE8]"
+                      : "w-[80%] text-[#111110] font-medium"
+                  }
+                >
+                  <img
+                    onClick={() =>
+                      navigate(RouterConstantUtil.routes.page.home)
+                    }
+                    src={ThemeUtil.icon.questionIcon}
+                    className={""}
+                    alt={"icon"}
+                  />
+                  About Us
+                </NavLink>
               </li>
-              <li className="hover:text-[#18ACE8] hover:bg-[#EFF6FF]  flex items-center justify-start flex-row text-[#111110] text-[16px] font-medium leading-5 font-darkerGrotesque-bold">
-                <img
-                  onClick={() => navigate(RouterConstantUtil.routes.page.home)}
-                  src={ThemeUtil.icon.headSetIcon}
-                  className={""}
-                  alt={"icon"}
-                />
-                Contact
+              <li className=" flex items-center text-[#111110] justify-start flex-row text-[16px] font-medium leading-5 font-darkerGrotesque-bold">
+                <NavLink
+                  to={RouterConstantUtil.routes.page.contactPage}
+                  // className={({ isActive }) => (isActive ? "active-nav" : "nav")}
+                  className={() =>
+                    locale.toLowerCase().includes("contact")
+                      ? "w-[80%] text-[#EFF6FF] bg-[#18ACE8]"
+                      : "w-[80%] text-[#111110] font-medium"
+                  }
+                >
+                  <img
+                    onClick={() =>
+                      navigate(RouterConstantUtil.routes.page.home)
+                    }
+                    src={ThemeUtil.icon.headSetIcon}
+                    className={""}
+                    alt={"icon"}
+                  />
+                  Contact
+                </NavLink>
               </li>
               <li className="hover:text-[#18ACE8] hover:bg-[#EFF6FF]  flex items-center justify-start flex-row text-[#111110] text-[16px] font-medium leading-5 font-darkerGrotesque-bold">
                 <img
@@ -173,7 +203,11 @@ export const BasePageHeader = ({
 
       <img
         onClick={() => navigate(RouterConstantUtil.routes.page.home)}
-        src={ThemeUtil.image.logoDarkSvg}
+        src={
+          isBgLight && isMobileScreen
+            ? ThemeUtil.image.logo
+            : ThemeUtil.image.logoDarkSvg
+        }
         className={"w-[97px] h-[35px] "}
         alt={"logo"}
       />
@@ -199,7 +233,7 @@ export const BasePageHeader = ({
           Home
         </NavLink>
         <NavLink
-          to={"/page/about"}
+          to={RouterConstantUtil.routes.page.aboutPage}
           className={() =>
             locale.toLowerCase().includes("about") ? "active-nav" : "nav"
           }
@@ -207,7 +241,7 @@ export const BasePageHeader = ({
           About
         </NavLink>
         <NavLink
-          to={"/page/contact"}
+          to={RouterConstantUtil.routes.page.contactPage}
           className={() =>
             locale.toLowerCase().includes("contact") ? "active-nav" : "nav"
           }

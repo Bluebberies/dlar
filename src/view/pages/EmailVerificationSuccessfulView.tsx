@@ -1,6 +1,7 @@
 import {RouterConstantUtil} from "@/util/constant/RouterConstantUtil.ts";
 import {AuthLayout} from "@/view/layout/AuthLayout.tsx";
 import {EmailVerificationSuccessfulContent} from "@/component/content/page/EmailVerificationSuccessfulContent.tsx";
+import { ThemeUtil } from "@/util/ThemeUtil";
 
 export const EmailVerificationSuccessfulView = () => {
   document.title = "Email verified 🎉| Dwelar";
@@ -12,11 +13,13 @@ export const EmailVerificationSuccessfulView = () => {
       title={""}
       subTitle={""}
       style={{
-        marginTop: "50px",
+        marginTop: "20px",
         padding: "10px 0",
+        paddingBottom: "3rem"
       }}
       footerNextRouteType="login"
       routeUrl={routeUrl}
+      bgImage={ThemeUtil.image.pool_view1}
     >
       <EmailVerificationSuccessfulContent routeUrl={routeUrl} />
     </AuthLayout>

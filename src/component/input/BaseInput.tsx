@@ -17,7 +17,9 @@ interface BaseInputProps {
   inputContainerStyle?: CSSProperties;
   type?: string;
   superTextStyles?: CSSProperties;
-  inputContainerClassName?: string
+  inputContainerClassName?: string;
+  inputClassName?: string;
+  labelClassName?: string;
 }
 export const BaseInput = ({
   label,
@@ -31,6 +33,8 @@ export const BaseInput = ({
   inputContainerStyle,
   superTextStyles,
   inputContainerClassName,
+  inputClassName,
+  labelClassName,
   ...props
 }: BaseInputProps & InputHTMLAttributes<HTMLInputElement>) => {
   // const [visible, setVisible] = useState(true);
@@ -45,12 +49,13 @@ export const BaseInput = ({
     <div className={"min-h-[100px] h-auto mt-5 mb-5"} style={containerStyle}>
       {label && (
         <h1
-          className={
-            "font-medium text-[28px] leading-[25px] text-left mb-2 text-blackColor font-darkerGrotesque-bold"
-          }
+          dangerouslySetInnerHTML={{ __html: label }}
+          className={`font-medium leading-[25px] text-left mb-2 text-blackColor font-darkerGrotesque-bold ${
+            labelClassName ? labelClassName : "text-[28px] "
+          }`}
           style={labelStyle}
         >
-          {label}
+          {/* {label} */}
         </h1>
       )}
 
@@ -62,7 +67,7 @@ export const BaseInput = ({
       >
         {superText && (
           <span
-           dangerouslySetInnerHTML={{ __html: superText }}
+            dangerouslySetInnerHTML={{ __html: superText }}
             // className={`absolute bottom-4 text-grayColor_2 text-[20px] leading-[25px] mt-5 ml-3 mr-20 ${
             className={` text-grayColor_2 text-[20px] leading-[25px] ml-3 border-r-slate-950 border-r-4 pr-2 border-l-[#070707] ${
               superTextPosition === "left" ? "left-0" : "right-0"
@@ -77,9 +82,7 @@ export const BaseInput = ({
           type={
             type === "password" ? (showPassword ? "text" : "password") : type
           }
-          className={
-            "text-[#111110] border-0 rounded-xl w-full h-[100%] bg-[#F5F5F5] font-darkerGrotesque-bold focus:outline-0 pl-5 font-light text-[20px] leading-[25px]"
-          }
+          className={`text-[#111110] border-0 rounded-xl h-[100%] bg-[#F5F5F5] font-darkerGrotesque-medium focus:outline-0 pl-5 font-light text-[20px] leading-[25px] ${inputClassName}`}
           placeholder={placeholder}
           style={inputStyle}
           {...props}

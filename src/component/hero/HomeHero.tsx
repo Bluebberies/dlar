@@ -1,10 +1,15 @@
 import { BaseAvatar } from "../avatar/BaseAvatar.tsx";
+import React from "react";
 import heroImage from "../../assets/image/hero-image.jpg";
 import hero1 from "../../assets/image/hero1.jpg";
 import WhiteChevronArrow from "../../assets/icon/white-chevron-round.svg";
 import { cutSentence } from "./../../util/helper";
 import { ThemeUtil } from "@/util/ThemeUtil.ts";
 import { useState } from "react";
+import { BaseInput } from "@/component/input/BaseInput";
+import { BaseButton } from "../button/BaseButton.tsx";
+import { mdiMagnify } from "@mdi/js";
+import Icon from "@mdi/react";
 
 export const HomeHero = () => {
   const [activeTab, setActiveTab] = useState("hotels");
@@ -14,10 +19,10 @@ export const HomeHero = () => {
   }
 
   return (
-    <>
+    <div className={"relative"}>
       <div
         className={
-          "h-[515px] max-[700px]:h-[400px] w-full mt-0 overflow-hidden relative"
+          "relative h-[555px] lg:mb-[10rem] max-[700px]:h-[400px] w-full mt-0 overflow-hidden"
         }
         style={{
           // backgroundColor: "rgba(17, 17, 16, .85)",
@@ -32,8 +37,9 @@ export const HomeHero = () => {
           alt={"hero image"}
         />
         <div
+          // bottom-10
           className={
-            "z-[999] translate-x-[-50%] w-full absolute bottom-10 gap-4 flex flex-col justify-center items-center left-[50%]"
+            "z-[999] translate-x-[-50%] w-full absolute  gap-4 flex flex-col justify-center items-center left-[50%] bottom-[3rem] lg:bottom-[9rem]"
           }
         >
           <h1
@@ -81,7 +87,7 @@ export const HomeHero = () => {
               />
             </div>
           </BaseAvatar>
-          <div className="flex items-center flex-wrap justify-center flex-row gap-3 mt-[12px] min-[700px]:hidden">
+          <div className="flex items-center flex-wrap justify-center flex-row gap-3 mt-[12px]">
             <p
               style={{
                 borderBottom: activeTab == "hotels" ? "2px solid #18ACE8" : "",
@@ -102,7 +108,8 @@ export const HomeHero = () => {
             </p>
             <p
               style={{
-                borderBottom: activeTab == "apartments" ? "2px solid #18ACE8" : "",
+                borderBottom:
+                  activeTab == "apartments" ? "2px solid #18ACE8" : "",
               }}
               onClick={() => handleTabClick("apartments")}
               className="flex items-center justify-center p-[10px] w-[90px] text-[16px] leading-[14px] text-white font-bold font-darkerGrotesque-bold text-center"
@@ -112,14 +119,226 @@ export const HomeHero = () => {
           </div>
         </div>
       </div>
-      {/* <div
-        className="min-[700px]:hidden"
+      <div
+          className="lg:hidden mb-[160px] max-[290px]:h-[350px] max-[375px]:h-[230px] h-[130px] md:h-[100px]"
         style={{
-          height: "120px",
+          // height: "300px",
           backgroundColor: "rgba(17, 17, 16, .85)",
         }}
-      ></div> */}
-    </>
+      ></div>
+      <div className="z-10 flex flex-wrap items-center flex-row justify-between rounded-[20px] shadow-[0px_1px_16px_0px_rgba(24,172,232,0.30)] max-[644px]:bottom-[2rem] bottom-[6rem] absolute bg-[#FFF] py-[15px] lg:py-[35px] px-[10px] lg:px-[75px] max-w-[1200px] max-[1315px]:w-[95%] max-[1500px]:w-[90%] w-[80%] left-[50%] translate-x-[-50%]">
+        <div>
+          <BaseInput
+            label={`
+                  <img src=${ThemeUtil.icon.light_gray_pin} alt="" />
+                  Location
+              `}
+            labelStyle={{
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              color: "#111110",
+              // gap: "10px",
+              // fontSize: "3vw",
+              fontFamily: "darkerGrotesque-normal, sans-serif",
+              fontWeight: 400,
+            }}
+            containerStyle={{
+              display: "flex",
+              flexDirection: "column",
+              minHeight: "0",
+              // width: "175px",
+              // marginTop: "-10px",
+              width: "fit-content",
+              height: "auto",
+              // padding: "10px",
+            }}
+            inputStyle={{
+              // width: "auto",
+              borderRadius: "10px",
+              // padding: "10px",
+              background: "rgba(232, 248, 255, 0.85)",
+            }}
+            labelClassName={
+              "gap-[10px] max-[1000px]:gap-[5px] text-[3vw] sm:text-[1vw]"
+            }
+            inputClassName={
+              "py-[10px] max-[1000px]:px-[1px] w-[8rem] h-[36px] text-[3vw] sm:text-[1vw] sm:h-auto lg:w-auto px-[1px]"
+            }
+            inputContainerStyle={{
+              width: "fit-content",
+              paddingRight: 0,
+              height: "auto",
+            }}
+          />
+        </div>
+        <div>
+          <BaseInput
+            label={`
+                  <img src=${ThemeUtil.icon.light_gray_person_icon} alt="" />
+                  Guests
+              `}
+            labelStyle={{
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              color: "#111110",
+              // gap: "10px",
+              // fontSize: "3vw",
+              fontFamily: "darkerGrotesque-normal, sans-serif",
+              fontWeight: 400,
+            }}
+            containerStyle={{
+              display: "flex",
+              flexDirection: "column",
+              minHeight: "0",
+              // width: "175px",
+              // marginTop: "-10px",
+              width: "fit-content",
+              height: "auto",
+              // padding: "10px",
+            }}
+            inputStyle={{
+              // width: "auto",
+              borderRadius: "10px",
+              // padding: "10px",
+              background: "rgba(232, 248, 255, 0.85)",
+            }}
+            labelClassName={
+              "gap-[10px] max-[1000px]:gap-[5px] text-[3vw] sm:text-[1vw]"
+            }
+            inputClassName={
+              "py-[10px] max-[1000px]:px-[1px] w-[8rem] h-[36px] text-[3vw] sm:text-[1vw] sm:h-auto lg:w-auto px-[1px]"
+            }
+            inputContainerStyle={{
+              width: "fit-content",
+              paddingRight: 0,
+              height: "auto",
+            }}
+          />
+        </div>
+        <div>
+          <BaseInput
+            label={`
+                  <img src=${ThemeUtil.icon.light_gray_checkin} alt="" />
+                  Check-in
+              `}
+            labelStyle={{
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              color: "#111110",
+              // gap: "10px",
+              // fontSize: "3vw",
+              fontFamily: "darkerGrotesque-normal, sans-serif",
+              fontWeight: 400,
+            }}
+            containerStyle={{
+              display: "flex",
+              flexDirection: "column",
+              minHeight: "0",
+              // width: "175px",
+              // marginTop: "-10px",
+              width: "fit-content",
+              height: "auto",
+              // padding: "10px",
+            }}
+            inputStyle={{
+              // width: "auto",
+              borderRadius: "10px",
+              // padding: "10px",
+              background: "rgba(232, 248, 255, 0.85)",
+            }}
+            labelClassName={
+              "gap-[10px] max-[1000px]:gap-[5px] text-[3vw] sm:text-[1vw]"
+            }
+            inputClassName={
+              "py-[10px] max-[1000px]:px-[1px] w-[8rem] h-[36px] text-[3vw] sm:text-[1vw] sm:h-auto lg:w-auto px-[1px]"
+            }
+            inputContainerStyle={{
+              width: "fit-content",
+              paddingRight: 0,
+              height: "auto",
+            }}
+          />
+        </div>
+        <div>
+          <BaseInput
+            label={`
+                  <img src=${ThemeUtil.icon.light_gray_checkout} alt="" />
+                  Check-out
+              `}
+            labelStyle={{
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              color: "#111110",
+              // gap: "10px",
+              // fontSize: "3vw",
+              fontFamily: "darkerGrotesque-normal, sans-serif",
+              fontWeight: 400,
+            }}
+            containerStyle={{
+              display: "flex",
+              flexDirection: "column",
+              minHeight: "0",
+              // width: "175px",
+              // marginTop: "-10px",
+              width: "fit-content",
+              height: "auto",
+              // padding: "10px",
+            }}
+            inputStyle={{
+              // width: "auto",
+              borderRadius: "10px",
+              // padding: "10px",
+              background: "rgba(232, 248, 255, 0.85)",
+            }}
+            labelClassName={
+              "gap-[10px] max-[1000px]:gap-[5px] text-[3vw] sm:text-[1vw]"
+            }
+            inputClassName={
+              "py-[10px] max-[1000px]:px-[1px] w-[8rem] h-[36px] text-[3vw] sm:text-[1vw] sm:h-auto lg:w-auto px-[1px]"
+            }
+            inputContainerStyle={{
+              width: "fit-content",
+              paddingRight: 0,
+              height: "auto",
+            }}
+          />
+        </div>
+        <div>
+          <BaseButton
+            buttonStyle={{
+              fontSize: 20,
+              backgroundColor: "#FF6A28",
+              color: "#fff",
+              borderRadius: "25px",
+              padding: "10px 32px ",
+              cursor: "pointer",
+            }}
+            // hoverScale={1.1}
+            // hoverOpacity={0.7}
+            // containerClassName={"sm:w-[80px] w-[60px] sm:h-[80px] h-[60px]"}
+            containerStyle={{
+              width: "80px",
+              height: "80px",
+            }}
+          >
+            <span className="-z-10 w-full object-cover flex flex-col text-[10px] sm:text-[20px] leading-5 font-darkerGrotesque-normal font-normal items-center justify-center ">
+              <Icon
+                path={mdiMagnify}
+                className={
+                  "sm:h-[32px] w-[22px] sm:w-[32px] h-[22px] ml-1 text-white"
+                }
+              />
+              Search
+            </span>
+          </BaseButton>
+        </div>
+      </div>
+      ;
+    </div>
 
     // <div
     //   className={

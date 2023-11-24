@@ -62,6 +62,19 @@ import ref_person2 from "../assets/image/ref_person2.png";
 import ref_person3 from "../assets/image/ref_person3.png";
 import ref_dummy_icon from "../assets/image/ref_dummy_icon.png";
 import phone_preview from "../assets/image/phone_preview.png";
+import pool_view1 from "../assets/image/pool_view1.png";
+import bookmark_white from "../assets/image/bookmark_white.svg";
+import blue_call_icon from "../assets/image/blue_call_icon.svg";
+import blue_mail_icon from "../assets/image/blue_mail_icon.svg";
+import blue_pin_icon from "../assets/image/blue_pin_icon.svg";
+import white_sendMessage_icon from "../assets/image/white_sendMessage_icon.svg";
+import light_gray_checkin from "../assets/icon/light_gray_checkin.svg";
+import light_gray_checkout from "../assets/icon/light_gray_checkout.svg";
+import light_gray_person_icon from "../assets/icon/light_gray_person_icon.svg";
+import light_gray_pin from "../assets/icon/light_gray_pin.svg";
+import light_gray_piggy_bank from "../assets/icon/light_gray_piggy_bank.svg";
+import light_gray_home_icon from "../assets/icon/light_gray_home_icon.svg";
+import light_gray_bed_icon from "../assets/icon/light_gray_bed_icon.svg";
 
 export const ThemeUtil = {
   color: {
@@ -122,7 +135,14 @@ export const ThemeUtil = {
     questionIcon: QuestionIcon,
     profileIcon: ProfileIcon,
     logout: Logout,
-    settingSliderWhite
+    settingSliderWhite,
+    light_gray_checkin,
+    light_gray_checkout,
+    light_gray_person_icon,
+    light_gray_pin,
+    light_gray_piggy_bank,
+    light_gray_home_icon,
+    light_gray_bed_icon,
   },
   image: {
     logo: LogoSvg,
@@ -143,6 +163,12 @@ export const ThemeUtil = {
     ref_person2,
     ref_person3,
     ref_dummy_icon,
-    phone_preview
+    phone_preview,
+    pool_view1,
+    bookmark_white,
+    blue_call_icon,
+    blue_mail_icon,
+    blue_pin_icon,
+    white_sendMessage_icon,
   },
 };

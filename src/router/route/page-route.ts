@@ -12,6 +12,8 @@ import { ResetPasswordView } from "../../view/pages/passwordReset/ResetPasswordV
 import { PasswordResetEmailSentView } from "../../view/pages/passwordReset/PasswordResetEmailSentView.tsx";
 import { PasswordResetSuccessfulView } from "../../view/pages/passwordReset/PasswordResetSuccessful.tsx";
 import ReferralsView from "../../view/pages/ReferralsView.tsx";
+import AboutPageView from "@/view/pages/About.tsx";
+import ContactPageView from "@/view/pages/Contact.tsx";
 
 export const pageRoute = [
   {
@@ -79,7 +81,7 @@ export const pageRoute = [
   },
   {
     component: SearchResultView,
-    path: RouterConstantUtil.routes.page.recommeded,
+    path: RouterConstantUtil.routes.page.recommended,
     meta: {
       isAuth: false,
       redirectTo: undefined,
@@ -170,6 +172,24 @@ export const pageRoute = [
   {
     component: ReferralsView,
     path: RouterConstantUtil.routes.page.referrals,
+    meta: {
+      isAuth: false,
+      redirectTo: undefined,
+    },
+    options: {},
+  },
+  {
+    component: AboutPageView,
+    path: RouterConstantUtil.routes.page.aboutPage,
+    meta: {
+      isAuth: false,
+      redirectTo: undefined,
+    },
+    options: {},
+  },
+  {
+    component: ContactPageView,
+    path: RouterConstantUtil.routes.page.contactPage,
     meta: {
       isAuth: false,
       redirectTo: undefined,
