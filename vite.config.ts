@@ -3,13 +3,13 @@ import react from '@vitejs/plugin-react'
 import { fileURLToPath } from 'node:url'
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react({ jsxImportSource: "@emotion/react" })],
   preview: {
-    host: '0.0.0.0'
+    host: "0.0.0.0",
   },
-  resolve:{
-    alias:{
-      '@': fileURLToPath(new URL('./src', import.meta.url))
-    }
-  }
-})
+  resolve: {
+    alias: {
+      "@": fileURLToPath(new URL("./src", import.meta.url)),
+    },
+  },
+});
