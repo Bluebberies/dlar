@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { RouterConstantUtil } from "../../util/constant/RouterConstantUtil.ts";
 
 type BasePageHeaderSearchInputProps = {
-  isNavbarFixed: boolean;
+  isNavbarFixed?: boolean;
 };
 
 export const BasePageHeaderSearchInput = ({
