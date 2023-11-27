@@ -18,6 +18,7 @@ import { useEffect, useRef, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import { SheetRef } from "react-modal-sheet";
 import CompletePaymentSheet from '@/component/bottom-sheet/CompletePaymentSheet';
+import { ListOfPropertiesContent } from "./ListOfPropertiesContent.tsx";
 
 export const PropertyDetailsContent = () => {
   const [propertyData, setPropertyData] = useState<
