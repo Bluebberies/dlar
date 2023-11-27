@@ -9,6 +9,7 @@ import { FilterCheckbox } from "@/component/checkbox/FilterCheckbox";
 import { BaseInput } from "@/component/input/BaseInput";
 import { amountFilter } from "@/util/constant/generics.ts";
 import { BaseButton } from "../button/BaseButton.tsx";
+import FilterSheet from "../bottom-sheet/FiltersSheet.tsx";
 
 export const BasePageTab = () => {
   const [filter, setFilter] = useState<boolean>(false);
@@ -43,7 +44,7 @@ export const BasePageTab = () => {
     <>
       <div
         className={
-          "max-[700px]:hidden mt-[30px] flex gap-28 max-[1000px]:gap-24 max-[900px]:gap-10 max-[850px]:gap-8 max-[800px]:gap-4 max-[800px]:flex-wrap w-full justify-center mb-20 base-page-space"
+          "max-[700px]:hidden mt-[10px] flex gap-28 max-[1000px]:gap-24 max-[900px]:gap-10 max-[850px]:gap-8 max-[800px]:gap-4 max-[800px]:flex-wrap w-full justify-center mb-4 base-page-space"
         }
       >
         <div className="flex flex-row items-center justify-center gap-1 max-[900px]:gap-[2px]">
@@ -89,7 +90,6 @@ export const BasePageTab = () => {
           </div>
         </BaseAvatar>
       </div>
-
       <div
         className={
           "min-[700px]:hidden mt-[20px] flex gap-28 max-[1000px]:gap-24 max-[900px]:gap-10 max-[850px]:gap-8 max-[800px]:gap-4 max-[800px]:flex-wrap w-full justify-center mb-4"
@@ -150,17 +150,20 @@ export const BasePageTab = () => {
           </BaseAvatar>
         </div>
       </div>
-      <Sheet
+      {/* <Sheet
         isOpen={isOpen}
         onClose={() => setOpen(false)}
         disableDrag={false}
         // rootId="root"
         snapPoints={[700, 500]}
         initialSnap={1}
+        style={{ zIndex: "10000000000" }}
       >
-        <Sheet.Container>
+        <Sheet.Container style={{ zIndex: "10000000000" }}>
           <Sheet.Header />
-          <Sheet.Content style={{ paddingBottom: ref.current?.y }}>
+          <Sheet.Content
+            style={{ paddingBottom: ref.current?.y, zIndex: "10000000000" }}
+          >
             <Sheet.Scroller draggableAt="both">
               <div className="flex flex-col items-center py-10">
                 <h1 className="font-darkerGrotesque-bold text-[#111110] leading-[35px] text-[24px]">
@@ -202,7 +205,11 @@ export const BasePageTab = () => {
                   }}
                   label="Location"
                 />
-                <div className={"w-full h-auto flex flex-col items-center justify-center gap-7 "}>
+                <div
+                  className={
+                    "w-full h-auto flex flex-col items-center justify-center gap-7 "
+                  }
+                >
                   <h1
                     className={
                       "font-darkerGrotesque-bold text-[20px] leading-[20px] text-[#606060]"
@@ -293,20 +300,19 @@ export const BasePageTab = () => {
                 </div>
               </div>
 
-              {/* Some content here that makes the sheet content scrollable */}
             </Sheet.Scroller>
           </Sheet.Content>
         </Sheet.Container>
         <Sheet.Backdrop onTap={() => setOpen(false)} />
-      </Sheet>
-
+      </Sheet> */}
+      <FilterSheet myref={ref} isOpen={isOpen} setOpen={setOpen} />
+      
       <dialog id="my_modal_2" className="modal">
         <FilterCard />
         <form method="dialog" className="modal-backdrop">
           <button>close</button>
         </form>
       </dialog>
-
       {/* <AnimatePresence>
         {filter && (
           <motion.div
@@ -319,7 +325,6 @@ export const BasePageTab = () => {
           </motion.div>
         )}
       </AnimatePresence> */}
-
       {/* {filter && <FilterCard />} */}
     </>
   );

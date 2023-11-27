@@ -4,11 +4,16 @@ import { SearchResultContent } from "@/component/content/page/SearchResultConten
 export const SearchResultView = () => {
   return (
     <BasePageLayout
+      // isBgLight={true}
       filterPage={true}
-      // headerNavStyles={{
-      //   position: "relative",
-      //   backgroundColor: "inherit",
-      // }}
+      hideHamburger={true}
+      showBackButton={true}
+      hideLogo={true}
+      showHeaderBg={true}
+      headerNavStyles={{
+        position: "sticky",
+        // backgroundColor: "inherit",
+      }}
     >
       <SearchResultContent />
     </BasePageLayout>

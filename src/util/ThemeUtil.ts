@@ -29,9 +29,9 @@ import Twitter from "../assets/icon/twitter.svg";
 import BlackCall from "../assets/icon/black-call.svg";
 import CelebrationSvg from "../assets/image/celebration.svg";
 import CameraOutline from "../assets/icon/camera-outline.svg";
-import DangerWarning from "../assets/icon/danger-warning.svg";
 import ArrowLeft from "../assets/icon/arrow-left.svg";
 import ChatOwner from "../assets/icon/chat-owner.svg";
+import ChatOwnerLight from "../assets/icon/chat-owner_light.svg";
 import ArrowRight from "../assets/icon/arrow-right.svg";
 import Matteo from "../assets/image/matteo.jpg";
 import Andrea from "../assets/image/andrea.jpg";
@@ -75,6 +75,15 @@ import light_gray_pin from "../assets/icon/light_gray_pin.svg";
 import light_gray_piggy_bank from "../assets/icon/light_gray_piggy_bank.svg";
 import light_gray_home_icon from "../assets/icon/light_gray_home_icon.svg";
 import light_gray_bed_icon from "../assets/icon/light_gray_bed_icon.svg";
+import gift_icon from "../assets/icon/gift_icon.svg";
+import dark_facebook from "../assets/icon/dark_facebook.svg";
+import dark_twitter from "../assets/icon/dark_twitter.svg";
+import dark_instagram from "../assets/icon/dark_instagram.svg";
+import dark_telegram from "../assets/icon/dark_telegram.svg";
+import warning_icon from "../assets/icon/warning_icon.svg";
+import star_icon from "../assets/icon/star_icon.svg";
+import tick_icon from "../assets/icon/tick_icon.svg";
+import telegram from "../assets/icon/telegram.svg";
 
 export const ThemeUtil = {
   color: {
@@ -91,6 +100,8 @@ export const ThemeUtil = {
     dangerColor: "#E33629",
   },
   icon: {
+    telegram,
+    tick_icon,
     bookmark: BookmarkSvg,
     chat: ChatSvg,
     profile: ProfileSvg,
@@ -117,9 +128,9 @@ export const ThemeUtil = {
     blackCall: BlackCall,
     blackWhatsapp: BlackWhatsapp,
     chatOwner: ChatOwner,
+    ChatOwnerLight,
     whatsapp: Whatsapp,
     twitter: Twitter,
-    dangerWarning: DangerWarning,
     notificationOff: NotificationOff,
     notificationOn: NotificationOn,
     wallet: Wallet,
@@ -143,6 +154,13 @@ export const ThemeUtil = {
     light_gray_piggy_bank,
     light_gray_home_icon,
     light_gray_bed_icon,
+    gift_icon,
+    dark_facebook,
+    dark_twitter,
+    dark_instagram,
+    dark_telegram,
+    warning_icon,
+    star_icon,
   },
   image: {
     logo: LogoSvg,

@@ -9,22 +9,30 @@ import { BaseButton } from "@/component/button/BaseButton.tsx";
 import { BsFillBookmarkFill, BsFillChatFill } from "react-icons/bs";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { useMediaQuery } from "react-responsive";
+import BookmarkIcon from "@/component/customIcon/BookmarkIcon.tsx";
 
 export type BasePageHeaderProps = {
   headerNavStyles?: CSSProperties;
   filterPage?: boolean;
   isBgLight?: boolean;
+  showHeaderBg?: boolean;
+  hideHamburger?: boolean;
+  hideLogo?: boolean;
 };
 
 export const BasePageHeader = ({
   headerNavStyles,
   filterPage,
   isBgLight,
+  showHeaderBg = false,
+  hideHamburger = false,
+  hideLogo = false,
 }: BasePageHeaderProps) => {
   const navigate = useNavigate();
   const [isAuth, setIsAuth] = useState(true);
   const [locale, setLocale] = useState("");
   const isMobileScreen = useMediaQuery({ query: "(max-width: 700px)" });
+  const [isNavbarFixed, setNavbarFixed] = useState(false);
 
   function handleBookmark() {
     navigate(RouterConstantUtil.routes.page.bookmark);
@@ -37,28 +45,61 @@ export const BasePageHeader = ({
   }, [location]);
   // console.log("location", location);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      // Adjust the threshold value based on when you want the navbar to become fixed
+      const threshold = 100;
+      const shouldFixNavbar = window.scrollY > threshold;
+
+      setNavbarFixed(shouldFixNavbar);
+    };
+
+    // Attach the scroll event listener when the component mounts
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  console.log("is", hideLogo);
+
   return (
     <div
+      // bg-[rgba(17,17,16,0.85)]
       className={
-        "fixed z-[10000000] max-[700px]:absolute top-0 left-0 right-0 max-[700px]:bg-transparent bg-[rgba(17,17,16,0.85)] min-[700px]:b h-auto flex flex-row items-center justify-between flex-wrap max-[1200px]:px-4 gap-3 max-[1020px]:px-8  px-24"
+        "py-4 fixed z-[10000000] max-[700px]:absolute top-0 left-0 right-0 max-[700px]:bg-transparent min-[700px]:b h-auto flex flex-row items-center justify-between flex-wrap max-[1200px]:px-4 gap-3 max-[1020px]:px-8  px-24"
       }
       style={{
-        height: "70px",
+        backgroundColor: showHeaderBg
+          ? "rgba(17,17,16,0.85)"
+          : isNavbarFixed
+          ? "rgba(17,17,16,0.85)"
+          : "transparent",
+        transition: "background-color 0.3s ease-in-out",
+        minHeight: "70px",
         ...headerNavStyles,
       }}
     >
       {isAuth && (
         <div className="min-[700px]:hidden ">
           <input id="my-drawer" type="checkbox" className="drawer-toggle" />
-          <div className="drawer-content">
-            <label htmlFor="my-drawer">
-              <GiHamburgerMenu
-                className={`w-[27px] h-[27px] cursor-pointer ${
-                  isBgLight ? "text-black" : "text-[#fff]"
-                }`}
-              />
-            </label>
-          </div>
+          {!hideHamburger && (
+            <div className="drawer-content">
+              <label htmlFor="my-drawer">
+                <GiHamburgerMenu
+                  className={`w-[27px] h-[27px] cursor-pointer ${
+                    showHeaderBg
+                      ? "text-[#fff]"
+                      : isBgLight
+                      ? "text-black"
+                      : "text-[#fff]"
+                  }`}
+                />
+              </label>
+            </div>
+          )}
           <div className="drawer-side">
             <label
               htmlFor="my-drawer"
@@ -201,23 +242,26 @@ export const BasePageHeader = ({
         </div>
       )}
 
-      <img
-        onClick={() => navigate(RouterConstantUtil.routes.page.home)}
-        src={
-          isBgLight && isMobileScreen
-            ? ThemeUtil.image.logo
-            : ThemeUtil.image.logoDarkSvg
-        }
-        className={"w-[97px] h-[35px] "}
-        alt={"logo"}
-      />
-      {/* <GiHamburgerMenu
-        className={
-          "w-[27px] h-[27px] min-[700px]:hidden cursor-pointer text-[#fff]"
-        }
-      />
- */}
-      {filterPage && <BasePageHeaderSearchInput />}
+      {(!isMobileScreen && !hideLogo) ||
+      (!isMobileScreen && hideLogo) ||
+      (isMobileScreen && !hideLogo) ? (
+        <img
+          onClick={() => navigate(RouterConstantUtil.routes.page.home)}
+          src={
+            showHeaderBg
+              ? ThemeUtil.image.logoDarkSvg
+              : isBgLight && isMobileScreen
+              ? ThemeUtil.image.logo
+              : ThemeUtil.image.logoDarkSvg
+          }
+          className={"w-[97px] h-[35px] "}
+          alt={"logo"}
+        />
+      ) : null}
+
+      {filterPage && (
+        <BasePageHeaderSearchInput isNavbarFixed={isNavbarFixed} />
+      )}
       <div
         className={`flex items-center gap-14 max-[700px]:hidden ${
           filterPage && "hidden"
@@ -250,22 +294,23 @@ export const BasePageHeader = ({
         </NavLink>
       </div>
       {isAuth ? (
-        <div className={"flex gap-5 items-center w-auto"}>
+        <div className={"flex gap-5 items-center w-auto select-none"}>
           <div
             className="tooltip tooltip-primary tooltip-bottom max-[700px]:hidden"
             data-tip="Bookmarks"
           >
+            {/* <BookmarkIcon /> */}
             <BsFillBookmarkFill
-              className="w-[20px] h-[20px] text-[white]"
+              className="w-[20px] h-[20px] cursor-pointer hover:text-[#18ACE8] text-[white]"
               onClick={handleBookmark}
             />
           </div>
           <div
-            className="tooltip tooltip-primary tooltip-bottom max-[700px]:hidden"
+            className="tooltip tooltip-primary  tooltip-bottom max-[700px]:hidden"
             data-tip="Chat"
           >
             <BsFillChatFill
-              className="w-[20px] h-[20px] text-[white]"
+              className="w-[20px] h-[20px] cursor-pointer hover:text-[#18ACE8] text-[white]"
               // onClick={handleBookmark}
             />
           </div>
@@ -276,7 +321,9 @@ export const BasePageHeader = ({
             <div className="avatar online">
               <div className="w-[24px] rounded-full">
                 <IoIosNotifications
-                  className={"w-[27px] h-[27px] cursor-pointer text-[white]"}
+                  className={
+                    "w-[27px] hover:text-[#18ACE8] h-[27px] cursor-pointer text-[white]"
+                  }
                 />
               </div>
             </div>

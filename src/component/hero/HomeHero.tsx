@@ -93,16 +93,16 @@ export const HomeHero = () => {
                 borderBottom: activeTab == "hotels" ? "2px solid #18ACE8" : "",
               }}
               onClick={() => handleTabClick("hotels")}
-              className="flex items-center justify-center p-[10px] w-[90px] text-[16px] leading-[14px] text-white font-bold font-darkerGrotesque-bold text-center"
+              className="flex cursor-pointer items-center justify-center p-[10px] w-[90px] text-[16px] leading-[14px] text-white font-bold font-darkerGrotesque-bold text-center"
             >
               Hotels
             </p>
             <p
               style={{
-                borderBottom: activeTab == "lodges" ? "2px solid #18ACE8" : "",
+              borderBottom: activeTab == "lodges" ? "2px solid #18ACE8" : "",
               }}
               onClick={() => handleTabClick("lodges")}
-              className="flex items-center justify-center p-[10px] w-[90px] text-[16px] leading-[14px] text-white font-bold font-darkerGrotesque-bold text-center"
+              className="flex cursor-pointer items-center justify-center p-[10px] w-[90px] text-[16px] leading-[14px] text-white font-bold font-darkerGrotesque-bold text-center"
             >
               Lodges
             </p>
@@ -112,7 +112,7 @@ export const HomeHero = () => {
                   activeTab == "apartments" ? "2px solid #18ACE8" : "",
               }}
               onClick={() => handleTabClick("apartments")}
-              className="flex items-center justify-center p-[10px] w-[90px] text-[16px] leading-[14px] text-white font-bold font-darkerGrotesque-bold text-center"
+              className="flex cursor-pointer items-center justify-center p-[10px] w-[90px] text-[16px] leading-[14px] text-white font-bold font-darkerGrotesque-bold text-center"
             >
               Apartments
             </p>

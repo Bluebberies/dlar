@@ -5,7 +5,11 @@ export const HomeView = () => {
   document.title = "Home | Dwelar";
 
   return (
-    <BasePageLayout>
+    <BasePageLayout
+      headerNavStyles={{
+        position: "fixed",
+      }}
+    >
       <HomeContent />
     </BasePageLayout>
   );

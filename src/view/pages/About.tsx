@@ -4,9 +4,13 @@ import AboutPageContent from "@/component/content/page/AboutPageContent";
 
 export default function AboutPageView() {
   return (
-    <BasePageLayout isBgLight={true} headerNavStyles={{
-      position: "sticky"
-    }}>
+    <BasePageLayout
+      isBgLight={true}
+      showHeaderBg={true}
+      headerNavStyles={{
+        position: "sticky",
+      }}
+    >
       <AboutPageContent />
     </BasePageLayout>
   );

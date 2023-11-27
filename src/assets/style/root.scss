@@ -27,7 +27,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  // border: 2px solid red; 
+  // border: 2px solid red;
 }
 
 body {
@@ -118,6 +118,102 @@ body {
   cursor: pointer;
 }
 
+.pagination-container {
+  display: flex;
+  list-style-type: none;
+  margin-top: 5rem;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+
+  .pagination-item {
+    padding: 0 12px;
+    height: 32px;
+    text-align: center;
+    margin: auto 4px;
+    color: rgba(0, 0, 0, 0.87);
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+    letter-spacing: 0.01071em;
+    border-radius: 16px;
+    line-height: 1.43;
+    font-size: 13px;
+    min-width: 32px;
+    font-weight: 900;
+
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+
+    &.dots:hover {
+      background-color: transparent;
+      cursor: default;
+    }
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.04);
+      cursor: pointer;
+    }
+
+    &.selected {
+      background-color: rgba(0, 0, 0, 0.08);
+    }
+
+    .arrow {
+      border: 2px solid #111110;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      justify-content: center;
+      border-radius: 50%;
+
+      &::before {
+        position: relative;
+        /* top: 3pt; Uncomment this to lower the icons as requested in comments*/
+        content: "";
+        /* By using an em scale, the arrows will size with the font */
+        display: inline-block;
+        width: 0.4em;
+        height: 0.4em;
+        border-right: 0.12em solid rgba(0, 0, 0, 0.87);
+        border-top: 0.12em solid rgba(0, 0, 0, 0.87);
+      }
+
+      &.left {
+        transform: rotate(-135deg) translate(-50%);
+        margin-bottom: 1rem;
+      }
+
+      &.right {
+        transform: rotate(45deg);
+      }
+    }
+
+    &.disabled {
+      pointer-events: none;
+
+      .arrow {
+        border: 2px solid gray;
+        opacity: .6;
+      }
+
+      .arrow::before {
+        border-right: 0.12em solid rgba(0, 0, 0, 0.43);
+        border-top: 0.12em solid rgba(0, 0, 0, 0.43);
+      }
+
+      &:hover {
+        background-color: transparent;
+        cursor: default;
+      }
+    }
+  }
+}
+
 @media only screen and (max-width: 1000px) {
   .left_arr {
     left: 2px;
@@ -130,7 +226,6 @@ body {
   }
 }
 
-
 @media only screen and (max-width: 700px) {
   .login_linear_gradient {
     background: none;
@@ -142,7 +237,6 @@ body {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
-
 
 @media only screen and (max-width: 375px) {
   .display_property_grid_mobile {

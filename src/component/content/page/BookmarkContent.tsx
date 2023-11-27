@@ -4,7 +4,7 @@ import { BaseMapCard } from "../../card/BaseMapCard.tsx";
 
 export const BookmarkContent = () => {
   return (
-    <div className={"w-full h-full base-page-space"}>
+    <div className={"w-full h-full"}>
       <ListOfPropertiesContent
         containerStyle={{
           marginTop: 15,
@@ -13,7 +13,7 @@ export const BookmarkContent = () => {
         data={PropertiesData}
         showPagination={true}
       />
-      <BaseMapCard />
+      {/* <BaseMapCard /> */}
     </div>
   );
 };

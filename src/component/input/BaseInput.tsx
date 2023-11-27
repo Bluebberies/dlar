@@ -82,7 +82,7 @@ export const BaseInput = ({
           type={
             type === "password" ? (showPassword ? "text" : "password") : type
           }
-          className={`text-[#111110] border-0 rounded-xl h-[100%] bg-[#F5F5F5] font-darkerGrotesque-medium focus:outline-0 pl-5 font-light text-[20px] leading-[25px] ${inputClassName}`}
+          className={`text-[#111110] border-0 rounded-xl w-full h-[100%] bg-[#F5F5F5] font-darkerGrotesque-medium focus:outline-0 pl-5 font-light text-[20px] leading-[25px] ${inputClassName}`}
           placeholder={placeholder}
           style={inputStyle}
           {...props}

@@ -2,7 +2,7 @@ import { PropertyDisplayCard } from "../../card/PropertyDisplayCard.tsx";
 import { PropertiesDataProps } from "@/toolkit/data/nearYouData.ts";
 import { ThemeUtil } from "@/util/ThemeUtil.ts";
 import { BasePagination } from "../../pagination/BasePagination.tsx";
-import { CSSProperties, useEffect, useState } from "react";
+import { CSSProperties, useEffect, useMemo, useState } from "react";
 import { RouterConstantUtil } from "@/util/constant/RouterConstantUtil.ts";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -11,8 +11,10 @@ import Slider from "react-slick";
 import { useMediaQuery } from "react-responsive";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-// import { PrevSliderArrow, NextSliderArrow } from "./SliderArrows.tsx";
 import { NextSliderArrow, PrevSliderArrow } from "./SliderArrows.tsx";
+import Pagination from "@/util/customhooks/Pagination";
+
+let PageSize = 12;
 
 type ListOfPropertiesContentProps = {
   title: string;
@@ -23,6 +25,7 @@ type ListOfPropertiesContentProps = {
   containerStyle?: CSSProperties;
   linkTo?: string;
   isSlider?: boolean;
+  showAllProperties?: boolean;
 };
 
 export const ListOfPropertiesContent = ({
@@ -34,8 +37,10 @@ export const ListOfPropertiesContent = ({
   showFilters,
   linkTo,
   isSlider = false,
+  showAllProperties = false,
 }: ListOfPropertiesContentProps) => {
   const [spliceDigits, setSpliceDigits] = useState(8);
+  // console.log("hhdhd", data.length);
 
   const isBigScreen = useMediaQuery({ query: "(max-width: 1220px)" });
   const isMedium1 = useMediaQuery({ query: "(max-width: 700px)" });
@@ -65,7 +70,7 @@ export const ListOfPropertiesContent = ({
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.5,
+        staggerChildren: 0.1,
       },
     },
   };
@@ -76,21 +81,45 @@ export const ListOfPropertiesContent = ({
     exit: { opacity: 0, x: 1000 },
   };
 
+  const item2 = {
+    // hidden: { opacity: 0},
+    // show: { opacity: 1},
+    // exit: {opacity: 0}
+  };
+
   // isSmall1 ? 1 :
 
   const settings = {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: isSmall2? 1: isMedium1 ? 2 : isBigScreen ? 3 : 4,
+    slidesToShow: isSmall2 ? 1 : isMedium1 ? 2 : isBigScreen ? 3 : 4,
     slidesToScroll: isSmall1 ? 1 : 2,
     nextArrow: <NextSliderArrow />,
     prevArrow: <PrevSliderArrow />,
   };
+  false;
 
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const currentPropertyData = useMemo(() => {
+    const firstPageIndex = (currentPage - 1) * PageSize;
+    const lastPageIndex = firstPageIndex + PageSize;
+    // console.log("gagagag", data.slice(firstPageIndex, lastPageIndex));
+    
+    return data.slice(firstPageIndex, lastPageIndex);
+  }, [currentPage, data]);
+
+  // useEffect(() => {
+  //   console.log("currentPropertyData", currentPropertyData);
+  // }, [currentPropertyData]);
+
+  
   return (
     <div
-      className={"w-full m-auto flex flex-col max-w-[100rem] mt-5 max-[500px]: px-[8px] sm:px-[32px] md:px-[32px]"}
+      className={
+        "w-full m-auto flex flex-col max-w-[100rem] mt-2 max-[500px]: px-[8px] sm:px-[32px] md:px-[32px]"
+      }
       style={containerStyle}
     >
       <div
@@ -112,7 +141,7 @@ export const ListOfPropertiesContent = ({
                 `${RouterConstantUtil.routes.page.baseFilteredPage}${linkTo}`
               )
             }
-            className={"flex items-center gap-2 cursor-pointer"}
+            className={"hover:scale-[1.1] transition-[.2s] flex items-center gap-2 cursor-pointer"}
           >
             <span
               className={
@@ -169,20 +198,47 @@ export const ListOfPropertiesContent = ({
             // "w-full mt-0 display max-[565px]:grid-cols-2 justify-between flex-wrap"
           }
         >
-          {data.slice(0, spliceDigits).map((value, index) => (
-            <motion.div variants={item} key={index} className="m-auto w-full">
-              <PropertyDisplayCard
-                // key={index}
-                isSlider={isSlider}
-                onClick={() => handlePropertyNavigation(value.id)}
-                item={value}
-              />
-            </motion.div>
-          ))}
+          {showAllProperties &&
+            currentPropertyData.map((value, index) => (
+              <motion.div variants={item2} key={index} className="m-auto w-full">
+                <PropertyDisplayCard
+                  // key={index}
+                  isSlider={isSlider}
+                  onClick={() => handlePropertyNavigation(value.id)}
+                  item={value}
+                />
+              </motion.div>
+            ))}
+          {!showAllProperties &&
+            data
+              // .slice(0, showAllProperties ? undefined : spliceDigits)
+              .slice(0, spliceDigits)
+              .map((value, index) => (
+                <motion.div
+                  variants={item}
+                  key={index}
+                  className="m-auto w-full"
+                >
+                  <PropertyDisplayCard
+                    // key={index}
+                    isSlider={isSlider}
+                    onClick={() => handlePropertyNavigation(value.id)}
+                    item={value}
+                  />
+                </motion.div>
+              ))}
         </motion.div>
       )}
 
-      {showPagination && <BasePagination />}
+      {showAllProperties && <Pagination
+        className="pagination-bar"
+        currentPage={currentPage}
+        totalCount={data.length}
+        pageSize={PageSize}
+        onPageChange={(page: number) => setCurrentPage(page)}
+      />}
+
+      {/* {showPagination && <BasePagination />} */}
     </div>
   );
 };

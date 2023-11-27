@@ -14,6 +14,8 @@ import { PasswordResetSuccessfulView } from "../../view/pages/passwordReset/Pass
 import ReferralsView from "../../view/pages/ReferralsView.tsx";
 import AboutPageView from "@/view/pages/About.tsx";
 import ContactPageView from "@/view/pages/Contact.tsx";
+import { AgentProfileView } from "@/view/pages/AgentProfileView.tsx";
+import CompleteBookingsView from "@/view/pages/CompleteBookingView.tsx";
 
 export const pageRoute = [
   {
@@ -190,6 +192,24 @@ export const pageRoute = [
   {
     component: ContactPageView,
     path: RouterConstantUtil.routes.page.contactPage,
+    meta: {
+      isAuth: false,
+      redirectTo: undefined,
+    },
+    options: {},
+  },
+  {
+    component: AgentProfileView,
+    path: RouterConstantUtil.routes.page.agentProfile,
+    meta: {
+      isAuth: false,
+      redirectTo: undefined,
+    },
+    options: {},
+  },
+  {
+    component: CompleteBookingsView,
+    path: RouterConstantUtil.routes.page.completeBookings,
     meta: {
       isAuth: false,
       redirectTo: undefined,
