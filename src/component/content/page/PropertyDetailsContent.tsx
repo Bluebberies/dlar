@@ -252,13 +252,13 @@ export const PropertyDetailsContent = () => {
         </div>
       </div>
 
-      {/* <ListOfPropertiesContent
+      <ListOfPropertiesContent
         title={"Similar searches"}
         data={PropertiesData}
         showPagination={true}
         showFilters={false}
         showAllProperties={true}
-      /> */}
+      />
 
       <CompletePaymentSheet myref={ref} isOpen={isSheetOpen} setOpen={setSheetOpen} />
     </div>

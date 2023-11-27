@@ -10,6 +10,7 @@ import { BsFillBookmarkFill, BsFillChatFill } from "react-icons/bs";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { useMediaQuery } from "react-responsive";
 import BookmarkIcon from "@/component/customIcon/BookmarkIcon.tsx";
+import { useSelector } from "react-redux";
 
 export type BasePageHeaderProps = {
   headerNavStyles?: CSSProperties;
@@ -29,10 +30,11 @@ export const BasePageHeader = ({
   hideLogo = false,
 }: BasePageHeaderProps) => {
   const navigate = useNavigate();
-  const [isAuth, setIsAuth] = useState(true);
+  // const [isAuth, setIsAuth] = useState(false);
   const [locale, setLocale] = useState("");
   const isMobileScreen = useMediaQuery({ query: "(max-width: 700px)" });
   const [isNavbarFixed, setNavbarFixed] = useState(false);
+  const isAuth = useSelector((state: any) => state.auth.isAuth);
 
   function handleBookmark() {
     navigate(RouterConstantUtil.routes.page.bookmark);
@@ -63,7 +65,7 @@ export const BasePageHeader = ({
     };
   }, []);
 
-  console.log("is", hideLogo);
+  // console.log("is", hideLogo);
 
   return (
     <div
@@ -346,13 +348,15 @@ export const BasePageHeader = ({
             fontWeight: 700,
             lineHeight: "20px",
             borderRadius: "10px",
+            width: "90px",
           }}
           containerStyle={{
+            width: "fit-content",
             display: "flex",
-            width: "90px",
             padding: "10px",
             justifyContent: "center",
             alignItems: "center",
+            margin: "0",
           }}
         />
       )}

@@ -6,8 +6,10 @@ import { useNavigate } from "react-router-dom";
 import Google from "../../../assets/icon/google.svg";
 import Apple from "../../../assets/icon/apple.svg";
 import Facebook from "../../../assets/icon/facebook.svg";
-import axios from "axios";
 import { FilterCheckbox } from "../../checkbox/FilterCheckbox.tsx";
+import { useDispatch } from "react-redux";
+import { auth } from "@/store/module/auth.ts";
+
 // import useHandleRouteNavigate from "../../../util/customhooks/useHandleRouteNavigate.tsx";
 // import { useEffect } from "react";
 
@@ -18,12 +20,16 @@ import { FilterCheckbox } from "../../checkbox/FilterCheckbox.tsx";
 // {routeUrl}: LoginContentProps
 export const LoginFormik = () => {
   const navigate = useNavigate();
+  const { updateAuthState } = auth.mutation;
 
   function handleRegisterNavigate() {
     navigate(RouterConstantUtil.routes.auth.firstPhaseRegister);
   }
 
+  const dispatch = useDispatch();
+
   function handleLogin() {
+    dispatch(updateAuthState());
     navigate(RouterConstantUtil.routes.page.home);
   }
 
@@ -59,7 +65,7 @@ export const LoginFormik = () => {
             Remember me
           </span>
         </div> */}
-        <FilterCheckbox label="Remember me"/>
+        <FilterCheckbox label="Remember me" />
         <span className={"text-[16px] font-darkerGrotesque-bold"}>
           Forgot Password?
         </span>

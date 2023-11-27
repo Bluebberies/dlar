@@ -27,12 +27,30 @@ export const pageRoute = [
     },
     options: {},
   },
+  // {
+  //   component: LoginView,
+  //   path: "/",
+  //   meta: {
+  //     isAuth: false,
+  //     redirectTo: RouterConstantUtil.routes.auth.login,
+  //   },
+  //   options: {},
+  // },
   {
     component: LoginView,
-    path: "/",
+    path: RouterConstantUtil.routes.auth.login,
     meta: {
       isAuth: false,
       redirectTo: RouterConstantUtil.routes.auth.login,
+    },
+    options: {},
+  },
+  {
+    component: HomeView,
+    path: "/",
+    meta: {
+      isAuth: false,
+      redirectTo: RouterConstantUtil.routes.page.home,
     },
     options: {},
   },
