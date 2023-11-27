@@ -1,5 +1,6 @@
 import { AuthLayout } from "../layout/AuthLayout.tsx";
 import {VerifyYourAccountFormik} from "../../component/formik/auth/VerifyYourAccountFormik.tsx";
+import { ThemeUtil } from "@/util/ThemeUtil.ts";
 
 export const VerifyYourAccountView = () => {
   document.title = "Verify Your Account | Dwelar";
@@ -19,6 +20,7 @@ export const VerifyYourAccountView = () => {
         "You have successfully registered to Dwelar. \n" +
         "Please input the code sent to your mail to verify your email address."
       }
+      bgImage={ThemeUtil.image.bedroom}
     >
       <VerifyYourAccountFormik />
     </AuthLayout>

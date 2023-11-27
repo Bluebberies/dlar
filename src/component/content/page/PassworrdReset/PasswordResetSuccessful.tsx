@@ -19,14 +19,14 @@ function PasswordResetSuccessful() {
       />
       <h2
         className={
-          "text-[48px] max-[425px]:leading-[45px] mb-2 leading-[65px] mt-[30px] text-center font-darkerGrotesque-bold"
+          "text-[#111110] font-semibold  text-[48px] max-[425px]:leading-[45px] mb-2 leading-[65px] mt-[30px] text-center font-darkerGrotesque-bold"
         }
       >
         Congratulations
       </h2>
       <p
         className={
-          "text-grayColor_2 text-[28px] text-center mb-[20px] leading-[25px]"
+          "text-grayColor_2 font-semibold  text-[28px] text-center mb-[20px] leading-[25px]"
         }
       >
         You have successfully reset your password You can now login to your

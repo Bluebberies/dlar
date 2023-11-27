@@ -5,10 +5,11 @@ import { motion } from "framer-motion";
 export default function UserStatsSection() {
   return (
     <motion.div
-      initial={{ opacity: 0,  x: -100  }}
+      initial={{ opacity: 0, x: -100 }}
       whileInView={{ opacity: 1, x: 0 }}
-      transition={{ duration: 1, delay: .5 }}
+      transition={{ duration: 1, delay: 0.5 }}
       viewport={{ once: true }}
+      className="mt-9"
     >
       <div
         className="w-full flex-wrap px-[20px] md:px-[120px] h-[auto] gap-8 py-[90px] flex flex-row items-start justify-between"

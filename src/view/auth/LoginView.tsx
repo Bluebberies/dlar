@@ -3,6 +3,7 @@ import { RouterConstantUtil } from "../../util/constant/RouterConstantUtil.ts";
 // import { AnimatePresence, motion } from "framer-motion";
 // import { useState } from "react";
 import {LoginFormik} from "../../component/formik/auth/LoginFormik.tsx";
+import { ThemeUtil } from "@/util/ThemeUtil.ts";
 
 export const LoginView = () => {
   document.title = "Login | Dwelar";
@@ -11,11 +12,13 @@ export const LoginView = () => {
   return (
     <AuthLayout
       style={{
-        marginTop: "50px",
+        marginTop: "30px",
         padding: "10px 0",
       }}
       footerNextRouteType="register"
       routeUrl={routeUrl}
+      bgImage={ThemeUtil.image.bedroom}
+      showMobileBg={true}
     >
       <LoginFormik />
       {/* routeUrl={routeUrl} */}

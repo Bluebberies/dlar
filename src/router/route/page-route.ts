@@ -12,6 +12,10 @@ import { ResetPasswordView } from "../../view/pages/passwordReset/ResetPasswordV
 import { PasswordResetEmailSentView } from "../../view/pages/passwordReset/PasswordResetEmailSentView.tsx";
 import { PasswordResetSuccessfulView } from "../../view/pages/passwordReset/PasswordResetSuccessful.tsx";
 import ReferralsView from "../../view/pages/ReferralsView.tsx";
+import AboutPageView from "@/view/pages/About.tsx";
+import ContactPageView from "@/view/pages/Contact.tsx";
+import { AgentProfileView } from "@/view/pages/AgentProfileView.tsx";
+import CompleteBookingsView from "@/view/pages/CompleteBookingView.tsx";
 
 export const pageRoute = [
   {
@@ -23,12 +27,30 @@ export const pageRoute = [
     },
     options: {},
   },
+  // {
+  //   component: LoginView,
+  //   path: "/",
+  //   meta: {
+  //     isAuth: false,
+  //     redirectTo: RouterConstantUtil.routes.auth.login,
+  //   },
+  //   options: {},
+  // },
   {
     component: LoginView,
-    path: "/",
+    path: RouterConstantUtil.routes.auth.login,
     meta: {
       isAuth: false,
       redirectTo: RouterConstantUtil.routes.auth.login,
+    },
+    options: {},
+  },
+  {
+    component: HomeView,
+    path: "/",
+    meta: {
+      isAuth: false,
+      redirectTo: RouterConstantUtil.routes.page.home,
     },
     options: {},
   },
@@ -79,7 +101,7 @@ export const pageRoute = [
   },
   {
     component: SearchResultView,
-    path: RouterConstantUtil.routes.page.recommeded,
+    path: RouterConstantUtil.routes.page.recommended,
     meta: {
       isAuth: false,
       redirectTo: undefined,
@@ -170,6 +192,42 @@ export const pageRoute = [
   {
     component: ReferralsView,
     path: RouterConstantUtil.routes.page.referrals,
+    meta: {
+      isAuth: false,
+      redirectTo: undefined,
+    },
+    options: {},
+  },
+  {
+    component: AboutPageView,
+    path: RouterConstantUtil.routes.page.aboutPage,
+    meta: {
+      isAuth: false,
+      redirectTo: undefined,
+    },
+    options: {},
+  },
+  {
+    component: ContactPageView,
+    path: RouterConstantUtil.routes.page.contactPage,
+    meta: {
+      isAuth: false,
+      redirectTo: undefined,
+    },
+    options: {},
+  },
+  {
+    component: AgentProfileView,
+    path: RouterConstantUtil.routes.page.agentProfile,
+    meta: {
+      isAuth: false,
+      redirectTo: undefined,
+    },
+    options: {},
+  },
+  {
+    component: CompleteBookingsView,
+    path: RouterConstantUtil.routes.page.completeBookings,
     meta: {
       isAuth: false,
       redirectTo: undefined,

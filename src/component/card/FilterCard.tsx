@@ -5,18 +5,9 @@ import { BaseAvatar } from "../avatar/BaseAvatar.tsx";
 import { ThemeUtil } from "@/util/ThemeUtil.ts";
 import { SectionTitleHeader } from "../header/SectionTitleHeader.tsx";
 import { propertyFilters } from "@/toolkit/data/propertyFilters.ts";
+import { amountFilter } from "@/util/constant/generics.ts";
 
 export const FilterCard = () => {
-  const amountFilter = [
-    {
-      type: "Minimun",
-      placeholder: "1000",
-    },
-    {
-      type: "Maximum",
-      placeholder: "400000",
-    },
-  ];
   return (
     // <div className={"m-10 mb-10"}>
     // m-10 mb-10
@@ -35,9 +26,13 @@ export const FilterCard = () => {
         headerStyle={{ justifyContent: "center", paddingLeft: "0" }}
       />
       {/* <div className={"flex h-[195px] mb-5"}> */}
-      <div className={"overflow-y-auto grid grid-cols-3 max-[920px]:grid-cols-2 h-[auto]"}>
-        {propertyFilters.map((obj) => (
-          <div className={"w-full h-full mt-[25px]"}>
+      <div
+        className={
+          "overflow-y-auto grid grid-cols-3 max-[920px]:grid-cols-2 h-[auto]"
+        }
+      >
+        {propertyFilters.map((obj, idx) => (
+          <div className={"w-full h-full mt-[25px]"} key={idx}>
             <h1
               className={
                 "font-darkerGrotesque-bold text-[24px] leading-[20px] text-grayColor_1"
@@ -47,8 +42,8 @@ export const FilterCard = () => {
             </h1>
             <div className={"flex items-center justify-between mt-4"}>
               <div className={"w-full grid grid-cols-2"}>
-                {obj.items.map((cbox) => (
-                  <FilterCheckbox label={cbox} />
+                {obj.items.map((cbox, idx) => (
+                  <FilterCheckbox key={idx} label={cbox} />
                 ))}
               </div>
             </div>
@@ -67,8 +62,9 @@ export const FilterCard = () => {
             </h1>
             <div className={"flex items-center gap-2 justify-between"}>
               <div className={"w-full flex flex-row items-center"}>
-                {amountFilter.map((item) => (
+                {amountFilter.map((item, i) => (
                   <BaseInput
+                    key={i}
                     placeholder={item.placeholder}
                     containerStyle={{
                       // marginBottom: -30,
@@ -128,7 +124,11 @@ export const FilterCard = () => {
               }}
             />
           </div>
-          <div className={"w-full max-[1000px]:flex-wrap flex justify-end items-center "}>
+          <div
+            className={
+              "w-full max-[1000px]:flex-wrap flex justify-end items-center "
+            }
+          >
             <BaseAvatar
               isActive={true}
               containerStyle={{

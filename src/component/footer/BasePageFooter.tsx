@@ -10,10 +10,10 @@ export const BasePageFooter = () => {
     <motion.div
       initial={{ opacity: 0, x: -100 }}
       whileInView={{ opacity: 1, x: 0 }}
-      transition={{ duration: 1 , delay: .5}}
+      transition={{ duration: 1, delay: 0.5 }}
       viewport={{ once: true }}
     >
-      <div className={"h-full w-full flex flex-col mt-40"}>
+      <div className={"h-full w-full flex flex-col mt-24"}>
         <div
           className={
             "h-[30%] w-full max-[940px]:flex-wrap flex items-center max-[940px]:justify-end max-[940px]:gap-4 justify-between py-[75px] px-[116px] max-[1440px]:px-10 max-[1440px]:py-30 max-[1100px]:py-20"
@@ -148,7 +148,9 @@ export const BasePageFooter = () => {
             </div>
           </div>
         </div>
-        <div className={"h-[10%] flex items-center text-black justify-center mb-2"}>
+        <div
+          className={"h-[10%] flex items-center text-black justify-center mb-2"}
+        >
           <span>2023 Dwelar. All Rights Reserved</span>
         </div>
       </div>

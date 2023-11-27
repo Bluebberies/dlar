@@ -10,6 +10,8 @@ export interface AuthLayoutProps {
   style?: CSSProperties | undefined;
   routeUrl?: string;
   footerNextRouteType?: string;
+  bgImage?: string;
+  showMobileBg?: boolean;
 }
 export const AuthLayout = ({
   children,
@@ -18,6 +20,8 @@ export const AuthLayout = ({
   style,
   routeUrl = "",
   footerNextRouteType,
+  bgImage,
+  showMobileBg = false,
 }: AuthLayoutProps) => {
   return (
     <motion.div
@@ -29,49 +33,64 @@ export const AuthLayout = ({
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: 100 }}
       transition={{ duration: 0.5 }}
+      className="login_linear_gradient"
     >
-      <div className={"auth-two-background"}>
-        <img src={Logo} className="logo max-[425px]:hidden" alt={"logo"} />
-        <div
-          className=" m-auto flex flex-col items-center max-[425px]:mt-[16px] mt-16 w-[40%] max-[1100px]:w-[70%] max-[600px]:w-[100%]"
-          style={{
-            backgroundColor: "rgba(255, 255, 255, 0.7)",
-            ...style,
-          }}
-        >
-          <h2
-            dangerouslySetInnerHTML={{ __html: title }}
-            className={
-              "font-medium max-[425px]:text-[38px] w-[90%] text-[40px] text-center leading-[45px] max-[425px]:mb-[8px] mb-[10px] font-darkerGrotesque-bold"
-            }
-            style={{ color: ThemeUtil.color.blackColor }}
+      <div className={"auth-two-background overflow-hidden relative"}>
+        <img
+          src={bgImage}
+          className={
+            "absolute max-[700px]:hidden max-[900px]:scale-[2] w-full overflow-hidden bg-center  opacity-[.3] bg-no-repeat"
+          }
+          alt={"hero image"}
+        />
+        <div className="w-full min-h-screen ">
+          <img
+            src={Logo}
+            className="z-50 relative logo max-[700px]:hidden"
+            alt={"logo"}
+          />
+          <div
+            className="z-[50] pb-[16px] relative m-auto h-auto flex flex-col items-center  w-[40%] max-[1200px]:w-[70%] max-[600px]:w-[100%]"
+            style={{
+              // backgroundColor: "rgba(255,255,255,0.85)",
+              backgroundColor: "rgba(255,255,255,0.70)",
+              ...style,
+            }}
           >
-            {/* {title} */}
-          </h2>
-          <h2
-            className={
-              "text-center w-[80%] font-bold max-[425px]:text-[21px] text-[25px] leading-[25px] text-grayColor_2 font-darkerGrotesque-semiBold"
-            }
+            <h2
+              dangerouslySetInnerHTML={{ __html: title }}
+              className={
+                "font-medium max-[425px]:text-[38px] w-[90%] text-[40px] text-center leading-[45px] mt-7 font-darkerGrotesque-bold"
+              }
+              style={{ color: ThemeUtil.color.blackColor }}
+            >
+              {/* {title} */}
+            </h2>
+            <h2
+              className={
+                "text-center w-[80%] font-bold max-[425px]:text-[21px] text-[25px] leading-[25px] text-grayColor_2 font-darkerGrotesque-semiBold"
+              }
+            >
+              {subTitle}
+            </h2>
+            {children}
+          </div>
+          <p
+            className={`hidden ${
+              footerNextRouteType && "max-[425px]:flex"
+            } text-grayColor_1 text-[18px] text-center justify-center cursor-pointer`}
           >
-            {subTitle}
-          </h2>
-          {children}
+            {footerNextRouteType == "register"
+              ? "Don’t have an account yet?"
+              : "Already have an account?"}
+            <span
+              className={"text-blackColor font-darkerGrotesque-bold"}
+              onClick={useHandleRouteNavigate(routeUrl)}
+            >
+              {footerNextRouteType == "register" ? "Register" : "Login"}
+            </span>
+          </p>
         </div>
-        <p
-          className={`hidden ${
-            footerNextRouteType && "max-[425px]:flex"
-          } text-grayColor_1 text-[18px] text-center cursor-pointer`}
-        >
-          {footerNextRouteType == "register"
-            ? "Don’t have an account yet?"
-            : "Already have an account?"}
-          <span
-            className={"text-blackColor font-darkerGrotesque-bold"}
-            onClick={useHandleRouteNavigate(routeUrl)}
-          >
-            {footerNextRouteType == "register" ? "Register" : "Login"}
-          </span>
-        </p>
       </div>
     </motion.div>
   );

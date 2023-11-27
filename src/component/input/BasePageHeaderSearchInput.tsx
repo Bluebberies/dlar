@@ -4,7 +4,13 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { RouterConstantUtil } from "../../util/constant/RouterConstantUtil.ts";
 
-export const BasePageHeaderSearchInput = () => {
+type BasePageHeaderSearchInputProps = {
+  isNavbarFixed?: boolean;
+};
+
+export const BasePageHeaderSearchInput = ({
+  isNavbarFixed,
+}: BasePageHeaderSearchInputProps) => {
   const [search, setSearch] = useState<string>("");
   const navigate = useNavigate();
   function handleKeyUp(key: string) {
@@ -16,7 +22,7 @@ export const BasePageHeaderSearchInput = () => {
   return (
     <div
       className={
-        "h-[52px] rounded-2xl w-[452px] border-2 border-[#C0C0C0] flex items-center gap-5 overflow-hidden "
+        "h-[52px] rounded-2xl max-[700px]:w-[80%] w-[452px] border-2 border-[#C0C0C0] flex items-center gap-5 overflow-hidden "
       }
     >
       <Icon
@@ -28,9 +34,9 @@ export const BasePageHeaderSearchInput = () => {
         onChange={(event) => setSearch(event.target.value)}
         placeholder={"What are you looking for..."}
         onKeyUp={(event) => handleKeyUp(event.key)}
-        className={
-          "w-full h-full font-darkerGrotesque-bold focus:outline-0 bg-inherit text-grayColor_2 text-[20px]"
-        }
+        className={`w-full h-full font-darkerGrotesque-bold focus:outline-0 bg-inherit text-grayColor_2 ${
+          isNavbarFixed && "text-white"
+        } text-[20px]`}
       />
     </div>
   );

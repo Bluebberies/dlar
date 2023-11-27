@@ -5,10 +5,11 @@ import { ThemeUtil } from "../../../util/ThemeUtil.ts";
 import useHandleRouteNavigate from "../../../util/customhooks/useHandleRouteNavigate.tsx";
 
 type EmailVerificationSuccessfulContentProps = {
-    routeUrl: string
-}
-export const EmailVerificationSuccessfulContent = ({routeUrl}: EmailVerificationSuccessfulContentProps) => {
-
+  routeUrl: string;
+};
+export const EmailVerificationSuccessfulContent = ({
+  routeUrl,
+}: EmailVerificationSuccessfulContentProps) => {
   const navigate = useNavigate();
 
   function handleLogin() {
@@ -26,14 +27,14 @@ export const EmailVerificationSuccessfulContent = ({routeUrl}: EmailVerification
       />
       <h2
         className={
-          "text-[48px] max-[425px]:leading-[45px] mb-2 leading-[65px] mt-[30px] text-center font-darkerGrotesque-bold"
+          "text-[48px] text-[#111110] max-[425px]:leading-[45px] mb-2 leading-[65px] mt-[30px] text-center font-darkerGrotesque-bold"
         }
       >
         Email Address Verified!
       </h2>
       <p
         className={
-          "text-grayColor_2 text-[28px] text-center mb-[20px] leading-[25px]"
+          "text-grayColor_2 font-semibold  font-medium text-[28px] text-center mb-[20px] leading-[25px]"
         }
       >
         {/* You have successfully verified your email address, Please login to your

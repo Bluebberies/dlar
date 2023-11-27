@@ -6,8 +6,10 @@ import { useNavigate } from "react-router-dom";
 import Google from "../../../assets/icon/google.svg";
 import Apple from "../../../assets/icon/apple.svg";
 import Facebook from "../../../assets/icon/facebook.svg";
-import axios from "axios";
 import { FilterCheckbox } from "../../checkbox/FilterCheckbox.tsx";
+import { useDispatch } from "react-redux";
+import { auth } from "@/store/module/auth.ts";
+
 // import useHandleRouteNavigate from "../../../util/customhooks/useHandleRouteNavigate.tsx";
 // import { useEffect } from "react";
 
@@ -18,17 +20,21 @@ import { FilterCheckbox } from "../../checkbox/FilterCheckbox.tsx";
 // {routeUrl}: LoginContentProps
 export const LoginFormik = () => {
   const navigate = useNavigate();
+  const { updateAuthState } = auth.mutation;
 
   function handleRegisterNavigate() {
     navigate(RouterConstantUtil.routes.auth.firstPhaseRegister);
   }
 
+  const dispatch = useDispatch();
+
   function handleLogin() {
+    dispatch(updateAuthState());
     navigate(RouterConstantUtil.routes.page.home);
   }
 
   return (
-    <div className="w-[90%] mt-[1rem]">
+    <div className="max-[700px]:w-full w-[70%] mt-[1rem] my-6">
       <BaseInput
         placeholder={"Input your email address"}
         label={"Email"}
@@ -59,7 +65,7 @@ export const LoginFormik = () => {
             Remember me
           </span>
         </div> */}
-        <FilterCheckbox label="Remember me"/>
+        <FilterCheckbox label="Remember me" />
         <span className={"text-[16px] font-darkerGrotesque-bold"}>
           Forgot Password?
         </span>
@@ -72,7 +78,7 @@ export const LoginFormik = () => {
 
       <p
         className={
-          "text-blackColor text-[18px] text-center max-[425px]:mt-6 mt-10 mb-5 font-darkerGrotesque-medium"
+          "text-blackColor text-[18px] text-center max-[425px]:mt-6 mt-5 mb-5 font-darkerGrotesque-medium"
         }
       >
         Or Login using

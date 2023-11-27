@@ -28,14 +28,15 @@ export const SearchResultContent = () => {
   }, [l.pathname]);
 
   return (
-    <div className={"w-full h-full base-page-space"}>
+    <div className={"w-full h-full"}>
       <ListOfPropertiesContent
         title={pageTitle}
         data={PropertiesData}
         showPagination={true}
         showFilters={true}
+        showAllProperties={true}
       />
-      <BaseMapCard />
+      {/* <BaseMapCard /> */}
     </div>
   );
 };
