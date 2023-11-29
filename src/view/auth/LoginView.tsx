@@ -1,8 +1,8 @@
 import { AuthLayout } from "../layout/AuthLayout.tsx";
-import { RouterConstantUtil } from "../../util/constant/RouterConstantUtil.ts";
+import { RouterConstantUtil } from "../../util/constants/RouterConstantUtil.ts";
 // import { AnimatePresence, motion } from "framer-motion";
 // import { useState } from "react";
-import {LoginFormik} from "../../component/formik/auth/LoginFormik.tsx";
+import { LoginFormik } from "../../component/formik/auth/LoginFormik.tsx";
 import { ThemeUtil } from "@/util/ThemeUtil.ts";
 
 export const LoginView = () => {
@@ -24,7 +24,7 @@ export const LoginView = () => {
       {/* routeUrl={routeUrl} */}
     </AuthLayout>
   );
-  
+
   // const [isOpen, setIsOpen] = useState(false);
 
   // const toggleDrawer = () => {

@@ -1,6 +1,6 @@
-import {RouterConstantUtil} from "@/util/constant/RouterConstantUtil.ts";
-import {AuthLayout} from "@/view/layout/AuthLayout.tsx";
-import {EmailVerificationSuccessfulContent} from "@/component/content/page/EmailVerificationSuccessfulContent.tsx";
+import { RouterConstantUtil } from "@/util/constants/RouterConstantUtil";
+import { AuthLayout } from "@/view/layout/AuthLayout.tsx";
+import { EmailVerificationSuccessfulContent } from "@/component/content/page/EmailVerificationSuccessfulContent.tsx";
 import { ThemeUtil } from "@/util/ThemeUtil";
 
 export const EmailVerificationSuccessfulView = () => {
@@ -15,7 +15,7 @@ export const EmailVerificationSuccessfulView = () => {
       style={{
         marginTop: "20px",
         padding: "10px 0",
-        paddingBottom: "3rem"
+        paddingBottom: "3rem",
       }}
       footerNextRouteType="login"
       routeUrl={routeUrl}

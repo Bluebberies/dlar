@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { RouterConstantUtil } from "../../../../util/constant/RouterConstantUtil.ts";
+import { RouterConstantUtil } from "../../../../util/constants/RouterConstantUtil.ts";
 import { BaseButton } from "../../../button/BaseButton.tsx";
 import { ThemeUtil } from "../../../../util/ThemeUtil.ts";
 

@@ -4,7 +4,7 @@ import { BaseButton } from "../button/BaseButton";
 import BottomSheetLayout, {
   BottomSheetLayoutPropTypes,
 } from "./BottomSheetLayout";
-import { amountFilter } from "@/util/constant/generics";
+import { amountFilter } from "@/util/constants/generics";
 import { BaseInput } from "../input/BaseInput";
 import { FilterCheckbox } from "../checkbox/FilterCheckbox";
 import { motion } from "framer-motion";

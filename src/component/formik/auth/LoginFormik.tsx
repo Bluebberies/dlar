@@ -1,7 +1,7 @@
 import { BaseInput } from "../../input/BaseInput.tsx";
 import { ThemeUtil } from "../../../util/ThemeUtil.ts";
 import { BaseButton } from "../../button/BaseButton.tsx";
-import { RouterConstantUtil } from "../../../util/constant/RouterConstantUtil.ts";
+import { RouterConstantUtil } from "../../../util/constants/RouterConstantUtil.ts";
 import { useNavigate } from "react-router-dom";
 import Google from "../../../assets/icon/google.svg";
 import Apple from "../../../assets/icon/apple.svg";

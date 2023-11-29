@@ -1,14 +1,16 @@
 import { useNavigate } from "react-router-dom";
-import { RouterConstantUtil } from "../../../util/constant/RouterConstantUtil.ts";
+import { RouterConstantUtil } from "../../../util/constants/RouterConstantUtil.ts";
 import { BaseButton } from "../../button/BaseButton.tsx";
 import { ThemeUtil } from "../../../util/ThemeUtil.ts";
 import useHandleRouteNavigate from "../../../util/customhooks/useHandleRouteNavigate.tsx";
 import React from "react";
 
 type RegistrationCompleteContentProps = {
-    routeUrl: string
-}
-function RegistrationCompleteContent({ routeUrl }:RegistrationCompleteContentProps ) {
+  routeUrl: string;
+};
+function RegistrationCompleteContent({
+  routeUrl,
+}: RegistrationCompleteContentProps) {
   const navigate = useNavigate();
 
   function handleLogin() {

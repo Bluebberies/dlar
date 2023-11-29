@@ -5,7 +5,7 @@ import { BaseAvatar } from "../avatar/BaseAvatar.tsx";
 import { ThemeUtil } from "@/util/ThemeUtil.ts";
 import { SectionTitleHeader } from "../header/SectionTitleHeader.tsx";
 import { propertyFilters } from "@/toolkit/data/propertyFilters.ts";
-import { amountFilter } from "@/util/constant/generics.ts";
+import { amountFilter } from "@/util/constants/generics.ts";
 
 export const FilterCard = () => {
   return (

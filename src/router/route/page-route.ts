@@ -1,4 +1,4 @@
-import { RouterConstantUtil } from "../../util/constant/RouterConstantUtil.ts";
+import { RouterConstantUtil } from "../../util/constants/RouterConstantUtil.ts";
 import { OverviewView } from "../../view/pages/OverviewView.tsx";
 import { NoPageFoundView } from "../../view/pages/NoPageFoundView.tsx";
 import { HomeView } from "../../view/pages/HomeView.tsx";
@@ -16,6 +16,10 @@ import AboutPageView from "@/view/pages/About.tsx";
 import ContactPageView from "@/view/pages/Contact.tsx";
 import { AgentProfileView } from "@/view/pages/AgentProfileView.tsx";
 import CompleteBookingsView from "@/view/pages/CompleteBookingView.tsx";
+import ProfileView from "@/view/pages/profile/ProfileView.tsx";
+import ProfileSettingsView from "@/view/pages/profile/ProfileSettingsView.tsx";
+import NotificationsView from "@/view/pages/NotificationsView.tsx";
+import ChatsView from "@/view/pages/ChatsView.tsx";
 
 export const pageRoute = [
   {
@@ -228,6 +232,51 @@ export const pageRoute = [
   {
     component: CompleteBookingsView,
     path: RouterConstantUtil.routes.page.completeBookings,
+    meta: {
+      isAuth: false,
+      redirectTo: undefined,
+    },
+    options: {},
+  },
+  {
+    component: ProfileView,
+    path: RouterConstantUtil.routes.page.profile,
+    meta: {
+      isAuth: false,
+      redirectTo: undefined,
+    },
+    options: {},
+  },
+  {
+    component: ProfileSettingsView,
+    path: RouterConstantUtil.routes.page.profileSettings,
+    meta: {
+      isAuth: false,
+      redirectTo: undefined,
+    },
+    options: {},
+  },
+  {
+    component: NotificationsView,
+    path: RouterConstantUtil.routes.page.notifications,
+    meta: {
+      isAuth: false,
+      redirectTo: undefined,
+    },
+    options: {},
+  },
+  {
+    component: ChatsView,
+    path: RouterConstantUtil.routes.page.chat,
+    meta: {
+      isAuth: false,
+      redirectTo: undefined,
+    },
+    options: {},
+  },
+  {
+    component: ChatsView,
+    path: RouterConstantUtil.routes.page.chatGroup,
     meta: {
       isAuth: false,
       redirectTo: undefined,

@@ -1,6 +1,6 @@
 import { AuthLayout } from "../../layout/AuthLayout.tsx";
-import { RouterConstantUtil } from "../../../util/constant/RouterConstantUtil.ts";
-import {FirstPhaseRegisterFormik} from "../../../component/formik/auth/register/FirstPhaseRegisterFormik.tsx";
+import { RouterConstantUtil } from "../../../util/constants/RouterConstantUtil.ts";
+import { FirstPhaseRegisterFormik } from "../../../component/formik/auth/register/FirstPhaseRegisterFormik.tsx";
 import { ThemeUtil } from "@/util/ThemeUtil.ts";
 
 export const FirstPhaseRegisterView = () => {

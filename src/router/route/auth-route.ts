@@ -1,4 +1,4 @@
-import { RouterConstantUtil } from "@/util/constant/RouterConstantUtil.ts";
+import { RouterConstantUtil } from "@/util/constants/RouterConstantUtil";
 import { LoginView } from "@/view/auth/LoginView.tsx";
 import { VerifyYourAccountView } from "@/view/auth/VerifyYourAccountView.tsx";
 import { CompleteKycRegisterView } from "@/view/auth/register/CompleteKycRegisterView.tsx";
@@ -58,13 +58,13 @@ export const authRoute = [
     },
     options: {},
   },
-    {
-      component: CompleteKycRegisterView,
-      path: RouterConstantUtil.routes.auth.completeKyc,
-      meta: {
-        isAuth: false,
-        redirectTo: undefined,
-      },
-      options: {},
+  {
+    component: CompleteKycRegisterView,
+    path: RouterConstantUtil.routes.auth.completeKyc,
+    meta: {
+      isAuth: false,
+      redirectTo: undefined,
     },
+    options: {},
+  },
 ];

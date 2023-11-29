@@ -1,12 +1,11 @@
 import { useParams } from "react-router-dom";
-import {useEffect, useState} from "react";
-import {RouterConstantUtil} from "@/util/constant/RouterConstantUtil.ts";
-import {AuthLayout} from "@/view/layout/AuthLayout.tsx";
-import {ResetPasswordWithToken} from "@/component/content/page/PassworrdReset/ResetPasswordWithToken.tsx";
-import {NoPageFoundView} from "@/view/pages/NoPageFoundView.tsx";
-import {ResetPassword} from "@/component/content/page/PassworrdReset/ResetPassword.tsx";
+import { useEffect, useState } from "react";
+import { RouterConstantUtil } from "@/util/constants/RouterConstantUtil";
+import { AuthLayout } from "@/view/layout/AuthLayout.tsx";
+import { ResetPasswordWithToken } from "@/component/content/page/PassworrdReset/ResetPasswordWithToken.tsx";
+import { NoPageFoundView } from "@/view/pages/NoPageFoundView.tsx";
+import { ResetPassword } from "@/component/content/page/PassworrdReset/ResetPassword.tsx";
 import { ThemeUtil } from "@/util/ThemeUtil";
-
 
 export const ResetPasswordView = () => {
   const [tokenStatus, setTokenStatus] = useState("");
@@ -49,7 +48,7 @@ export const ResetPasswordView = () => {
       style={{
         marginTop: "50px",
         padding: "10px 0",
-        paddingBottom: "5rem"
+        paddingBottom: "5rem",
       }}
       routeUrl={routeUrl}
       bgImage={ThemeUtil.image.bedroom}

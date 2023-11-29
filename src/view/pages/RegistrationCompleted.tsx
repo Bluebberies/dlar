@@ -1,5 +1,5 @@
-import {RouterConstantUtil} from "@/util/constant/RouterConstantUtil.ts";
-import {AuthLayout} from "@/view/layout/AuthLayout.tsx";
+import { RouterConstantUtil } from "@/util/constants/RouterConstantUtil";
+import { AuthLayout } from "@/view/layout/AuthLayout.tsx";
 import RegistrationCompleteContent from "@/component/content/page/RegistrationCompleteContent.tsx";
 import { ThemeUtil } from "@/util/ThemeUtil";
 
@@ -15,7 +15,7 @@ export const RegistrationCompletedView = () => {
       style={{
         marginTop: "50px",
         padding: "10px 0",
-        paddingBottom: "4rem"
+        paddingBottom: "4rem",
       }}
       footerNextRouteType="login"
       bgImage={ThemeUtil.image.pool_view1}

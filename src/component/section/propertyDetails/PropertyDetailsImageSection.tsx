@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { ThemeUtil } from "@/util/ThemeUtil.ts";
 import { BaseButton } from "../../button/BaseButton.tsx";
 import { SectionTitleHeader } from "../../header/SectionTitleHeader.tsx";
-import { RouterConstantUtil } from "@/util/constant/RouterConstantUtil.ts";
+import { RouterConstantUtil } from "@/util/constants/RouterConstantUtil.ts";
 import { BaseAvatar } from "@/component/avatar/BaseAvatar.tsx";
 
 type PropertyDetailsImageSectionPropType = {

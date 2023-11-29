@@ -42,6 +42,11 @@ export const RouterConstantUtil = {
       contactPage: "/page/contactus",
       baseCompleteBookings: "/page/completeBookings/",
       completeBookings: "/page/completeBookings/:propertyid",
+      profile: "/profile",
+      profileSettings: "/profile/settings",
+      notifications: "/notifications",
+      chat: "/chat",
+      chatGroup: "/chat/:id",
     },
   },
 };

@@ -1,6 +1,6 @@
 import React from "react";
 import { Navigate, Outlet, useLocation } from "react-router-dom";
-import { RouterConstantUtil } from "../../util/constant/RouterConstantUtil.ts";
+import { RouterConstantUtil } from "../../util/constants/RouterConstantUtil.ts";
 
 type AuthRequiredProps = {
   isAuth: boolean;

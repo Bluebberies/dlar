@@ -84,6 +84,8 @@ import warning_icon from "../assets/icon/warning_icon.svg";
 import star_icon from "../assets/icon/star_icon.svg";
 import tick_icon from "../assets/icon/tick_icon.svg";
 import telegram from "../assets/icon/telegram.svg";
+import no_messages_mobile from "../assets/image/no-messages-mobile.png";
+import no_messages from "../assets/image/no-messages.png";
 
 export const ThemeUtil = {
   color: {
@@ -163,6 +165,8 @@ export const ThemeUtil = {
     star_icon,
   },
   image: {
+    no_messages_mobile,
+    no_messages,
     logo: LogoSvg,
     logoDarkSvg: LogoDarkSvg,
     celebration: CelebrationSvg,

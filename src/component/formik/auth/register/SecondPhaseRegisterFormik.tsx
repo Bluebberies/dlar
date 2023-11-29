@@ -1,5 +1,5 @@
 import { BaseButton } from "../../../button/BaseButton.tsx";
-import { RouterConstantUtil } from "../../../../util/constant/RouterConstantUtil.ts";
+import { RouterConstantUtil } from "../../../../util/constants/RouterConstantUtil.ts";
 import { useNavigate } from "react-router-dom";
 // import { SelectAgentCard } from "../../../card/SelectAgentCard.tsx";
 // import { LoginContentProps } from "../LoginContent.tsx";
@@ -14,7 +14,7 @@ export const SecondPhaseRegisterFormik = () => {
   // const { id } = useParams();
   const navigate = useNavigate();
   function handleRegister() {
-    const userId = 'iowh89y4u9buhru9'
+    const userId = "iowh89y4u9buhru9";
     navigate(
       `${RouterConstantUtil.routes.auth.baseAcountVerification}/${userId}`
     );
@@ -66,7 +66,7 @@ export const SecondPhaseRegisterFormik = () => {
             Remember me
           </span>
         </div> */}
-        <FilterCheckbox label="Remember me"/>
+        <FilterCheckbox label="Remember me" />
         <span className={"text-[16px] font-darkerGrotesque-bold"}>
           Forgot Password?
         </span>

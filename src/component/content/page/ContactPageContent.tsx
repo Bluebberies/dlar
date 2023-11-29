@@ -2,7 +2,7 @@
 import { BaseButton } from "@/component/button/BaseButton";
 import { BaseInput } from "@/component/input/BaseInput";
 import { ThemeUtil } from "@/util/ThemeUtil";
-import { RouterConstantUtil } from "@/util/constant/RouterConstantUtil";
+import { RouterConstantUtil } from "@/util/constants/RouterConstantUtil";
 import { useNavigate } from "react-router-dom";
 
 const ContactPageContent = () => {

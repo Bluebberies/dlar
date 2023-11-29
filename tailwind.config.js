@@ -1,25 +1,22 @@
 /** @type {{ThemeUtil: {color: {greyColor_2: string; greyColor_1: string; blackColor: string; whiteColor: string; primaryColor: string}}}} */
-const defaultTheme = require('tailwindcss/defaultTheme')
+const defaultTheme = require("tailwindcss/defaultTheme");
 
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
-      backgroundImage:{
-        'onboarding': "url('/src/assets/image/onboarding.icon')"
+      backgroundImage: {
+        onboarding: "url('/src/assets/image/onboarding.icon')",
       },
-      fontFamily:{
-        "sans": ['darkerGrotesque-regular', ...defaultTheme.fontFamily.sans],
-        "darkerGrotesque-regular": ['darkerGrotesque-regular'],
-        "darkerGrotesque-medium": ['darkerGrotesque-medium'],
-        "darkerGrotesque-bold": ['darkerGrotesque-bold'],
-        "darkerGrotesque-semiBold": ['darkerGrotesque-semiBold'],
-        "darkerGrotesque-black": ['darkerGrotesque-black'],
+      fontFamily: {
+        sans: ["darkerGrotesque-regular", ...defaultTheme.fontFamily.sans],
+        "darkerGrotesque-regular": ["darkerGrotesque-regular"],
+        "darkerGrotesque-medium": ["darkerGrotesque-medium"],
+        "darkerGrotesque-bold": ["darkerGrotesque-bold"],
+        "darkerGrotesque-semiBold": ["darkerGrotesque-semiBold"],
+        "darkerGrotesque-black": ["darkerGrotesque-black"],
       },
-      colors:{
+      colors: {
         primaryColor: "#18ACE8",
         primaryColor_2: "#E8F8FF",
         blackColor: "#111110",
@@ -31,9 +28,15 @@ export default {
         grayColor_5: "#F2F2F2",
         grayColor_6: "#F2F2F2",
         dangerColor: "#E33629",
-
-
-      }
+        accent2: "#EBD0FF",
+        accent4: "#F6F6F6",
+        accent3: "#FFF6A4",
+        accent5: "#F1F1F1",
+        white: "#fff",
+        
+        primary: "#18ACE8",
+        black: "#111110",
+      },
     },
   },
   plugins: [require("daisyui")],
@@ -47,5 +50,4 @@ export default {
     prefix: "",
     logs: true,
   },
-}
-
+};

@@ -57,7 +57,7 @@ export const PropertyDisplayCard = ({
             }}
           >
             <div
-              className={
+              className={ 
                 "flex justify-center items-center gap-1 h-full rounded-[12px] "
               }
             >

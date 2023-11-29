@@ -1,12 +1,12 @@
 import { AuthLayout } from "../../layout/AuthLayout.tsx";
-import { RouterConstantUtil } from "../../../util/constant/RouterConstantUtil.ts";
-import {CompleteKycRegisterFormik} from "../../../component/formik/auth/register/CompleteKycRegisterFormik.tsx";
+import { RouterConstantUtil } from "../../../util/constants/RouterConstantUtil.ts";
+import { CompleteKycRegisterFormik } from "../../../component/formik/auth/register/CompleteKycRegisterFormik.tsx";
 import { ThemeUtil } from "@/util/ThemeUtil.ts";
 
 export const CompleteKycRegisterView = () => {
   document.title = "Register | Dwelar";
 
-  const routeUrl = RouterConstantUtil.routes.auth.login
+  const routeUrl = RouterConstantUtil.routes.auth.login;
   return (
     <AuthLayout
       title={"Complete KYC"}

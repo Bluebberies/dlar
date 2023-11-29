@@ -1,6 +1,6 @@
 import { BaseButton } from "../../button/BaseButton.tsx";
 import { useNavigate } from "react-router-dom";
-import { RouterConstantUtil } from "../../../util/constant/RouterConstantUtil.ts";
+import { RouterConstantUtil } from "../../../util/constants/RouterConstantUtil.ts";
 import { OtpInput } from "../../input/OtpInput.tsx";
 import { useState } from "react";
 

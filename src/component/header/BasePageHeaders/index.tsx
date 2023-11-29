@@ -1,16 +1,19 @@
 import { CSSProperties, useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { IoIosNotifications } from "react-icons/io";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { BsFillBookmarkFill, BsFillChatFill } from "react-icons/bs";
+import BookmarkIcon from "@/component/customIcon/BookmarkIcon.tsx";
 import { BasePageHeaderSearchInput } from "../../input/BasePageHeaderSearchInput.tsx";
 import { NavLink } from "react-router-dom";
-import { RouterConstantUtil } from "@/util/constant/RouterConstantUtil.ts";
+import { RouterConstantUtil } from "@/util/constants/RouterConstantUtil.ts";
 import { ThemeUtil } from "@/util/ThemeUtil.ts";
 import { BaseButton } from "@/component/button/BaseButton.tsx";
-import { BsFillBookmarkFill, BsFillChatFill } from "react-icons/bs";
-import { GiHamburgerMenu } from "react-icons/gi";
 import { useMediaQuery } from "react-responsive";
-import BookmarkIcon from "@/component/customIcon/BookmarkIcon.tsx";
 import { useSelector } from "react-redux";
+import SearchBar from "@/component/form/SearchBar.tsx";
+import ChatIcon from "@/component/icons/ChatIcon.tsx";
+import NotificationIcon from "@/component/icons/NotificationIcon.tsx";
 
 export type BasePageHeaderProps = {
   headerNavStyles?: CSSProperties;
@@ -19,6 +22,8 @@ export type BasePageHeaderProps = {
   showHeaderBg?: boolean;
   hideHamburger?: boolean;
   hideLogo?: boolean;
+  persistDarkLogo?: boolean;
+  showNavbarFixed?: boolean;
 };
 
 export const BasePageHeader = ({
@@ -28,6 +33,8 @@ export const BasePageHeader = ({
   showHeaderBg = false,
   hideHamburger = false,
   hideLogo = false,
+  persistDarkLogo = false,
+  showNavbarFixed = true,
 }: BasePageHeaderProps) => {
   const navigate = useNavigate();
   // const [isAuth, setIsAuth] = useState(false);
@@ -65,7 +72,9 @@ export const BasePageHeader = ({
     };
   }, []);
 
-  // console.log("is", hideLogo);
+  const isActive = (path: string) => {
+    return location.pathname.includes(path);
+  };
 
   return (
     <div
@@ -76,7 +85,7 @@ export const BasePageHeader = ({
       style={{
         backgroundColor: showHeaderBg
           ? "rgba(17,17,16,0.85)"
-          : isNavbarFixed
+          : isNavbarFixed && showNavbarFixed
           ? "rgba(17,17,16,0.85)"
           : "transparent",
         transition: "background-color 0.3s ease-in-out",
@@ -254,9 +263,11 @@ export const BasePageHeader = ({
               ? ThemeUtil.image.logoDarkSvg
               : isBgLight && isMobileScreen
               ? ThemeUtil.image.logo
+              : isBgLight && persistDarkLogo
+              ? ThemeUtil.image.logo
               : ThemeUtil.image.logoDarkSvg
           }
-          className={"w-[97px] h-[35px] "}
+          className={"w-[97px] cursor-pointer h-[35px] "}
           alt={"logo"}
         />
       ) : null}
@@ -303,8 +314,13 @@ export const BasePageHeader = ({
           >
             {/* <BookmarkIcon /> */}
             <BsFillBookmarkFill
-              className="w-[20px] h-[20px] cursor-pointer hover:text-[#18ACE8] text-[white]"
+              className={`w-[27px] hover:text-[#18ACE8] h-[27px] cursor-pointer ${
+                isBgLight ? "text-blackColor" : "text-[white]"
+              }`}
               onClick={handleBookmark}
+              style={{
+                color: isActive("bookmark") && "#18ACE8",
+              }}
             />
           </div>
           <div
@@ -312,25 +328,39 @@ export const BasePageHeader = ({
             data-tip="Chat"
           >
             <BsFillChatFill
-              className="w-[20px] h-[20px] cursor-pointer hover:text-[#18ACE8] text-[white]"
-              // onClick={handleBookmark}
+              className={`w-[27px] hover:text-[#18ACE8] h-[27px] cursor-pointer ${
+                isBgLight ? "text-blackColor" : "text-[white]"
+              }`}
+              onClick={() => navigate(RouterConstantUtil.routes.page.chat)}
+              style={{
+                color: isActive("chat") && "#18ACE8",
+              }}
             />
           </div>
           <div
             className="tooltip tooltip-primary tooltip-bottom max-[700px]:hidden"
             data-tip="Notifictaions"
           >
-            <div className="avatar online">
-              <div className="w-[24px] rounded-full">
+            <div className="avatar online mt-2">
+              <div className="w-[33px] rounded-full">
                 <IoIosNotifications
-                  className={
-                    "w-[27px] hover:text-[#18ACE8] h-[27px] cursor-pointer text-[white]"
+                  className={`w-[33px] hover:text-[#18ACE8] h-[33px] cursor-pointer ${
+                    isBgLight ? "text-blackColor" : "text-[white]"
+                  }`}
+                  onClick={() =>
+                    navigate(RouterConstantUtil.routes.page.notifications)
                   }
+                  style={{
+                    color: isActive("notifications") && "#18ACE8",
+                  }}
                 />
               </div>
             </div>
           </div>
           <img
+            onClick={() =>
+              navigate(RouterConstantUtil.routes.page.profile)
+            }
             src={ThemeUtil.icon.profile}
             className={"w-[40px] h-[40px] cursor-pointer"}
             alt={"profile"}

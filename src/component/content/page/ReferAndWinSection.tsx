@@ -4,7 +4,7 @@ import { ThemeUtil } from "@/util/ThemeUtil";
 import WhiteChevronArrow from "@/assets/icon/white-chevron-round.svg";
 import { useNavigate } from "react-router-dom";
 import { RouteUtil } from "@/util/RouteUtil";
-import { RouterConstantUtil } from "@/util/constant/RouterConstantUtil";
+import { RouterConstantUtil } from "@/util/constants/RouterConstantUtil";
 import { Fade, Slide, Zoom } from "react-awesome-reveal";
 
 const SlideImg1 = () => (
@@ -135,7 +135,11 @@ const ReferAndWinSection = () => {
         }}
       >
         {currentSlideIndex === 0 ? (
-          <Slide direction="right" triggerOnce={true} className="h-[100%] w-auto">
+          <Slide
+            direction="right"
+            triggerOnce={true}
+            className="h-[100%] w-auto"
+          >
             <CurrentComponent />
           </Slide>
         ) : currentSlideIndex === 1 ? (

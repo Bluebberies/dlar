@@ -23,7 +23,8 @@
   src: url("../font/DarkerGrotesque-Black.ttf");
 }
 
-* {
+*, *::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -32,6 +33,7 @@
 
 body {
   background-color: #ffffff;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .hv {
@@ -41,6 +43,10 @@ body {
   height: 45px;
   width: 125px;
   margin-right: auto;
+}
+
+img {
+  user-select: none;
 }
 
 // @media screen and (max-width: 425px) {
@@ -198,7 +204,7 @@ body {
 
       .arrow {
         border: 2px solid gray;
-        opacity: .6;
+        opacity: 0.6;
       }
 
       .arrow::before {

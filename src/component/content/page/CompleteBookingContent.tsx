@@ -6,7 +6,7 @@ import {
   RecentlyUploadedDataProps,
   recentlyUploadedData,
 } from "@/toolkit/data/recentlyUploadedData";
-import { RouterConstantUtil } from "@/util/constant/RouterConstantUtil";
+import { RouterConstantUtil } from "@/util/constants/RouterConstantUtil";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { BaseInput } from "@/component/input/BaseInput";
@@ -42,7 +42,7 @@ const CompleteBookingContent = () => {
     }
   }, [propertyid, navigate, isMobileScreen]);
 
-//   useEffect(() => {}, [isMobileScreen]);
+  //   useEffect(() => {}, [isMobileScreen]);
   return (
     <div className="mt-2 w-[80%] h-auto flex items-start m-auto justify-center flex-col">
       <h1 className="text-[45px] leading-[35px] text-[#111110] font-darkerGrotesque-bold ">

@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { RouterConstantUtil } from "../../../../util/constant/RouterConstantUtil.ts";
+import { RouterConstantUtil } from "../../../../util/constants/RouterConstantUtil.ts";
 import { BaseButton } from "../../../button/BaseButton.tsx";
 import { BaseInput } from "../../../input/BaseInput.tsx";
 
@@ -25,7 +25,6 @@ export const ResetPasswordWithToken = () => {
         placeholder="Input password"
         type="password"
       />
-
 
       <BaseButton
         title={"Change Password"}

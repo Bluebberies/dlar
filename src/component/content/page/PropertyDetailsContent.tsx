@@ -3,7 +3,7 @@ import { PropertyDetailsSection } from "../../section/propertyDetails/PropertyDe
 import { ThemeUtil } from "@/util/ThemeUtil.ts";
 import { SectionTitleHeader } from "@/component/header/SectionTitleHeader.tsx";
 import { BaseButton } from "@/component/button/BaseButton.tsx";
-import { RouterConstantUtil } from "@/util/constant/RouterConstantUtil.ts";
+import { RouterConstantUtil } from "@/util/constants/RouterConstantUtil.ts";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import {
@@ -17,7 +17,7 @@ import {
 import { useEffect, useRef, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import { SheetRef } from "react-modal-sheet";
-import CompletePaymentSheet from '@/component/bottom-sheet/CompletePaymentSheet';
+import CompletePaymentSheet from "@/component/bottom-sheet/CompletePaymentSheet";
 import { ListOfPropertiesContent } from "./ListOfPropertiesContent.tsx";
 
 export const PropertyDetailsContent = () => {
@@ -50,8 +50,8 @@ export const PropertyDetailsContent = () => {
     //   );
     // }
     console.log("gdgdg");
-    
-    setSheetOpen(true)
+
+    setSheetOpen(true);
   };
 
   return (
@@ -261,7 +261,11 @@ export const PropertyDetailsContent = () => {
         showAllProperties={true}
       />
 
-      <CompletePaymentSheet myref={ref} isOpen={isSheetOpen} setOpen={setSheetOpen} />
+      <CompletePaymentSheet
+        myref={ref}
+        isOpen={isSheetOpen}
+        setOpen={setSheetOpen}
+      />
     </div>
   );
 };

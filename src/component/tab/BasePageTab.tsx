@@ -7,7 +7,7 @@ import { FilterCard } from "../card/FilterCard.tsx";
 import Sheet, { SheetRef } from "react-modal-sheet";
 import { FilterCheckbox } from "@/component/checkbox/FilterCheckbox";
 import { BaseInput } from "@/component/input/BaseInput";
-import { amountFilter } from "@/util/constant/generics.ts";
+import { amountFilter } from "@/util/constants/generics.ts";
 import { BaseButton } from "../button/BaseButton.tsx";
 import FilterSheet from "../bottom-sheet/FiltersSheet.tsx";
 
@@ -306,7 +306,7 @@ export const BasePageTab = () => {
         <Sheet.Backdrop onTap={() => setOpen(false)} />
       </Sheet> */}
       <FilterSheet myref={ref} isOpen={isOpen} setOpen={setOpen} />
-      
+
       <dialog id="my_modal_2" className="modal">
         <FilterCard />
         <form method="dialog" className="modal-backdrop">

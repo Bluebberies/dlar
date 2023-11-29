@@ -3,7 +3,7 @@ import { PropertiesDataProps } from "@/toolkit/data/nearYouData.ts";
 import { ThemeUtil } from "@/util/ThemeUtil.ts";
 import { BasePagination } from "../../pagination/BasePagination.tsx";
 import { CSSProperties, useEffect, useMemo, useState } from "react";
-import { RouterConstantUtil } from "@/util/constant/RouterConstantUtil.ts";
+import { RouterConstantUtil } from "@/util/constants/RouterConstantUtil.ts";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { BasePageTab } from "@/component/tab/BasePageTab.tsx";
@@ -106,7 +106,7 @@ export const ListOfPropertiesContent = ({
     const firstPageIndex = (currentPage - 1) * PageSize;
     const lastPageIndex = firstPageIndex + PageSize;
     // console.log("gagagag", data.slice(firstPageIndex, lastPageIndex));
-    
+
     return data.slice(firstPageIndex, lastPageIndex);
   }, [currentPage, data]);
 
@@ -114,7 +114,6 @@ export const ListOfPropertiesContent = ({
   //   console.log("currentPropertyData", currentPropertyData);
   // }, [currentPropertyData]);
 
-  
   return (
     <div
       className={
@@ -141,7 +140,9 @@ export const ListOfPropertiesContent = ({
                 `${RouterConstantUtil.routes.page.baseFilteredPage}${linkTo}`
               )
             }
-            className={"hover:scale-[1.1] transition-[.2s] flex items-center gap-2 cursor-pointer"}
+            className={
+              "hover:scale-[1.1] transition-[.2s] flex items-center gap-2 cursor-pointer"
+            }
           >
             <span
               className={
@@ -200,7 +201,11 @@ export const ListOfPropertiesContent = ({
         >
           {showAllProperties &&
             currentPropertyData.map((value, index) => (
-              <motion.div variants={item2} key={index} className="m-auto w-full">
+              <motion.div
+                variants={item2}
+                key={index}
+                className="m-auto w-full"
+              >
                 <PropertyDisplayCard
                   // key={index}
                   isSlider={isSlider}
@@ -230,13 +235,15 @@ export const ListOfPropertiesContent = ({
         </motion.div>
       )}
 
-      {showAllProperties && <Pagination
-        className="pagination-bar"
-        currentPage={currentPage}
-        totalCount={data.length}
-        pageSize={PageSize}
-        onPageChange={(page: number) => setCurrentPage(page)}
-      />}
+      {showAllProperties && (
+        <Pagination
+          className="pagination-bar"
+          currentPage={currentPage}
+          totalCount={data.length}
+          pageSize={PageSize}
+          onPageChange={(page: number) => setCurrentPage(page)}
+        />
+      )}
 
       {/* {showPagination && <BasePagination />} */}
     </div>
