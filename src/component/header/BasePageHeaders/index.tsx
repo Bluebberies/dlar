@@ -146,9 +146,6 @@ export const BasePageHeader = ({
                   }
                 >
                   <img
-                    onClick={() =>
-                      navigate(RouterConstantUtil.routes.page.home)
-                    }
                     src={ThemeUtil.icon.questionIcon}
                     className={""}
                     alt={"icon"}
@@ -167,9 +164,6 @@ export const BasePageHeader = ({
                   }
                 >
                   <img
-                    onClick={() =>
-                      navigate(RouterConstantUtil.routes.page.home)
-                    }
                     src={ThemeUtil.icon.headSetIcon}
                     className={""}
                     alt={"icon"}
@@ -177,38 +171,62 @@ export const BasePageHeader = ({
                   Contact
                 </NavLink>
               </li>
-              <li className="hover:text-[#18ACE8] hover:bg-[#EFF6FF]  flex items-center justify-start flex-row text-[#111110] text-[16px] font-medium leading-5 font-darkerGrotesque-bold">
-                <img
-                  onClick={() => navigate(RouterConstantUtil.routes.page.home)}
-                  src={ThemeUtil.icon.chatIcon}
-                  className={""}
-                  alt={"icon"}
-                />
-                Messages
-                <span className="text-[#fff] py-[2px] px-[6px]  bg-[#FF472E] rounded-[50%] w-[28px] h-[28px] flex items-center justify-center ml-auto">
-                  2
-                </span>
+              <li className=" flex items-center text-[#111110] justify-start flex-row text-[16px] font-medium leading-5 font-darkerGrotesque-bold">
+                <NavLink
+                  to={RouterConstantUtil.routes.page.chat}
+                  className={() =>
+                    locale.toLowerCase().includes("chat")
+                      ? "w-[80%] text-[#EFF6FF] bg-[#18ACE8]"
+                      : "w-[80%] text-[#111110] font-medium"
+                  }
+                >
+                  <img
+                    src={ThemeUtil.icon.chatIcon}
+                    className={""}
+                    alt={"icon"}
+                  />
+                  Messages
+                  <span className="text-[#fff] py-[2px] px-[6px]  bg-[#FF472E] rounded-[50%] w-[28px] h-[28px] flex items-center justify-center ml-auto">
+                    2
+                  </span>
+                </NavLink>
               </li>
-              <li className="hover:text-[#18ACE8] hover:bg-[#EFF6FF]  flex items-center justify-start flex-row text-[#111110] text-[16px] font-medium leading-5 font-darkerGrotesque-bold">
-                <img
-                  onClick={() => navigate(RouterConstantUtil.routes.page.home)}
-                  src={ThemeUtil.icon.sideBarNotificationIcon}
-                  className={""}
-                  alt={"icon"}
-                />
-                Notifications
-                <span className="text-[#fff] py-[2px] px-[6px]  bg-[#FF472E] rounded-[50%] w-[28px] h-[28px] flex items-center justify-center ml-auto">
-                  6
-                </span>
+              <li className=" flex items-center text-[#111110] justify-start flex-row text-[16px] font-medium leading-5 font-darkerGrotesque-bold">
+                <NavLink
+                  to={RouterConstantUtil.routes.page.notifications}
+                  className={() =>
+                    locale.toLowerCase().includes("notification")
+                      ? "w-[80%] text-[#EFF6FF] bg-[#18ACE8]"
+                      : "w-[80%] text-[#111110] font-medium"
+                  }
+                >
+                  <img
+                    src={ThemeUtil.icon.sideBarNotificationIcon}
+                    className={""}
+                    alt={"icon"}
+                  />
+                  Notifications
+                  <span className="text-[#fff] py-[2px] px-[6px]  bg-[#FF472E] rounded-[50%] w-[28px] h-[28px] flex items-center justify-center ml-auto">
+                    6
+                  </span>
+                </NavLink>
               </li>
-              <li className="hover:text-[#18ACE8] hover:bg-[#EFF6FF]  flex items-center justify-start flex-row text-[#111110] text-[16px] font-medium leading-5 font-darkerGrotesque-bold">
-                <img
-                  onClick={() => navigate(RouterConstantUtil.routes.page.home)}
-                  src={ThemeUtil.icon.settingsWheel}
-                  className={""}
-                  alt={"icon"}
-                />
-                Settings
+              <li className=" flex items-center text-[#111110] justify-start flex-row text-[16px] font-medium leading-5 font-darkerGrotesque-bold">
+                <NavLink
+                  to={RouterConstantUtil.routes.page.profileSettings}
+                  className={() =>
+                    locale.toLowerCase().includes("notification")
+                      ? "w-[80%] text-[#EFF6FF] bg-[#18ACE8]"
+                      : "w-[80%] text-[#111110] font-medium"
+                  }
+                >
+                  <img
+                    src={ThemeUtil.icon.settingsWheel}
+                    className={""}
+                    alt={"icon"}
+                  />
+                  Settings
+                </NavLink>
               </li>
               <div className="flex items-start justify-start flex-col gap-9 mt-auto">
                 <h3
@@ -358,9 +376,7 @@ export const BasePageHeader = ({
             </div>
           </div>
           <img
-            onClick={() =>
-              navigate(RouterConstantUtil.routes.page.profile)
-            }
+            onClick={() => navigate(RouterConstantUtil.routes.page.profile)}
             src={ThemeUtil.icon.profile}
             className={"w-[40px] h-[40px] cursor-pointer"}
             alt={"profile"}

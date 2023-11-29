@@ -4,6 +4,7 @@ import ChatMobileSideBar from "@/component/dashboard/chat/components/ChatMobileS
 import ChatSideBar from "@/component/dashboard/chat/components/ChatSideBar";
 import React, { ReactElement } from "react";
 import DashboardNavbar from "@/component/dashboard/navbar";
+import { motion } from "framer-motion";
 
 type ChatLayoutsPropTypes = {
   children: ReactElement<React.JSX.Element>;
@@ -15,7 +16,14 @@ const ChatLayout = ({ children }: ChatLayoutsPropTypes) => {
   const { pathname } = useLocation();
 
   return (
-    <div className="">
+    <motion.div
+      key="userprofile"
+      initial={{ opacity: 0, x: 100 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: 100 }}
+      transition={{ duration: 0.5 }}
+    >
+      {" "}
       <DashboardNavbar />
       {isTabletOrMobile ? (
         <>
@@ -41,7 +49,7 @@ const ChatLayout = ({ children }: ChatLayoutsPropTypes) => {
           </div>
         </>
       )}
-    </div>
+    </motion.div>
   );
 };
 
