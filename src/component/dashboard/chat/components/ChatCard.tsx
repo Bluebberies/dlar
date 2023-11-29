@@ -15,7 +15,7 @@ const ChatCard = ({ isActive }: PropTypes) => {
   return (
     <Link to={RouterConstantUtil.routes.page.chat + '/2'}>
       <div
-        className={`relative flex justify-between rounded-full lg:mb-0 mb-4 lg:w-full w-80 sm:w-[450px] lg:mx-0 mx-4  lg:rounded-none items-center gap-4 lg:py-4 py-1.5 md:py-2 cursor-pointer px-4 ${
+        className={`relative flex justify-between sm:rounded-full lg:mb-0 mb-4 lg:w-full w-full sm:w-[450px] lg:mx-0 mx-0 sm:mx-4  lg:rounded-none items-center gap-4 lg:py-4 py-1.5 md:py-2 cursor-pointer px-4 ${
           isActive || isTabletOrMobile ? "bg-accent4" : ""
         }`}
       >

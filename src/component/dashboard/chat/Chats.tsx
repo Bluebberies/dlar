@@ -54,7 +54,7 @@ const Chats = () => {
       )}
       <div
         className={
-          "w-11/12 md:static md:mb-0 overflow-y-auto left-0 right-0 mx-auto md:w-full md:p-0 px-3 pb-1 pt-5 md:mx-0 md:rounded-none bg-accent5 rounded-xl"
+          "w-11/12 md:static md:mb-0 overflow-y-auto left-0 right-0 mx-auto md:w-full md:p-0 px-3 pb-20 pt-5 md:mx-0 md:rounded-none bg-accent5 rounded-xl"
         }
       >
         {/* Chat Tittle */}

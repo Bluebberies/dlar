@@ -19,7 +19,7 @@ import CompleteBookingsView from "@/view/pages/CompleteBookingView.tsx";
 import ProfileView from "@/view/pages/profile/ProfileView.tsx";
 import ProfileSettingsView from "@/view/pages/profile/ProfileSettingsView.tsx";
 import NotificationsView from "@/view/pages/NotificationsView.tsx";
-import ChatsView from "@/view/pages/ChatsView.tsx";
+import ChatsView from "@/view/pages/chat/ChatsView.tsx";
 
 export const pageRoute = [
   {

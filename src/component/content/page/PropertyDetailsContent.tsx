@@ -44,14 +44,13 @@ export const PropertyDetailsContent = () => {
   }, [propertyId, navigate]);
 
   const handleBookNow = () => {
-    // if (!isMobileScreen) {
-    //   navigate(
-    //     RouterConstantUtil.routes.page.baseCompleteBookings + propertyId
-    //   );
-    // }
-    console.log("gdgdg");
-
-    setSheetOpen(true);
+    if (!isMobileScreen) {
+      navigate(
+        RouterConstantUtil.routes.page.baseCompleteBookings + propertyId
+      );
+    }else{
+      setSheetOpen(true);
+    }
   };
 
   return (

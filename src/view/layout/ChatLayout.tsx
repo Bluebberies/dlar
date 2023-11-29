@@ -1,7 +1,5 @@
 import { useMediaQuery } from "react-responsive";
-import { Outlet, useLocation } from "react-router-dom";
-// import ChatMobileSideBar from "./components/ChatMobileSideBar";
-// import ChatSideBar from "./components/ChatSideBar";
+import { useLocation } from "react-router-dom";
 import ChatMobileSideBar from "@/component/dashboard/chat/components/ChatMobileSideBar";
 import ChatSideBar from "@/component/dashboard/chat/components/ChatSideBar";
 import React, { ReactElement } from "react";
@@ -21,11 +19,11 @@ const ChatLayout = ({ children }: ChatLayoutsPropTypes) => {
       <DashboardNavbar />
       {isTabletOrMobile ? (
         <>
-          <div className="mt-2 w-full bg-white ">
-            {pathname === "/chatLayout" ? (
+          <div className="mt-2 w-full bg-white min-h-screen ">
+            {pathname === "/chat" ? (
               <ChatMobileSideBar />
             ) : (
-              <div className="h-full mb-2 md:mb-0">
+              <div className="h-full mb-0">
                 {/* <Outlet /> */}
                 {children}
               </div>

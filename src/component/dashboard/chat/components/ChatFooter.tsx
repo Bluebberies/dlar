@@ -18,21 +18,21 @@ const ChatFooter = ({ setInputIsFocused }: propTypes) => {
   const isMobile = useMediaQuery({ query: "(max-width: 640px)" });
 
   return (
-    <div className="md:fixed bottom-0 bg-white right-0 md:py-2 w-full mx-auto my-[5%] md:my-0 rounded-full md:rounded-none md:px-0 overflow-x-hidden md:w-full left-0 lg:pl-96 z-0">
+    <div className="fixed bottom-0  bg-white right-0 md:py-2 w-full mx-auto my-0 rounded-full md:rounded-none md:px-0 overflow-x-hidden md:w-full left-0 lg:pl-96 z-0">
       <div className="flex justify-start items-center gap-1 px-4 md:px-8">
         <span className="cursor-pointer">
           <EmojiIcon isMobile={isMobile} />
         </span>
-        <div className="form-control">
-          {/* <input
+        <div className="w-full py-3 space-y-2">
+          <input
             type="text"
-            className="rounded-full w-full text-grayColor_1 font-medium text-base md:text-[16px] border-0 focus:border-0 focus:outline-0"
+            className="px-3 text-[16px] bg-inherit py-3 focus:outline-0 border-double border-[1px] border-primary rounded-full w-full text-grayColor_1 font-medium text-base md:text-[16px]"
             placeholder="Message"
             onFocus={() => setInputIsFocused(true)}
             onBlur={() => setInputIsFocused(false)}
-          /> */}
+          />
         </div>
-        <BaseInput
+        {/* <BaseInput
           onFocus={() => setInputIsFocused(true)}
           onBlur={() => setInputIsFocused(false)}
           placeholder="message..."
@@ -66,7 +66,7 @@ const ChatFooter = ({ setInputIsFocused }: propTypes) => {
             // border-radius: 20px;
             border: " 2px solid rgba(192, 192, 192, 0.70)",
           }}
-        />
+        /> */}
 
         <span className="cursor-pointer">
           <VoiceNoteIcon isMobile={isMobile} />
