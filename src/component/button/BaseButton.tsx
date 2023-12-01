@@ -33,6 +33,7 @@ BaseButtonProps & ButtonHTMLAttributes<HTMLButtonElement>) => {
   return (
     <div
       // className={`button-container`}
+      onClick={onClick}
       className={` ${containerClassName} button-container `}
       style={containerStyle}
     >
@@ -50,7 +51,7 @@ BaseButtonProps & ButtonHTMLAttributes<HTMLButtonElement>) => {
           color: ThemeUtil.color.whiteColor,
           ...buttonStyle,
         }}
-        onClick={onClick}
+       
       >
         {children || title}
         {/* <button

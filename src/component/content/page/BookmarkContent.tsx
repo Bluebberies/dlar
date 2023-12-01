@@ -9,7 +9,7 @@ export const BookmarkContent = () => {
         containerStyle={{
           marginTop: 15,
         }}
-        title={"My Bookmarks"}
+        title={"Bookmarked"}
         data={PropertiesData}
         showPagination={true}
       />

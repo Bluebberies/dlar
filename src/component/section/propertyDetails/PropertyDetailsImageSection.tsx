@@ -170,7 +170,7 @@ export const PropertyDetailsImageSection = ({
                 src={ThemeUtil.icon.naira}
                 className={"text-blackColor w-[16px] h-[16px]"}
                 alt={"naira"}
-              />
+              />  
               <p
                 className={
                   "[@media(max-width:700px)]:text-[20px] text-[36px] self-start font-light leading-[30px] text-blackColor font-darkerGrotesque-bold"

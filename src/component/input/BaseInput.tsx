@@ -20,6 +20,7 @@ interface BaseInputProps {
   inputContainerClassName?: string;
   inputClassName?: string;
   labelClassName?: string;
+  showValidTick?: boolean;
 }
 export const BaseInput = ({
   label,
@@ -35,6 +36,7 @@ export const BaseInput = ({
   inputContainerClassName,
   inputClassName,
   labelClassName,
+  showValidTick,
   ...props
 }: BaseInputProps & InputHTMLAttributes<HTMLInputElement>) => {
   // const [visible, setVisible] = useState(true);
@@ -69,7 +71,7 @@ export const BaseInput = ({
           <span
             dangerouslySetInnerHTML={{ __html: superText }}
             // className={`absolute bottom-4 text-grayColor_2 text-[20px] leading-[25px] mt-5 ml-3 mr-20 ${
-            className={` text-grayColor_2 text-[20px] leading-[25px] ml-3 border-r-slate-950 border-r-4 pr-2 border-l-[#070707] ${
+            className={`bsol text-grayColor_2 text-[20px] leading-[25px] ml-3 border-r-slate-950 border-r-4 pr-2 border-l-[#070707] ${
               superTextPosition === "left" ? "left-0" : "right-0"
             }`}
             style={superTextStyles}
@@ -99,7 +101,7 @@ export const BaseInput = ({
               className="text-[30px] cursor-pointer text-[#111110]"
             />
           ))}
-        {/* <AiFillCheckCircle className="text-[green] text-[30px] ml-3"/> */}
+        {showValidTick && <AiFillCheckCircle className="text-[green] text-[30px] ml-3"/>}
       </div>
       {/* <p className="text-[red] text-[20px] leading-[15px] flex items-center gap-2 mb-4">
         <AiOutlineInfoCircle /> Input value is incorerct. 

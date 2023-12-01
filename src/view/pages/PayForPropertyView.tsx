@@ -1,27 +1,16 @@
-import { SecondPageLayout } from "@/view/layout/SecondPageLayout.tsx";
 import { PropertyDetailsContent } from "@/component/content/page/PropertyDetailsContent.tsx";
 import { BasePageLayout } from "../layout/BasePageLayouts/BasePageLayout";
 import { useMediaQuery } from "react-responsive";
+import { PayForPropertyContent } from "@/component/content/page/PayForPropertyContent";
 
-export const PropertyDetailsView = () => {
+export const PayForPropertyView = () => {
   const bp1 = useMediaQuery({ query: "(max-width: 1200px)" });
 
   return (
+    // <SecondPageLayout>
+    //   <PropertyDetailsContent />
+    // </SecondPageLayout>
     <BasePageLayout
-      // isBgLight={true}
-      // showHeaderBg={true}
-      // showBackButton={true}
-      // backButtonText={"Back to Properties"}
-      // backButtonStyles={{
-      //   paddingTop: "3rem",
-      //   width: bp1 ? "90%" : "70%",
-      //   margin: "auto",
-      //   paddingLeft: "0",
-      // }}
-      // headerNavStyles={{
-      //   position: "sticky",
-      // }}
-
       filterPage={true}
       headerNavStyles={{
         backgroundColor: "#fff",
@@ -35,13 +24,12 @@ export const PropertyDetailsView = () => {
       backButtonText={"Back to Properties"}
       backButtonStyles={{
         paddingTop: "3rem",
-        width: bp1 ? "90%" : "70%",
+        width: bp1 ? "90%" : "90%",
         margin: "auto",
         paddingLeft: "0",
       }}
-
     >
-      <PropertyDetailsContent />
+      <PayForPropertyContent />
     </BasePageLayout>
   );
 };

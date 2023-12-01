@@ -3,7 +3,7 @@ export const PropertyDescriptionSection = () => {
         <div className={"flex justify-center items-center h-[253px]"}>
             <div className={"h-full w-full"}>
                 <h1 className={"font-darkerGrotesque-bold text-[36px] leading-[35px] text-blackColor mb-3"}>Properties Description</h1>
-                <ul className={"font-darkerGrotesque-semiBold text-[20px] leading-[28px] text-grayColor_1]"}>
+                <ul className={"font-darkerGrotesque-semiBold text-[20px] leading-[28px] text-grayColor_1"}>
                     <li>Beautiful and lovely Selfcon + A shop to rent:</li>
                     <li>Spacious Rooms</li>
                     <li>240k per year</li>

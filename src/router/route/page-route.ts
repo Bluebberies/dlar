@@ -20,6 +20,7 @@ import ProfileView from "@/view/pages/profile/ProfileView.tsx";
 import ProfileSettingsView from "@/view/pages/profile/ProfileSettingsView.tsx";
 import NotificationsView from "@/view/pages/NotificationsView.tsx";
 import ChatsView from "@/view/pages/chat/ChatsView.tsx";
+import { PayForPropertyView } from "@/view/pages/PayForPropertyView.tsx";
 
 export const pageRoute = [
   {
@@ -277,6 +278,15 @@ export const pageRoute = [
   {
     component: ChatsView,
     path: RouterConstantUtil.routes.page.chatGroup,
+    meta: {
+      isAuth: false,
+      redirectTo: undefined,
+    },
+    options: {},
+  },
+  {
+    component: PayForPropertyView,
+    path: RouterConstantUtil.routes.page.payForProperty,
     meta: {
       isAuth: false,
       redirectTo: undefined,

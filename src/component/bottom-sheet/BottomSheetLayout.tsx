@@ -28,7 +28,9 @@ const BottomSheetLayout = ({
       initialSnap={1}
       style={{ zIndex: "10000000000" }}
     >
-      <Sheet.Container style={{ zIndex: "10000000000" }}>
+      <Sheet.Container
+        style={{ zIndex: "10000000000", borderTopRightRadius: "30px" , borderTopLeftRadius: "30px" }}
+      >
         <Sheet.Header />
         <Sheet.Content
           style={{ paddingBottom: myref?.current?.y, zIndex: "10000000000" }}

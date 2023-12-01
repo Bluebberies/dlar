@@ -333,7 +333,7 @@ export const BasePageHeader = ({
             {/* <BookmarkIcon /> */}
             <BsFillBookmarkFill
               className={`w-[27px] hover:text-[#18ACE8] h-[27px] cursor-pointer ${
-                isBgLight ? "text-blackColor" : "text-[white]"
+                isBgLight && !showHeaderBg ? "text-blackColor" : "text-[white]"
               }`}
               onClick={handleBookmark}
               style={{
@@ -347,7 +347,7 @@ export const BasePageHeader = ({
           >
             <BsFillChatFill
               className={`w-[27px] hover:text-[#18ACE8] h-[27px] cursor-pointer ${
-                isBgLight ? "text-blackColor" : "text-[white]"
+                isBgLight && !showHeaderBg ? "text-blackColor" : "text-[white]"
               }`}
               onClick={() => navigate(RouterConstantUtil.routes.page.chat)}
               style={{
@@ -363,7 +363,7 @@ export const BasePageHeader = ({
               <div className="w-[33px] rounded-full">
                 <IoIosNotifications
                   className={`w-[33px] hover:text-[#18ACE8] h-[33px] cursor-pointer ${
-                    isBgLight ? "text-blackColor" : "text-[white]"
+                    isBgLight && !showHeaderBg ? "text-blackColor" : "text-[white]"
                   }`}
                   onClick={() =>
                     navigate(RouterConstantUtil.routes.page.notifications)

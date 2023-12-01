@@ -16,6 +16,8 @@ export type BasePageLayoutProps = {
   hideHamburger?: boolean;
   showBackButton?: boolean;
   hideLogo?: boolean;
+  persistDarkLogo?: boolean;
+  showNavbarFixed?: boolean;
   baseLayoutStyles?: CSSProperties;
   backButtonStyles?: CSSProperties;
   backButtonClassName?: string;
@@ -33,7 +35,9 @@ export const BasePageLayout = ({
   baseLayoutStyles,
   backButtonStyles,
   backButtonClassName,
-  backButtonText
+  backButtonText,
+  persistDarkLogo,
+  showNavbarFixed
 }: BasePageLayoutProps) => {
   const navigate = useNavigate();
   function handleBack() {
@@ -57,7 +61,18 @@ export const BasePageLayout = ({
             showHeaderBg={showHeaderBg}
             hideHamburger={hideHamburger}
             hideLogo={hideLogo}
+            persistDarkLogo={persistDarkLogo}
+
+            // filterPage={true}
+            // headerNavStyles={{
+            //   backgroundColor: "#fff",
+            // }}
+            // isBgLight={true}
+            // persistDarkLogo={true}
+            // showNavbarFixed={false}
+            // showHeaderBg={false}
           />
+          
           {showBackButton && (
             <div
               className={`mt-3 transition-[.2s] pl-[32px] ${backButtonClassName}`}

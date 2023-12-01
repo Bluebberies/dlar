@@ -49,6 +49,13 @@ img {
   user-select: none;
 }
 
+.usd-option {
+  background-image: url(/src//assets/icon/usd_icon.svg);
+  background-size: 20px; /* Adjust image size as needed */
+  background-repeat: no-repeat;
+  padding-left: 25px; /* Ensure text doesn't overlap image */
+}
+
 // @media screen and (max-width: 425px) {
 //   .logo {
 //     display: none;

@@ -53,6 +53,7 @@ import HeadSetIcon from "../assets/icon/headSetIcon.svg";
 import ChatIcon from "../assets/icon/chatIcon.svg";
 import SideBarNotificationIcon from "../assets/icon/sideBarNotificationIcon.svg";
 import QuestionIcon from "../assets/icon/questionIcon.svg";
+import questionIconTransparent from "../assets/icon/questionIconTransparent.svg";
 import ProfileIcon from "../assets/icon/profileIcon.svg";
 import Logout from "../assets/icon/logout.svg";
 import man_in_bath from "../assets/image/man_in_bath.svg";
@@ -86,6 +87,14 @@ import tick_icon from "../assets/icon/tick_icon.svg";
 import telegram from "../assets/icon/telegram.svg";
 import no_messages_mobile from "../assets/image/no-messages-mobile.png";
 import no_messages from "../assets/image/no-messages.png";
+import successful_tick_icon from "../assets/icon/successful_tick_icon.svg";
+import alarm_icon from "../assets/icon/alarm_icon.svg";
+import qr_code from "../assets/image/qr_code.svg";
+import file_copy_blue from "../assets/icon/file_copy_blue.svg";
+import usd_icon from "../assets/icon/usd_icon.svg";
+import slash from "../assets/icon/slash.svg";
+import mastercard from "../assets/icon/mastercard.svg";
+import debit_card from "../assets/icon/debit_card.svg";
 
 export const ThemeUtil = {
   color: {
@@ -102,7 +111,15 @@ export const ThemeUtil = {
     dangerColor: "#E33629",
   },
   icon: {
+    debit_card,
+    mastercard,
+    slash,
+    questionIconTransparent,
+    usd_icon,
+    file_copy_blue,
+    successful_tick_icon,
     telegram,
+    alarm_icon,
     tick_icon,
     bookmark: BookmarkSvg,
     chat: ChatSvg,
@@ -165,6 +182,8 @@ export const ThemeUtil = {
     star_icon,
   },
   image: {
+    qr_code,
+    usd_icon,
     no_messages_mobile,
     no_messages,
     logo: LogoSvg,

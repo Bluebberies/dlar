@@ -47,6 +47,7 @@ export const RouterConstantUtil = {
       notifications: "/notifications",
       chat: "/chat",
       chatGroup: "/chat/:id",
+      payForProperty: "/property/:propertyid/pay",
     },
   },
 };

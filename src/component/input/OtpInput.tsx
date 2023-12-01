@@ -1,14 +1,18 @@
-import React, { createRef, useMemo, useRef } from "react";
+import React, { CSSProperties, createRef, useMemo, useRef } from "react";
 
 type OtpInputProps = {
   numberOfInputs: number;
   onChangeText: Function;
   otp: string;
+  containerStyle?: CSSProperties
+  inputStyle?: CSSProperties
 };
 export const OtpInput = ({
   numberOfInputs,
   onChangeText,
   otp,
+  containerStyle,
+  inputStyle
 }: OtpInputProps) => {
   const ref = useRef<any>(
     [...Array<any>(numberOfInputs)].map(() => createRef())
@@ -117,8 +121,9 @@ export const OtpInput = ({
   return (
     <div
       className={
-        "w-full h-[auto] flex max-[440px]:flex-wrap items-center justify-center gap-3 mt-5 mb-5"
+        "w-full select-none h-[auto] flex max-[440px]:flex-wrap items-center justify-center gap-3 mt-5 mb-5"
       }
+      style={containerStyle}
     >
       {otpItems?.map((_, i) => {
         return (
@@ -134,8 +139,9 @@ export const OtpInput = ({
             onFocus={inputOnFocus}
             maxLength={1}
             className={
-              "select-none text-[#111110] w-[80px] h-[70px] font-black text-[24px] max-[425px]:w-[40px] max-[425px]:h-[40px] max-[850px]:w-[60px] max-[850px]:h-[60px]focus:outline-0 text-center border-[3px] bg-inherit border-grayColor_4 rounded-[4px]"
+              "select-none selection:bg-transparent  text-[#111110] w-[80px] h-[70px] font-black text-[24px] max-[425px]:w-[40px] max-[425px]:h-[40px] max-[850px]:w-[60px] max-[850px]:h-[60px]focus:outline-0 text-center border-[3px] bg-inherit border-grayColor_4 rounded-[4px]"
             }
+            style={inputStyle}
           />
         );
       })}

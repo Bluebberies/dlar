@@ -5,15 +5,34 @@ export const SearchResultView = () => {
   return (
     <BasePageLayout
       // isBgLight={true}
+      // filterPage={true}
+      // hideHamburger={true}
+      // showBackButton={true}
+      // hideLogo={true}
+      // showHeaderBg={true}
+      // headerNavStyles={{
+      //   position: "sticky",
+      //   // backgroundColor: "inherit",
+      // }}
+
       filterPage={true}
-      hideHamburger={true}
-      showBackButton={true}
-      hideLogo={true}
-      showHeaderBg={true}
       headerNavStyles={{
+        backgroundColor: "#fff",
         position: "sticky",
-        // backgroundColor: "inherit",
       }}
+      isBgLight={true}
+      persistDarkLogo={true}
+      showNavbarFixed={false}
+      showHeaderBg={false}
+      showBackButton={true}
+      // backButtonText={"Back to Properties"}
+      backButtonStyles={{
+        width: "90%",
+        // paddingTop: "3rem",
+        margin: "auto",
+        paddingLeft: "0",
+      }}
+
     >
       <SearchResultContent />
     </BasePageLayout>
